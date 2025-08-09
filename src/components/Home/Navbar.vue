@@ -293,48 +293,39 @@ watch([showStars, stars], () => {
 
         <div class="flex items-center gap-2">
           <a href="https://discord.gg/qbwytm4WUG" target="_blank" rel="noreferrer">
-            <!--            <RxDiscordLogo-->
-            <!--                class="text-[2.7rem] hover:bg-gray-50 dark:hover:bg-slate-900 dark:border-darkBorderColor transition-all duration-500 dark:text-slate-400 text-gray-400 rounded-normal p-[9px] border border-gray-200 cursor-pointer"-->
-            <!--            />-->
+            <Icon icon="iconoir:discord"
+                  class="text-[2.8rem] hover:bg-gray-50 dark:hover:bg-slate-900 dark:border-darkBorderColor transition-all duration-500 dark:text-slate-400 text-gray-400 rounded-normal p-[7px] border border-gray-200 cursor-pointer"
+            />
           </a>
 
           <a
-              href="https://github.com/Asfak00/zenui-library"
+              href="https://github.com/Asfak00/zenui-library-vue"
               target="_blank"
               rel="noreferrer"
-              class="hover:bg-gray-50 dark:hover:bg-slate-900 dark:border-darkBorderColor transition-all duration-300 dark:text-slate-400 flex items-center text-gray-400 rounded-normal border border-gray-200 cursor-pointer overflow-hidden"
           >
-            <Icon icon="iconoir:github" width="24" height="24"/>
-            <!--            <motion-div-->
-            <!--                :style="{ overflow: 'hidden', width: showStars ? textWidth + 16 + 'px' : '0' }"-->
-            <!--                class="transition-[width] duration-300"-->
-            <!--            >-->
-            <!--              <p-->
-            <!--                  ref="textRef"-->
-            <!--                  class="text-black dark:text-darkTextColor text-[0.9rem] font-medium pr-4 whitespace-nowrap"-->
-            <!--              >-->
-            <!--                <CountUp :endVal="stars" :duration="3.2"/>-->
-            <!--                +-->
-            <!--              </p>-->
-            <!--            </motion-div>-->
+            <Icon icon="iconoir:github"
+                  class="text-[2.8rem] hover:bg-gray-50 dark:hover:bg-slate-900 dark:border-darkBorderColor transition-all duration-500 dark:text-slate-400 text-gray-400 rounded-normal p-[9px] border border-gray-200 cursor-pointer"
+            />
           </a>
 
           <div
               @click="toggleTheme"
               class="text-[1.5rem] hover:bg-gray-50 dark:hover:bg-slate-900 dark:border-darkBorderColor dark:text-slate-400 text-gray-400 overflow-hidden h-[43px] border border-border rounded-normal px-[9px] p-1 cursor-pointer"
           >
-            <Icon icon="bitcoin-icons:sun-outline" width="24" height="24"
-                  :class="[
-                  theme === 'dark' ? 'translate-y-[4px] rotate-0' : 'translate-y-[-80px] rotate-[160deg]',
-                  'transition-all duration-500'
-                ]"
+            <Icon icon="bitcoin-icons:sun-outline" class="translate-y-0.5 text-[1.9rem]"
             />
-            <Icon icon="tabler:moon-filled" width="24" height="24"
-                  :class="[
-                  theme === 'light' ? 'translate-y-[-19px] rotate-0' : 'translate-y-[80px] rotate-[-260deg]',
-                  'transition-all duration-500'
-                ]"
-            />
+            <!--            <Icon icon="bitcoin-icons:sun-outline" width="24" height="24"-->
+            <!--                  :class="[-->
+            <!--                  theme === 'dark' ? 'translate-y-[4px] rotate-0' : 'translate-y-[-80px] rotate-[160deg]',-->
+            <!--                  'transition-all duration-500'-->
+            <!--                ]"-->
+            <!--            />-->
+            <!--            <Icon icon="tabler:moon-filled" width="24" height="24"-->
+            <!--                  :class="[-->
+            <!--                  theme === 'light' ? 'translate-y-[-19px] rotate-0' : 'translate-y-[80px] rotate-[-260deg]',-->
+            <!--                  'transition-all duration-500'-->
+            <!--                ]"-->
+            <!--            />-->
           </div>
         </div>
       </div>

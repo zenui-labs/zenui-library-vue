@@ -5,6 +5,6 @@
 </template>
 
 <script setup>
-import Overview from '@/Components/overview/Overview.vue'
+import Overview from '@/components/overview/SidebarContent/Content/Overview.vue'
 import ContentPageLayout from '@/Shared/ContentPageLayout.vue'
 </script>

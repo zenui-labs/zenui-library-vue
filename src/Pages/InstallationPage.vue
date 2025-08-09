@@ -1,5 +1,5 @@
 <script setup>
-import Installation from '@/components/overview/Installation.vue'
+import Installation from '@/components/overview/SidebarContent/Content/Installation.vue'
 import ContentPageLayout from '@/Shared/ContentPageLayout.vue'
 </script>
 
