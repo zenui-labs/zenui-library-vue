@@ -1,7 +1,8 @@
 <script setup>
 import {ref} from "vue";
-import {ChevronRight} from "lucide-vue-next";
-import Item from "./Item.vue"; // Import the Item component
+import Item from "./Item.vue";
+import NewBadge from "@/Shared/NewBadge.vue";
+import {Icon} from "@iconify/vue"
 
 const props = defineProps({
   title: String,
@@ -26,7 +27,7 @@ const toggleOpen = () => {
     <h3
         @click="toggleOpen"
         :class="[
-        isOpen ? 'text-[#049ab7]' : 'text-gray-500 dark:text-darkSubTextColor',
+        isOpen ? 'text-brandColor' : 'text-gray-500 dark:text-darkSubTextColor',
         'flex items-center justify-between gap-1 text-[1rem] font-[500] capitalize cursor-pointer'
       ]"
     >
@@ -37,10 +38,10 @@ const toggleOpen = () => {
         </div>
       </template>
       <template v-else>{{ title }}</template>
-      <ChevronRight
-          :class="[
-          isOpen ? 'rotate-[90deg] !text-[#049ab7]' : '',
-          'text-[1.5rem] text-gray-500 transition-all duration-300'
+      <Icon icon="humbleicons:chevron-down"
+            :class="[
+          isOpen ? 'rotate-[180deg] !text-brandColor' : '',
+          'text-[1.2rem] text-gray-500 transition-all duration-300'
         ]"
       />
     </h3>

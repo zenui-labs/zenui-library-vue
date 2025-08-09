@@ -1,13 +1,9 @@
 <script setup>
 import OverviewIcon from "@/SvgIcons/OverviewIcon.vue";
 import InstallationIcon from "@/SvgIcons/InstallationIcon.vue";
-import ResourceIcon from "@/SvgIcons/ResourceIcon.vue";
-import TemplatesIcon from "@/SvgIcons/TemplatesIcon.vue";
-import HookIcon from "@/SvgIcons/HookIcon.vue";
 import DefaultMenu from "@/components/overview/Sidebar/children/Menu/DefaultMenu.vue";
 import CollapseMenu from "@/components/overview/Sidebar/children/Menu/CollapseMenu.vue";
 
-// Menu items data (you can also move these outside the component if static)
 const defaultMenuItems = [
   {
     bgColor: "bg-blue-600",
@@ -24,30 +20,6 @@ const defaultMenuItems = [
     title: "Installation",
     icon: InstallationIcon,
     url: "/docs/installation",
-  },
-  {
-    bgColor: "bg-purple-600",
-    borderColor: "border-purple-600",
-    textColor: "text-purple-600",
-    title: "Resources",
-    icon: ResourceIcon,
-    url: "/docs/resources",
-  },
-  {
-    bgColor: "bg-[#DB06F9]",
-    borderColor: "border-[#DB06F9]",
-    textColor: "text-[#DB06F9]",
-    title: "Custom Hooks",
-    icon: HookIcon,
-    url: "/custom-hooks",
-  },
-  {
-    bgColor: "bg-indigo-600",
-    borderColor: "border-indigo-600",
-    textColor: "text-indigo-600",
-    title: "Templates",
-    icon: TemplatesIcon,
-    url: "/templates",
   },
 ];
 

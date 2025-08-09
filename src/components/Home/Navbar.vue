@@ -1,14 +1,11 @@
 <script setup>
 import {onBeforeUnmount, onMounted, ref, watch} from 'vue'
 import {RouterLink, useRoute, useRouter} from 'vue-router'
-
-import {ChevronDown, CodeXml, Github, Keyboard, Moon, Palette, Search, Sun} from 'lucide-vue-next';
-
-
 import CommandIcon from '@/SvgIcons/CommandIcon.vue'
 import ConfigAiIcon from '@/SvgIcons/ConfigAiIcon.vue'
 import UpdateBadge from '@/Shared/UpdateBadge.vue'
 import {useGitHubStars} from '@/CustomHooks/useGithubStars.js'
+import {Icon} from "@iconify/vue"
 
 // import {} from 'vue-countup-v2'
 
@@ -110,13 +107,14 @@ watch([showStars, stars], () => {
       <div class="flex items-center gap-8">
 
         <div class="relative mr-10 h-[52px]">
-          <!--          <VersionSelectBox/>-->
           <img
               src="/logo.png"
               alt="logo"
               class="w-[70px] cursor-pointer z-10"
               @click="router.push('/')"
           />
+          <span
+              class='absolute top-1 right-[-38px] border border-gray-200 rounded-full text-[0.7rem] text-text bg-gray-50 pb-[0.5px] px-2'>Beta</span>
         </div>
 
         <ul class="text-gray-600 flex items-center gap-8 font-[500] capitalize text-[1rem]">
@@ -148,9 +146,8 @@ watch([showStars, stars], () => {
               @mouseleave="isToolsHover = false"
           >
             Tools
-            <ChevronDown
-                :size="20"
-                :class="[
+            <Icon icon="humbleicons:chevron-down" width="20" height="20"
+                  :class="[
                   'transition-all duration-300',
                   isToolsHover ? 'rotate-[180deg]' : 'rotate-0'
                 ]"
@@ -173,7 +170,7 @@ watch([showStars, stars], () => {
                       class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
                   >
                     <div class="bg-brandColor/5 p-[14px] rounded-normal text-[1.6rem]">
-                      <Keyboard/>
+                      <Icon icon="solar:keyboard-linear" width="24" height="24"/>
                     </div>
                     <div>
                       <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
@@ -190,7 +187,7 @@ watch([showStars, stars], () => {
                       class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
                   >
                     <div class="bg-brandColor/5 p-3 rounded-normal text-[1.8rem]">
-                      <Palette/>
+                      <Icon icon="icon-park-outline:platte" width="48" height="48"/>
                     </div>
                     <div>
                       <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
@@ -211,7 +208,7 @@ watch([showStars, stars], () => {
                       class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
                   >
                     <div class="bg-brandColor/5 p-3.5 rounded-normal text-[1.5rem]">
-                      <!--                      <TbIcons/>-->
+                      <Icon icon="tabler:icons" width="24" height="24"/>
                     </div>
                     <div>
                       <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
@@ -251,7 +248,7 @@ watch([showStars, stars], () => {
                       class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
                   >
                     <div class="bg-brandColor/5 p-3.5 rounded-normal text-[1.5rem]">
-                      <CodeXml/>
+                      <Icon icon="fluent:code-16-regular" width="16" height="16"/>
                     </div>
                     <div>
                       <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
@@ -271,11 +268,12 @@ watch([showStars, stars], () => {
 
       <div class="flex items-center gap-2">
         <div class="zenuiSearchInput relative w-full" @click="handleSearchClick">
-          <Search :size="20" class="text-gray-400 absolute dark:text-slate-400 left-3 top-[0.8rem]"/>
+          <Icon icon="circum:search" width="24" height="24"
+                class="text-gray-400 absolute dark:text-slate-400 left-3 top-[0.65rem]"/>
           <transition-group name="fade-slide" tag="div">
             <p
                 key="search-placeholder"
-                class="text-[0.9rem] dark:text-slate-400 text-gray-400 absolute top-[11px] left-[40px]"
+                class="text-[0.9rem] dark:text-slate-400 text-gray-400 absolute top-[11px] left-[42px]"
             >
               {{ searchPlaceholderText }}
             </p>
@@ -283,7 +281,7 @@ watch([showStars, stars], () => {
           <input
               type="search"
               readonly
-              class="py-[0.59rem] pl-10 dark:border-darkBorderColor border w-full bg-transparent border-gray-200 rounded-normal focus:ring-0 outline-none"
+              class="py-[0.59rem] pl-12 dark:border-darkBorderColor border w-full bg-transparent border-gray-200 rounded-normal focus:ring-0 outline-none"
           />
           <span
               class="text-gray-400 dark:text-slate-400 transition-all duration-500 px-2 py-1 text-[1rem] font-[400] rounded-md h-[75%] absolute right-1.5 top-[0.35rem] flex items-center justify-center gap-[1px]"
@@ -306,7 +304,7 @@ watch([showStars, stars], () => {
               rel="noreferrer"
               class="hover:bg-gray-50 dark:hover:bg-slate-900 dark:border-darkBorderColor transition-all duration-300 dark:text-slate-400 flex items-center text-gray-400 rounded-normal border border-gray-200 cursor-pointer overflow-hidden"
           >
-            <Github class="text-[2.6rem] px-[9px] py-[7px]"/>
+            <Icon icon="iconoir:github" width="24" height="24"/>
             <!--            <motion-div-->
             <!--                :style="{ overflow: 'hidden', width: showStars ? textWidth + 16 + 'px' : '0' }"-->
             <!--                class="transition-[width] duration-300"-->
@@ -325,14 +323,14 @@ watch([showStars, stars], () => {
               @click="toggleTheme"
               class="text-[1.5rem] hover:bg-gray-50 dark:hover:bg-slate-900 dark:border-darkBorderColor dark:text-slate-400 text-gray-400 overflow-hidden h-[43px] border border-border rounded-normal px-[9px] p-1 cursor-pointer"
           >
-            <Sun
-                :class="[
+            <Icon icon="bitcoin-icons:sun-outline" width="24" height="24"
+                  :class="[
                   theme === 'dark' ? 'translate-y-[4px] rotate-0' : 'translate-y-[-80px] rotate-[160deg]',
                   'transition-all duration-500'
                 ]"
             />
-            <Moon
-                :class="[
+            <Icon icon="tabler:moon-filled" width="24" height="24"
+                  :class="[
                   theme === 'light' ? 'translate-y-[-19px] rotate-0' : 'translate-y-[80px] rotate-[-260deg]',
                   'transition-all duration-500'
                 ]"

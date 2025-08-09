@@ -1,6 +1,6 @@
 <script setup>
-import {ChevronLeft} from 'lucide-vue-next';
 import {defineProps} from 'vue'
+import {Icon} from "@iconify/vue"
 
 const props = defineProps({
   width: {
@@ -33,7 +33,7 @@ const props = defineProps({
           :to="backUrl"
           class="flex items-center gap-[5px] text-[0.9rem] py-1.5 px-3 border border-gray-200 hover:bg-gray-200 dark:bg-slate-900 dark:text-darkSubTextColor dark:border-darkBorderColor dark:hover:bg-slate-800 capitalize transition-all duration-200 text-gray-500 rounded-md bg-gray-100"
       >
-        <ChevronLeft class="text-[1rem] text-gray-500"/>
+        <Icon icon="material-symbols-light:chevron-left" width="24" height="24" class="text-[1rem] text-gray-500"/>
         {{ backName }}
       </RouterLink>
 
@@ -43,14 +43,15 @@ const props = defineProps({
           class="flex items-center gap-[5px] text-[0.9rem] py-1.5 px-3 border border-gray-200 hover:bg-gray-200 dark:bg-slate-900 dark:text-darkSubTextColor dark:border-darkBorderColor dark:hover:bg-slate-800 capitalize transition-all duration-200 text-gray-500 rounded-md bg-gray-100"
       >
         {{ forwardName }}
-        <ChevronLeft class="text-[1rem] text-gray-500 rotate-[180deg]"/>
+        <Icon icon="material-symbols-light:chevron-left" width="24" height="24"
+              class="text-[1rem] text-gray-500 rotate-[180deg]"/>
       </RouterLink>
     </div>
 
     <div
         class="flex items-center flex-col 640px:flex-row gap-5 dark:border-slate-700 justify-between w-full border-t border-border pt-5"
     >
-      <img src="/footer_logo.png" alt="logo-image" class="w-[120px] 640px:w-[120px]"/>
+      <img src="/footer-logo.png" alt="logo-image" class="w-[120px] 640px:w-[120px]"/>
 
       <div class="flex items-center gap-3">
         <p class="font-[600] text-[1rem] text-text dark:text-darkSubTextColor/90">Support:</p>
@@ -65,7 +66,7 @@ const props = defineProps({
               alt="sponser-image"
               class="w-[25px]"
           />
-          Keep ZenUI Brewing
+          Donate
         </a>
       </div>
     </div>

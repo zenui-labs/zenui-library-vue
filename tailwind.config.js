@@ -15,7 +15,7 @@ export default {
             colors: {
                 primary: "#3B9DF8",
                 secondary: "#ffffff",
-                brandColor: '#0FABCA',
+                brandColor: '#3fb682',
                 border: "#e5eaf2",
                 text: "#424242",
                 darkBgColor: '#020617',

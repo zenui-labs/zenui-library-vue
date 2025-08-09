@@ -1,41 +1,36 @@
 <script setup>
 import Content from "./Content.vue";
+import {onMounted, onUnmounted, ref, watch} from "vue";
 
-// Inject scrollY and setScrollY from your MenuContext provider
-// Assuming MenuContext provides: scrollY (ref) and setScrollY (function)
-// const scrollY = inject("scrollY");
-// const setScrollY = inject("setScrollY");
-//
-// const sidebarRef = ref(null);
-//
-// const scrollHandler = () => {
-//   if (sidebarRef.value) {
-//     setScrollY(sidebarRef.value.scrollTop);
-//   }
-// };
-//
-// onMounted(() => {
-//   if (sidebarRef.value) {
-//     const ele = sidebarRef.value;
-//     ele.addEventListener("scroll", scrollHandler);
-//
-//     // Restore scroll position with smooth effect disabled then enabled
-//     ele.style.scrollBehavior = "auto";
-//     ele.scrollTop = scrollY.value || 0;
-//     ele.style.scrollBehavior = "smooth";
-//
-//     onUnmounted(() => {
-//       ele.removeEventListener("scroll", scrollHandler);
-//     });
-//   }
-// });
-//
-// // Optional: watch scrollY and update scrollTop if scrollY changes externally
-// watch(scrollY, (newVal) => {
-//   if (sidebarRef.value && sidebarRef.value.scrollTop !== newVal) {
-//     sidebarRef.value.scrollTop = newVal;
-//   }
-// });
+const sidebarRef = ref(null);
+
+const scrollHandler = () => {
+  if (sidebarRef.value) {
+    setScrollY(sidebarRef.value.scrollTop);
+  }
+};
+
+onMounted(() => {
+  if (sidebarRef.value) {
+    const ele = sidebarRef.value;
+    ele.addEventListener("scroll", scrollHandler);
+
+    ele.style.scrollBehavior = "auto";
+    ele.scrollTop = scrollY.value || 0;
+    ele.style.scrollBehavior = "smooth";
+
+    onUnmounted(() => {
+      ele.removeEventListener("scroll", scrollHandler);
+    });
+  }
+});
+
+// Optional: watch scrollY and update scrollTop if scrollY changes externally
+watch(scrollY, (newVal) => {
+  if (sidebarRef.value && sidebarRef.value.scrollTop !== newVal) {
+    sidebarRef.value.scrollTop = newVal;
+  }
+});
 </script>
 
 <template>
