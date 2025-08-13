@@ -11,6 +11,9 @@ const routes = [
         name: 'Overview',
         component: () => import('@/Pages/OverviewPage.vue'),
     },
+
+    // ***********************  Component Routes  *********************** //
+
     {
         path: '/components/all-components',
         name: 'All Components',
@@ -18,8 +21,18 @@ const routes = [
     },
     {
         path: '/components/input-text',
-        name: 'Overview',
+        name: 'Input Text',
         component: () => import('@/Pages/Components/Inputs/InputTextPage.vue'),
+    },
+    {
+        path: '/components/input-textarea',
+        name: 'Input Textarea',
+        component: () => import('@/Pages/Components/Inputs/InputTextareaPage.vue'),
+    },
+    {
+        path: '/components/input-number',
+        name: 'Input Number',
+        component: () => import('@/Pages/Components/Inputs/NumberInputPage.vue'),
     },
 ]
 

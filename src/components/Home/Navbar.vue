@@ -2,8 +2,6 @@
 import {onBeforeUnmount, onMounted, ref, watch} from 'vue'
 import {RouterLink, useRoute, useRouter} from 'vue-router'
 import CommandIcon from '@/SvgIcons/CommandIcon.vue'
-import ConfigAiIcon from '@/SvgIcons/ConfigAiIcon.vue'
-import UpdateBadge from '@/Shared/UpdateBadge.vue'
 import {useGitHubStars} from '@/CustomHooks/useGithubStars.js'
 import {Icon} from "@iconify/vue"
 
@@ -127,7 +125,7 @@ watch([showStars, stars], () => {
 
           <RouterLink
               to="/docs/overview"
-              class="dark:text-darkTextColor cursor-pointer hover:text-[#0FABCA] transition-all duration-200"
+              class="dark:text-darkTextColor cursor-pointer py-[23px] hover:text-[#0FABCA] transition-all duration-200"
           >
             Documentation
           </RouterLink>
@@ -139,130 +137,6 @@ watch([showStars, stars], () => {
             Components
           </RouterLink>
 
-          <li
-              class="cursor-pointer relative py-[23px] flex items-center gap-[8px]"
-              :class="{ 'text-[#0FABCA]': isToolsHover }"
-              @mouseenter="isToolsHover = true"
-              @mouseleave="isToolsHover = false"
-          >
-            Tools
-            <Icon icon="humbleicons:chevron-down" width="20" height="20"
-                  :class="[
-                  'transition-all duration-300',
-                  isToolsHover ? 'rotate-[180deg]' : 'rotate-0'
-                ]"
-            />
-
-            <transition
-                name="fade-scale"
-                appear
-                v-if="isToolsHover"
-            >
-              <div
-                  class="absolute dark:bg-slate-800 dark:border-darkBorderColor top-[64px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white shadow-[0px_40px_80px_-8px_rgba(145,158,171,0.24)] rounded-high p-5 mt-2"
-                  @mouseenter="isToolsHover = true"
-                  @mouseleave="isToolsHover = false"
-              >
-                <div class="flex flex-col gap-3">
-
-                  <RouterLink
-                      to="/shortcut-generator"
-                      class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
-                  >
-                    <div class="bg-brandColor/5 p-[14px] rounded-normal text-[1.6rem]">
-                      <Icon icon="solar:keyboard-linear" width="24" height="24"/>
-                    </div>
-                    <div>
-                      <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
-                        ShotKey
-                      </p>
-                      <span class="text-[0.8rem] dark:text-darkSubTextColor font-[300] text-gray-500">
-                          generate keyboard shortcuts easily.
-                        </span>
-                    </div>
-                  </RouterLink>
-
-                  <RouterLink
-                      to="/color-palette"
-                      class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
-                  >
-                    <div class="bg-brandColor/5 p-3 rounded-normal text-[1.8rem]">
-                      <Icon icon="icon-park-outline:platte" width="48" height="48"/>
-                    </div>
-                    <div>
-                      <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
-                        Color Palettes
-                      </p>
-                      <span class="text-[0.8rem] dark:text-darkSubTextColor font-[300] text-gray-500">
-                          Harmonized color sets.
-                        </span>
-                    </div>
-                  </RouterLink>
-
-                </div>
-
-                <div class="flex flex-col gap-3">
-
-                  <RouterLink
-                      to="/icons"
-                      class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
-                  >
-                    <div class="bg-brandColor/5 p-3.5 rounded-normal text-[1.5rem]">
-                      <Icon icon="tabler:icons" width="24" height="24"/>
-                    </div>
-                    <div>
-                      <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
-                        Icons
-                      </p>
-                      <span class="text-[0.8rem] dark:text-darkSubTextColor font-[300] text-gray-500">
-                          Scalable icons for clear visuals.
-                        </span>
-                    </div>
-                  </RouterLink>
-
-                  <RouterLink
-                      to="/config-generator"
-                      class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
-                  >
-                    <div class="bg-brandColor/5 p-[14px] rounded-normal">
-                      <ConfigAiIcon/>
-                    </div>
-                    <div>
-                      <div class="flex items-center gap-2">
-                        <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
-                          Config AI
-                        </p>
-                        <UpdateBadge/>
-                      </div>
-                      <span class="text-[0.8rem] dark:text-darkSubTextColor font-[300] text-gray-500">
-                          Generate tailwind config file by AI.
-                        </span>
-                    </div>
-                  </RouterLink>
-
-                </div>
-
-                <div class="flex flex-col">
-                  <RouterLink
-                      to="/semantic-tag-master"
-                      class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
-                  >
-                    <div class="bg-brandColor/5 p-3.5 rounded-normal text-[1.5rem]">
-                      <Icon icon="fluent:code-16-regular" width="16" height="16"/>
-                    </div>
-                    <div>
-                      <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
-                        Semantic TagMaster
-                      </p>
-                      <span class="text-[0.8rem] dark:text-darkSubTextColor font-[300] text-gray-500">
-                          HTML semantic tags use cases
-                        </span>
-                    </div>
-                  </RouterLink>
-                </div>
-              </div>
-            </transition>
-          </li>
         </ul>
       </div>
 

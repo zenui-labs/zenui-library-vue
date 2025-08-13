@@ -14,16 +14,15 @@ const defaultMenuItems = [
     url: "/docs/overview",
   },
   {
-    bgColor: "bg-green-600",
-    borderColor: "border-green-600",
-    textColor: "text-green-600",
+    bgColor: "bg-[#DB06F9]",
+    borderColor: "bg-[#DB06F9]",
+    textColor: "text-[#DB06F9]",
     title: "Installation",
     icon: InstallationIcon,
     url: "/docs/installation",
   },
 ];
 
-// You can declare the large arrays for CollapseMenu items similarly as constants
 const componentsItems = [
   {title: "All Components", url: "/components/all-components"},
   {label: "FORM"},
@@ -89,58 +88,9 @@ const componentsItems = [
   {title: "Code", url: "/components/code", parent: "RANDOMS"},
   {title: "Snippet", url: "/components/snippet", parent: "RANDOMS"},
 ];
-
-const animationsItems = [
-  {title: "Installation", url: "/animations/installation"},
-  {label: "CARDS"},
-  {title: "Magic Card", url: "/animations/magic-card", parent: "CARDS"},
-  {title: "Reveal Card", url: "/animations/reveal-card", parent: "CARDS"},
-  {title: "Magnet Card", url: "/animations/magnet-card", parent: "CARDS"},
-  {label: "LAYOUTS"},
-  {title: "Sorting Animation", url: "/animations/sorting-animation", parent: "LAYOUTS"},
-  {title: "Layout Switcher", url: "/animations/layout-switcher", parent: "LAYOUTS"},
-  {title: "Drag Animations", url: "/animations/drag-animations", parent: "LAYOUTS"},
-  {title: "Animated Accordion", url: "/animations/animated-accordion", parent: "LAYOUTS"},
-  {label: "BUTTONS"},
-  {title: "Reaction Trail", url: "/animations/reaction-trail", parent: "BUTTONS"},
-  {title: "Hover Effects", url: "/animations/hover-effects", parent: "BUTTONS"},
-  {label: "VISUALS"},
-  {title: "Text Effects", url: "/animations/text-effects", parent: "VISUALS"},
-  {title: "Background Animations", url: "/animations/background-animations", parent: "VISUALS"},
-  {title: "Chat Screen", url: "/animations/chat-screen", parent: "VISUALS"},
-  {title: "Dropdown Animations", url: "/animations/dropdown-animations", parent: "VISUALS"},
-  {title: "Mouse Navigations", url: "/animations/mouse-navigations", parent: "VISUALS", isNewComponent: true},
-  {title: "Gallery View", url: "/animations/gallery-view", parent: "VISUALS"},
-  {title: "Search Placeholder", url: "/animations/search-placeholder", parent: "VISUALS", isNewComponent: true},
-];
-
-const blocksItems = [
-  {title: "All Blocks", url: "/blocks/all-blocks"},
-  {label: "SECTIONS"},
-  {title: "Responsive Navbar", url: "/blocks/responsive-navbar", parent: "Sections"},
-  {title: "Hero Section", url: "/blocks/hero-section", parent: "Sections"},
-  {title: "Pricing Section", url: "/blocks/pricing-section", parent: "Sections"},
-  {title: "Responsive Footer", url: "/blocks/responsive-footer", parent: "Sections"},
-  {label: "FORM"},
-  {title: "Contact Form", url: "/blocks/contact-form", parent: "Form"},
-  {title: "Multi-Step Form", url: "/blocks/multi-step-form", parent: "Form"},
-  {title: "Newsletter Form", url: "/blocks/newsletter-form", parent: "Form"},
-  {label: "EMPTY PAGES"},
-  {title: "404 Page", url: "/blocks/404-page", parent: "Empty Pages"},
-  {title: "Empty Page", url: "/blocks/empty-page", parent: "Empty Pages"},
-  {label: "E-COMMERCE"},
-  {title: "Offer Grid", url: "/blocks/offer-grid", parent: "E-Commerce"},
-  {title: "Product Details Page", url: "/blocks/product-details-page", parent: "E-Commerce"},
-  {title: "Checkout Page", url: "/blocks/checkout-page", parent: "E-Commerce"},
-  {label: "RANDOM"},
-  {title: "Responsive Search Bar", url: "/blocks/responsive-search-bar", parent: "Random"},
-  {title: "Responsive Sidebar", url: "/blocks/responsive-sidebar", parent: "Random"},
-];
 </script>
 
 <template>
   <DefaultMenu :items="defaultMenuItems"/>
   <CollapseMenu title="Components" :items="componentsItems"/>
-  <CollapseMenu title="Animations" :items="animationsItems"/>
-  <CollapseMenu title="Blocks" :items="blocksItems"/>
 </template>

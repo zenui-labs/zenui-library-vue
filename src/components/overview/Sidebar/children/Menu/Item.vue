@@ -16,7 +16,7 @@ const props = defineProps({
 const route = useRoute();
 
 const isActive = computed(() => {
-  return props.url ? route.path === props.url || route.path.startsWith(props.url) : false;
+  return props.url ? route.path === props.url : false;
 });
 
 const prefix = "sidebar";

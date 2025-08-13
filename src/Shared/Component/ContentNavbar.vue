@@ -1,5 +1,5 @@
 <template>
-  <div :class="`1024px:block sticky top-4 right-0 w-[${width}] hidden`">
+  <div :class="`1024px:block sticky top-4 right-0 ${classNames} hidden`">
     <h2 class="text-[0.9rem] dark:text-darkSubTextColor font-[600] text-text tracking-widest">
       CONTENTS
     </h2>
@@ -55,11 +55,11 @@
               class="absolute top-0 left-4 h-full w-px bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(0,0,0,0.1)_9.27%,_rgba(0,0,0,0.15)_90.7%,_transparent_100%)] dark:bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(255,255,255,0.1)_9.27%,_rgba(255,255,255,0.1)_90.7%,_transparent_100%)]"
           ></div>
           <a href="https://readmestudio.zenui.net/" target="_blank" rel="noreferrer">
-            <!--            <img-->
-            <!--                alt="softollyo.com"-->
-            <!--                src="/small_ads_for_zenui.png"-->
-            <!--                class="rounded-high max-w-[200px]"-->
-            <!--            />-->
+            <img
+                alt="Readme Studio"
+                src="/small_ads_readme_studio.png"
+                class="rounded-high max-w-[200px]"
+            />
           </a>
           <div
               class="absolute top-0 right-4 h-full w-px bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(0,0,0,0.1)_9.27%,_rgba(0,0,0,0.1)_90.7%,_transparent_100%)] dark:bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(255,255,255,0.1)_9.27%,_rgba(255,255,255,0.1)_90.7%,_transparent_100%)]"
@@ -85,9 +85,9 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  width: {
+  classNames: {
     type: String,
-    default: '40%',
+    default: 'w-[40%]',
   },
 });
 

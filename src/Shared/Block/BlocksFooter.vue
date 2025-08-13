@@ -51,7 +51,7 @@ const props = defineProps({
     <div
         class="flex items-center flex-col 640px:flex-row gap-5 dark:border-slate-700 justify-between w-full border-t border-border pt-5"
     >
-      <img src="/footer-logo.png" alt="logo-image" class="w-[120px] 640px:w-[120px]"/>
+      <img src="/footer_logo.png" alt="logo-image" class="w-[120px] 640px:w-[140px]"/>
 
       <div class="flex items-center gap-3">
         <p class="font-[600] text-[1rem] text-text dark:text-darkSubTextColor/90">Support:</p>

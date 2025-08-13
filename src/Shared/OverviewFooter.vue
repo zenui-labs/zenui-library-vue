@@ -48,7 +48,7 @@ defineProps({
     <div
         class="flex items-center flex-col 640px:flex-row gap-5 justify-between w-full dark:border-darkBorderColor border-t border-border pt-5"
     >
-      <img src="/footer-logo.png" alt="logo-image" class="w-[100px] 640px:w-[120px]"/>
+      <img src="/footer_logo.png" alt="logo-image" class="w-[100px] 640px:w-[120px]"/>
 
       <div class="flex items-center gap-3">
         <p class="font-[600] text-[1rem] dark:text-darkSubTextColor/90 text-text">Support:</p>
@@ -63,7 +63,7 @@ defineProps({
               alt="sponser-image"
               class="w-[25px]"
           />
-          Keep ZenUI Brewing
+          Donate
         </a>
       </div>
     </div>
