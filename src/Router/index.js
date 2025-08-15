@@ -34,6 +34,26 @@ const routes = [
         name: 'Input Number',
         component: () => import('@/Pages/Components/Inputs/NumberInputPage.vue'),
     },
+    {
+        path: '/components/input-checkbox',
+        name: 'Input Checkbox',
+        component: () => import('@/Pages/Components/Inputs/CheckboxInputPage.vue'),
+    },
+    {
+        path: '/components/input-switch',
+        name: 'Input Switch',
+        component: () => import('@/Pages/Components/Inputs/InputSwitchPage.vue'),
+    },
+    {
+        path: '/components/strong-password',
+        name: 'Strong Password',
+        component: () => import('@/Pages/Components/Inputs/StrongPasswordPage.vue'),
+    },
+    {
+        path: '/components/select-box',
+        name: 'Select Box',
+        component: () => import('@/Pages/Components/Inputs/SelectBoxPage.vue'),
+    },
 ]
 
 const router = createRouter({

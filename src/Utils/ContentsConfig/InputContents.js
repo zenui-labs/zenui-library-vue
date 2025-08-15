@@ -83,7 +83,6 @@ export const numberInputContents = [
     },
 ];
 
-// Checkbox Input Contents
 export const checkboxInputContents = [
     {
         id: 1,
@@ -146,8 +145,8 @@ export const strongPasswordContents = [
 export const selectInputContents = [
     {
         id: 1,
-        title: 'Select',
-        href: '#select',
+        title: 'Basic Select',
+        href: '#basic_select',
     },
     {
         id: 2,

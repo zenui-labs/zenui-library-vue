@@ -2,12 +2,12 @@ import React from "react";
 
 // components
 import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
-import RedoUndo from "../../../Components/Overview/SidebarContent/Content/Data Display/RedoUndo/Index.jsx";
+import RedoUndo from "../../../Components/Overview/SidebarContent/Content/Data Display/RedoUndo/Index.vue";
 
 const TooltipPage = () => {
     return (
         <ContentPageLayout>
-            <RedoUndo />
+            <RedoUndo/>
         </ContentPageLayout>
     );
 };

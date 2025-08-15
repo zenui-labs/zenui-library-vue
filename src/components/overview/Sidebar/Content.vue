@@ -2,7 +2,7 @@
 import OverviewIcon from "@/SvgIcons/OverviewIcon.vue";
 import InstallationIcon from "@/SvgIcons/InstallationIcon.vue";
 import DefaultMenu from "@/components/overview/Sidebar/children/Menu/DefaultMenu.vue";
-import CollapseMenu from "@/components/overview/Sidebar/children/Menu/CollapseMenu.vue";
+import MainMenu from "@/components/overview/Sidebar/children/Menu/MainMenu.vue";
 
 const defaultMenuItems = [
   {
@@ -32,7 +32,7 @@ const componentsItems = [
   {title: "Checkbox", url: "/components/input-checkbox", parent: "FORM"},
   {title: "Switch", url: "/components/input-switch", parent: "FORM"},
   {title: "Strong Password", url: "/components/strong-password", parent: "FORM"},
-  {title: "Select", url: "/components/input-select", parent: "FORM"},
+  {title: "Select", url: "/components/select-box", parent: "FORM"},
   {title: "Radio", url: "/components/input-radio", parent: "FORM"},
   {title: "Range", url: "/components/input-range", parent: "FORM"},
   {title: "File", url: "/components/input-file", parent: "FORM"},
@@ -92,5 +92,5 @@ const componentsItems = [
 
 <template>
   <DefaultMenu :items="defaultMenuItems"/>
-  <CollapseMenu title="Components" :items="componentsItems"/>
+  <MainMenu title="Components" :items="componentsItems"/>
 </template>
