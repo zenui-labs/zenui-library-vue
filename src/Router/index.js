@@ -54,6 +54,11 @@ const routes = [
         name: 'Select Box',
         component: () => import('@/Pages/Components/Inputs/SelectBoxPage.vue'),
     },
+    {
+        path: "/components/input-radio",
+        name: "Radio",
+        component: () => import("@/Pages/Components/Inputs/InputRadioPage.vue"),
+    },
 ]
 
 const router = createRouter({
