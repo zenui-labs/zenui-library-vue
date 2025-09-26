@@ -59,6 +59,11 @@ const routes = [
         name: "Radio",
         component: () => import("@/Pages/Components/Inputs/InputRadioPage.vue"),
     },
+    {
+        path: "/components/input-range",
+        name: "Range",
+        component: () => import("@/Pages/Components/Inputs/InputSliderPage.vue"),
+    },
 ]
 
 const router = createRouter({
