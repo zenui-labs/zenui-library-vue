@@ -64,6 +64,11 @@ const routes = [
         name: "Range",
         component: () => import("@/Pages/Components/Inputs/InputSliderPage.vue"),
     },
+    {
+        path: "/components/input-file",
+        name: "File-Input",
+        component: () => import("@/Pages/Components/Inputs/InputFilePage.vue"),
+    },
 ]
 
 const router = createRouter({

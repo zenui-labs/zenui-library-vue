@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 // components
 import OverviewFooter from '../../../../../Shared/OverviewFooter.vue'
 import ContentHeader from '../../../../../Shared/ContentHeader.vue'
@@ -32,13 +32,13 @@ const breakPointSliderCode = ref(false)
 // actions
 const value = ref(0)
 
-const handleChange = (event: Event) => {
-  const target = event.target as HTMLInputElement
+const handleChange = (event) => {
+  const target = event.target 
   value.value = Number(target.value)
 }
 
-const handleClick = (event: MouseEvent) => {
-  const slider = (event.currentTarget as HTMLElement).getBoundingClientRect()
+const handleClick = (event) => {
+  const slider = (event.currentTarget ).getBoundingClientRect()
   const newValue = ((event.clientX - slider.left) / slider.width) * 100
   value.value = Math.min(Math.max(newValue, 0), 100)
 }
@@ -47,21 +47,21 @@ const handleClick = (event: MouseEvent) => {
 const breakpoints = [0, 25, 50, 75, 100]
 const value1 = ref(50) // Start at 50%
 
-const findNearestBreakpoint = (val: number) => {
+const findNearestBreakpoint = (val) => {
   return breakpoints.reduce((prev, curr) =>
     Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
   )
 }
 
-const handleChange1 = (event: Event) => {
-  const target = event.target as HTMLInputElement
+const handleChange1 = (event) => {
+  const target = event.target 
   const newValue = Number(target.value)
   const nearest = findNearestBreakpoint(newValue)
   value1.value = nearest
 }
 
-const handleClick1 = (event: MouseEvent) => {
-  const slider = (event.currentTarget as HTMLElement).getBoundingClientRect()
+const handleClick1 = (event) => {
+  const slider = (event.currentTarget).getBoundingClientRect()
   const clickPosition = ((event.clientX - slider.left) / slider.width) * 100
   const nearest = findNearestBreakpoint(clickPosition)
   value1.value = nearest
