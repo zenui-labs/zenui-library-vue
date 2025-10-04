@@ -83,13 +83,13 @@ useHead({
 
       <ToggleTab
         :code="sliderCode"
-        :setCode="(val) => (sliderCode.value = val)"
-        :setPreview="(val) => (sliderPreview.value = val)"
+        @update:code="val => sliderCode = val"
+        @update:preview="val => sliderPreview = val"
         :preview="sliderPreview"
       />
 
       <ComponentWrapper>
-        <template v-if="sliderPreview">
+        <div v-if="sliderPreview">
           <div class="p-8 mb-4 flex items-center flex-col gap-5 justify-center">
             <div class="flex items-center justify-center">
               <div
@@ -115,11 +115,11 @@ useHead({
               </div>
             </div>
           </div>
-        </template>
+        </div>
 
-        <template v-if="sliderCode">
+        <div v-if="sliderCode">
           <Showcode code="/* Your React demo code snippet here */" />
-        </template>
+        </div>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -132,13 +132,13 @@ useHead({
 
       <ToggleTab
         :code="breakPointSliderCode"
-        :setCode="(val) => (breakPointSliderCode.value = val)"
-        :setPreview="(val) => (breakPointSliderPreview.value = val)"
+        @update:code="val => breakPointSliderCode = val"
+        @update:preview="val => breakPointSliderPreview = val"
         :preview="breakPointSliderPreview"
       />
 
       <ComponentWrapper>
-        <template v-if="breakPointSliderPreview">
+        <div v-if="breakPointSliderPreview">
           <div class="p-8 mb-4 flex items-center flex-col gap-5 justify-center">
             <div class="flex flex-col items-center justify-center">
               <div
@@ -182,11 +182,11 @@ useHead({
               </div>
             </div>
           </div>
-        </template>
+        </div>
 
-        <template v-if="breakPointSliderCode">
+        <div v-if="breakPointSliderCode">
           <Showcode code="/* Your React demo code snippet here */" />
-        </template>
+        </div>
       </ComponentWrapper>
 
       <OverviewFooter

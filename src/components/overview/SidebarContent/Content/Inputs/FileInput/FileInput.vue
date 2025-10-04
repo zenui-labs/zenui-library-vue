@@ -19,7 +19,7 @@ import ProfileUpload from "./ProfileUpload.vue";
 // contents for scrollspy
 import { fileInputContents } from "../../../../../../Utils/ContentsConfig/InputContents.js";
 import { useScrollSpy } from "../../../../../../CustomHooks/useScrollSpy.js";
-import { useHead } from '@vueuse/head';
+import { useHead } from "@vueuse/head";
 
 const sectionIds = fileInputContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
@@ -41,7 +41,7 @@ const profileUploadPreview = ref(true);
 const profileUploadCode = ref(false);
 
 useHead({
-  title: "Form - File Input"
+  title: "Form - File Input",
 });
 </script>
 
@@ -59,18 +59,18 @@ useHead({
 
       <ToggleTab
         :code="iconUploadCode"
-        :setCode="(val) => (iconUploadCode.value = val)"
+        @update:code="val => iconUploadCode = val"
         :preview="iconUploadPreview"
-        :setPreview="(val) => (iconUploadPreview.value = val)"
+        @update:preview="val => iconUploadPreview = val"
       />
 
       <ComponentWrapper>
-        <template v-if="iconUploadPreview">
+        <div v-if="iconUploadPreview">
           <UploadWithIcon />
-        </template>
-        <template v-if="iconUploadCode">
+        </div>
+        <div v-if="iconUploadCode">
           <Showcode code="/* your code here */" />
-        </template>
+        </div>
       </ComponentWrapper>
 
       <!-- Upload with button -->
@@ -84,18 +84,18 @@ useHead({
 
       <ToggleTab
         :code="buttonUploadCode"
-        :setCode="(val) => (buttonUploadCode.value = val)"
+        @update:code="val => buttonUploadCode = val"
         :preview="buttonUploadPreview"
-        :setPreview="(val) => (buttonUploadPreview.value = val)"
+        @update:preview="val => buttonUploadPreview = val"
       />
 
       <ComponentWrapper>
-        <template v-if="buttonUploadPreview">
+        <div v-if="buttonUploadPreview">
           <UploadWithButton />
-        </template>
-        <template v-if="buttonUploadCode">
+        </div>
+        <div v-if="buttonUploadCode">
           <Showcode code="" />
-        </template>
+        </div>
       </ComponentWrapper>
 
       <!-- Upload with heading -->
@@ -109,18 +109,18 @@ useHead({
 
       <ToggleTab
         :code="headingUploadCode"
-        :setCode="(val) => (headingUploadCode.value = val)"
+        @update:code="val => headingUploadCode = val"
         :preview="headingUploadPreview"
-        :setPreview="(val) => (headingUploadPreview.value = val)"
+        @update:preview="val => headingUploadPreview = val"
       />
 
       <ComponentWrapper>
-        <template v-if="headingUploadPreview">
+        <div v-if="headingUploadPreview">
           <UploadWithHeading />
-        </template>
-        <template v-if="headingUploadCode">
+        </div>
+        <div v-if="headingUploadCode">
           <Showcode code="/* heading code */" />
-        </template>
+        </div>
       </ComponentWrapper>
 
       <!-- Profile upload -->
@@ -134,18 +134,18 @@ useHead({
 
       <ToggleTab
         :code="profileUploadCode"
-        :setCode="(val) => (profileUploadCode.value = val)"
+        @update:code="val => profileUploadCode = val"
         :preview="profileUploadPreview"
-        :setPreview="(val) => (profileUploadPreview.value = val)"
+        @update:preview="val => profileUploadPreview = val"
       />
 
       <ComponentWrapper>
-        <template v-if="profileUploadPreview">
+        <div v-if="profileUploadPreview">
           <ProfileUpload />
-        </template>
-        <template v-if="profileUploadCode">
+        </div>
+        <div v-if="profileUploadCode">
           <Showcode code="/* profile upload code */" />
-        </template>
+        </div>
       </ComponentWrapper>
 
       <OverviewFooter
@@ -156,6 +156,9 @@ useHead({
       />
     </div>
 
-    <ContentNavbar :contents="fileInputContents" :activeSection="activeSection" />
+    <ContentNavbar
+      :contents="fileInputContents"
+      :activeSection="activeSection"
+    />
   </aside>
 </template>

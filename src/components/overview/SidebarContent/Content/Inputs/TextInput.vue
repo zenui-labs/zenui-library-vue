@@ -19,8 +19,36 @@ const selectedCurrencyType = ref('BDT');
 const sectionIds = textInputContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
+// states start
 const primaryInputPreview = ref(true);
 const primaryInputCode = ref(false);
+
+const bottomBorderInputPreview = ref(true);
+const bottomBorderInputCode = ref(false);
+
+const animateLabelInputPreview = ref(true);
+const animateLabelInputCode = ref(false);
+
+const inputWithIconPreview = ref(true);
+const inputWithIconCode = ref(false);
+
+const passwordInputPreview = ref(true);
+const passwordInputCode = ref(false);
+
+const linkInputPreview = ref(true);
+const linkInputCode = ref(false);
+
+const priceInputPreview = ref(true);
+const priceInputCode = ref(false);
+
+const searchInputPreview = ref(true);
+const searchInputCode = ref(false);
+
+const joinUsInputPreview = ref(true);
+const joinUsInputCode = ref(false);
+
+// states end
+
 
 const allCurrencyTypes = ['USD', 'EUR', 'BDT'];
 
@@ -77,13 +105,13 @@ const handlePriceDropdownClick = (currency) => {
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="bottomBorderInputPreview"
+                 @update:preview="val => bottomBorderInputPreview = val"
+                 @update:code="val => bottomBorderInputCode = val"
+                 :code="bottomBorderInputCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="bottomBorderInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <input
               type='text'
               name='name'
@@ -105,13 +133,13 @@ const handlePriceDropdownClick = (currency) => {
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="animateLabelInputPreview"
+                 @update:preview="val => animateLabelInputPreview = val"
+                 @update:code="val => animateLabelInputCode = val"
+                 :code="animateLabelInputCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="animateLabelInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <label class='relative w-full 1024px:w-[80%]'>
             <input
                 type='text'
@@ -140,13 +168,13 @@ const handlePriceDropdownClick = (currency) => {
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="inputWithIconPreview"
+                 @update:preview="val => inputWithIconPreview = val"
+                 @update:code="val => inputWithIconCode = val"
+                 :code="inputWithIconCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="inputWithIconPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <div class='w-full 1024px:w-[80%] relative'>
             <Icon icon="uil:user"
                   class=' absolute top-3.5 left-3 text-[1.3rem] dark:text-slate-400 text-[#777777]'/>
@@ -196,13 +224,13 @@ const handlePriceDropdownClick = (currency) => {
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="passwordInputPreview"
+                 @update:preview="val => passwordInputPreview = val"
+                 @update:code="val => passwordInputCode = val"
+                 :code="passwordInputCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="passwordInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <div class='w-full 1024px:w-[80%]'>
             <label
                 htmlFor='password'
@@ -244,13 +272,13 @@ const handlePriceDropdownClick = (currency) => {
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="linkInputPreview"
+                 @update:preview="val => linkInputPreview = val"
+                 @update:code="val => linkInputCode = val"
+                 :code="linkInputCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="linkInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <div class='w-full 1024px:w-[80%] relative'>
             <input
                 type='text'
@@ -277,13 +305,13 @@ const handlePriceDropdownClick = (currency) => {
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="priceInputPreview"
+                 @update:preview="val => priceInputPreview = val"
+                 @update:code="val => priceInputCode = val"
+                 :code="priceInputCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" :class="priceDropdownOpen ? 'mb-[8rem]' : 'mb-4'"
+        <div v-if="priceInputPreview" :class="priceDropdownOpen ? 'mb-[8rem]' : 'mb-4'"
              class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <div class='w-full 1024px:w-[80%] relative'>
             <input
@@ -343,13 +371,13 @@ const handlePriceDropdownClick = (currency) => {
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="searchInputPreview"
+                 @update:preview="val => searchInputPreview = val"
+                 @update:code="val => searchInputCode = val"
+                 :code="searchInputCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="searchInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <div class='w-full 1024px:w-[80%] relative'>
             <input
                 type='text'
@@ -400,13 +428,13 @@ const handlePriceDropdownClick = (currency) => {
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="joinUsInputPreview"
+                 @update:preview="val => joinUsInputPreview = val"
+                 @update:code="val => joinUsInputCode = val"
+                 :code="joinUsInputCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="joinUsInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <div class='w-full 1024px:w-[80%] relative'>
             <input
                 type='email'
