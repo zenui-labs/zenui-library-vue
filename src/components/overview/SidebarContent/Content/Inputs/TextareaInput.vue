@@ -15,8 +15,15 @@ const animatedInputValue = ref('');
 const sectionIds = textareaInputContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-const primaryInputPreview = ref(true);
-const primaryInputCode = ref(false);
+const requiredTextareaPreview = ref(true);
+const requiredTextareaCode = ref(false);
+
+const backgroundTextareaPreview = ref(true);
+const backgroundTextareaCode = ref(false);
+
+const animateLabelTextareaPreview = ref(true);
+const animateLabelTextareaCode = ref(false);
+
 </script>
 
 <template>
@@ -27,13 +34,13 @@ const primaryInputCode = ref(false);
       <ComponentDescription text='This is an input text field. Use it to enter your information, which
             will be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="requiredTextareaPreview"
+                 @update:preview="val => requiredTextareaPreview = val"
+                 @update:code="val => requiredTextareaCode = val"
+                 :code="requiredTextareaCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="requiredTextareaPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <div class="w-full 1024px:w-[90%]">
             <label
                 for="description"
@@ -62,13 +69,13 @@ const primaryInputCode = ref(false);
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="backgroundTextareaPreview"
+                 @update:preview="val => backgroundTextareaPreview = val"
+                 @update:code="val => backgroundTextareaCode = val"
+                 :code="backgroundTextareaCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="backgroundTextareaPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <div class="w-full 1024px:w-[90%]">
             <label
                 for="description"
@@ -96,13 +103,13 @@ const primaryInputCode = ref(false);
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="animateLabelTextareaPreview"
+                 @update:preview="val => animateLabelTextareaPreview = val"
+                 @update:code="val => animateLabelTextareaCode = val"
+                 :code="animateLabelTextareaCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="animateLabelTextareaPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <label class="relative w-full 1024px:w-[90%]">
                <textarea
                    name="name"

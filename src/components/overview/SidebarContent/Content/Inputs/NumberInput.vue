@@ -19,6 +19,15 @@ const activeSection = useScrollSpy(sectionIds);
 
 const primaryInputPreview = ref(true);
 const primaryInputCode = ref(false);
+const miniNumberInputPreview = ref(true);
+const miniNumberInputCode = ref(false);
+
+const roundedButtonPreview = ref(true);
+const roundedButtonCode = ref(false);
+
+const roundedButtonPositionPreview = ref(true);
+const roundedButtonPositionCode = ref(false);
+
 
 const handleMiniIncrement = () => {
   miniInputValue.value = miniInputValue.value + 1;
