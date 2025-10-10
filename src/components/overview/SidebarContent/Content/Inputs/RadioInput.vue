@@ -49,8 +49,8 @@ useHead({
 
       <ToggleTab
         :code="circleCode"
-        :setCode="(val) => (circleCode.value = val)"
-        :setPreview="(val) => (circlePreview.value = val)"
+        @update:code="(val) => (circleCode = val)"
+        @update:preview="(val) => (circlePreview = val)"
         :preview="circlePreview"
       />
 
@@ -95,8 +95,8 @@ useHead({
 
       <ToggleTab
         :code="squareCode"
-        :setCode="(val) => (squareCode.value = val)"
-        :setPreview="(val) => (squarePreview.value = val)"
+        @update:code="(val) => (squareCode = val)"
+        @update:preview="(val) => (squarePreview = val)"
         :preview="squarePreview"
       />
 

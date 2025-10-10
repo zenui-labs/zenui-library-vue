@@ -36,8 +36,17 @@ const strengthProgress = computed(() => {
 const sectionIds = strongPasswordContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-const primaryInputPreview = ref(true);
-const primaryInputCode = ref(false);
+const checkInlinePreview = ref(true);
+const checkInlineCode = ref(false);
+
+const checkByIndicatorPreview = ref(true);
+const checkByIndicatorCode = ref(false);
+
+const checkPasswordWithHintPreview = ref(true);
+const checkPasswordWithHintCode = ref(false);
+
+const showHintInDropdownPreview = ref(true);
+const showHintInDropdownCode = ref(false);
 
 const handleStrongPasswordCheckingChange = (e) => {
   const password = e.target.value;
@@ -132,13 +141,13 @@ const hintList = [
       <ComponentDescription text='This is an input text field. Use it to enter your information, which
             will be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="checkInlinePreview"
+                 @update:preview="val => checkInlinePreview = val"
+                 @update:code="val => checkInlineCode = val"
+                 :code="checkInlineCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="checkInlinePreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <div class='w-full 1024px:w-[80%]'>
             <label
                 for='password'
@@ -200,13 +209,13 @@ const hintList = [
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="checkByIndicatorPreview"
+                 @update:preview="val => checkByIndicatorPreview = val"
+                 @update:code="val => checkByIndicatorCode = val"
+                 :code="checkByIndicatorCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="checkByIndicatorPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <div class="w-full 1024px:w-[80%]">
             <label
                 for="password"
@@ -262,13 +271,13 @@ const hintList = [
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="checkPasswordWithHintPreview"
+                 @update:preview="val => checkPasswordWithHintPreview = val"
+                 @update:code="val => checkPasswordWithHintCode = val"
+                 :code="checkPasswordWithHintCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="checkPasswordWithHintPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <div class="w-full 1024px:w-[80%]">
             <label
                 for="password"
@@ -332,13 +341,13 @@ const hintList = [
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="showHintInDropdownPreview"
+                 @update:preview="val => showHintInDropdownPreview = val"
+                 @update:code="val => showHintInDropdownCode = val"
+                 :code="showHintInDropdownCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" :class="hintDropdownOpen ? 'mb-48' : 'mb-4'"
+        <div v-if="showHintInDropdownPreview" :class="hintDropdownOpen ? 'mb-48' : 'mb-4'"
              class='p-8 flex items-center flex-col gap-5 justify-center transition-all duration-200'>
           <div class="w-full 1024px:w-[80%]">
             <label

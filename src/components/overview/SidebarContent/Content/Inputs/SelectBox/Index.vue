@@ -24,8 +24,24 @@ import SingleSelectWithSearchAndBadge
 const sectionIds = selectInputContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-const primaryInputPreview = ref(true);
-const primaryInputCode = ref(false);
+
+const basicSelectPreview = ref(true);
+const basicSelectCode = ref(false);
+
+const selectWithIconPreview = ref(true);
+const selectWithIconCode = ref(false);
+
+const multipleSelectWithSearchPreview = ref(true);
+const multipleSelectWithSearchCode = ref(false);
+
+const singleSelectWithSearchPreview = ref(true);
+const singleSelectWithSearchCode = ref(false);
+
+const singleSelectWithSearchAndBadgePreview = ref(true);
+const singleSelectWithSearchAndBadgeCode = ref(false);
+
+const multipleSelectWithSearchAndBadgePreview = ref(true);
+const multipleSelectWithSearchAndBadgeCode = ref(false);
 
 </script>
 
@@ -37,13 +53,13 @@ const primaryInputCode = ref(false);
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="basicSelectPreview"
+                 @update:preview="val => basicSelectPreview = val"
+                 @update:code="val => basicSelectCode = val"
+                 :code="basicSelectCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="basicSelectPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <BasicSelectExample/>
         </div>
         <ShowCode
@@ -59,13 +75,13 @@ const primaryInputCode = ref(false);
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="selectWithIconPreview"
+                 @update:preview="val => selectWithIconPreview = val"
+                 @update:code="val => selectWithIconCode = val"
+                 :code="selectWithIconCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="selectWithIconPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <SelectWithIconExample/>
         </div>
         <ShowCode
@@ -81,13 +97,13 @@ const primaryInputCode = ref(false);
       <ComponentDescription text='This is an input text field. Use it to enter your information, which
             will be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="multipleSelectWithSearchPreview"
+                 @update:preview="val => multipleSelectWithSearchPreview = val"
+                 @update:code="val => multipleSelectWithSearchCode = val"
+                 :code="multipleSelectWithSearchCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="multipleSelectWithSearchPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <MultipleSelectWithSearch/>
         </div>
         <ShowCode
@@ -103,13 +119,13 @@ const primaryInputCode = ref(false);
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="singleSelectWithSearchPreview"
+                 @update:preview="val => singleSelectWithSearchPreview = val"
+                 @update:code="val => singleSelectWithSearchCode = val"
+                 :code="singleSelectWithSearchCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="singleSelectWithSearchPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <SingleSelectWithSearch/>
         </div>
         <ShowCode
@@ -125,13 +141,13 @@ const primaryInputCode = ref(false);
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="singleSelectWithSearchAndBadgePreview"
+                 @update:preview="val => singleSelectWithSearchAndBadgePreview = val"
+                 @update:code="val => singleSelectWithSearchAndBadgeCode = val"
+                 :code="singleSelectWithSearchAndBadgeCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="singleSelectWithSearchAndBadgePreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <SingleSelectWithSearchAndBadge/>
         </div>
         <ShowCode
@@ -147,13 +163,13 @@ const primaryInputCode = ref(false);
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="multipleSelectWithSearchAndBadgePreview"
+                 @update:preview="val => multipleSelectWithSearchAndBadgePreview = val"
+                 @update:code="val => multipleSelectWithSearchAndBadgeCode = val"
+                 :code="multipleSelectWithSearchAndBadgeCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="multipleSelectWithSearchAndBadgePreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <MultipleSelectWithSearchAndBadge/>
         </div>
         <ShowCode

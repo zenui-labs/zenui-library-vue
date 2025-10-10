@@ -19,8 +19,14 @@ const widthIncrease = ref(false);
 const sectionIds = switchInputContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-const primaryInputPreview = ref(true);
-const primaryInputCode = ref(false);
+const circleSwitchPreview = ref(true);
+const circleSwitchCode = ref(false);
+
+const squareSwitchPreview = ref(true);
+const squareSwitchCode = ref(false);
+
+const animatedSwitchPreview = ref(true);
+const animatedSwitchCode = ref(false);
 
 const handleSquareToggle = () => {
   squareToggle.value = !squareToggle.value;
@@ -48,13 +54,13 @@ const handleAnimatedSwitch = () => {
       <ComponentDescription text='This is an input text field. Use it to enter your information, which
             will be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="circleSwitchPreview"
+                 @update:preview="val => circleSwitchPreview = val"
+                 @update:code="val => circleSwitchCode = val"
+                 :code="circleSwitchCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center gap-5 justify-center'>
+        <div v-if="circleSwitchPreview" class='p-8 mb-4 flex items-center gap-5 justify-center'>
           <div
               :class="`${
               squareToggle ? '!bg-brandColor' : 'bg-[#f0f0f0]'
@@ -124,13 +130,13 @@ const handleAnimatedSwitch = () => {
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="squareSwitchPreview"
+                 @update:preview="val => squareSwitchPreview = val"
+                 @update:code="val => squareSwitchCode = val"
+                 :code="squareSwitchCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center gap-5 justify-center'>
+        <div v-if="squareSwitchPreview" class='p-8 mb-4 flex items-center gap-5 justify-center'>
           <div
               :class="`${
               toggle ? '!bg-brandColor' : 'bg-[#f0f0f0]'
@@ -207,13 +213,13 @@ const handleAnimatedSwitch = () => {
       <ComponentDescription text='This is a bottom-bordered input text field. Enter your information
             here for it to be processed accordingly.'/>
 
-      <ToggleTab :preview="primaryInputPreview"
-                 @update:preview="val => primaryInputPreview = val"
-                 @update:code="val => primaryInputCode = val"
-                 :code="primaryInputCode"/>
+      <ToggleTab :preview="animatedSwitchPreview"
+                 @update:preview="val => animatedSwitchPreview = val"
+                 @update:code="val => animatedSwitchCode = val"
+                 :code="animatedSwitchCode"/>
 
       <ComponentWrapper>
-        <div v-if="primaryInputPreview" class='p-8 mb-4 flex items-center gap-5 justify-center'>
+        <div v-if="animatedSwitchPreview" class='p-8 mb-4 flex items-center gap-5 justify-center'>
           <div
               :class="`${
               animatedSwitch
