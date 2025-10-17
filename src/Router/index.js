@@ -69,6 +69,11 @@ const routes = [
         name: "File-Input",
         component: () => import("@/Pages/Components/Inputs/InputFilePage.vue"),
     },
+    {
+        path: "/components/otp-input",
+        name: "OTP-Input",
+        component: () => import("@/Pages/Components/Inputs/OtpInputPage.vue"),
+    },
 ]
 
 const router = createRouter({
