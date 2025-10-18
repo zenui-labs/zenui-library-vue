@@ -74,6 +74,21 @@ const routes = [
         name: "OTP-Input",
         component: () => import("@/Pages/Components/Inputs/OtpInputPage.vue"),
     },
+    {
+        path: "/components/button",
+        name: "Button",
+        component: () => import("@/Pages/Components/Buttons/ButtonPage.vue"),
+    },
+    {
+        path: "/components/login-buttons",
+        name: "Login Buttons",
+        component: () => import("@/Pages/Components/Buttons/AuthButtonPage.vue"),
+    },
+    {
+        path: "/components/dropdown-button",
+        name: "Dropdown Buttons",
+        component: () => import("@/Pages/Components/Buttons/DropdownButtonPage.vue"),
+    },
 ]
 
 const router = createRouter({

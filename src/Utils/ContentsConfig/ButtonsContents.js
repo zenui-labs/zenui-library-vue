@@ -35,6 +35,51 @@ export const normalButtonContents = [
     title: 'buttons shape',
     href: '#buttons_shape',
   },
+    {
+    id: 9,
+    title: 'Click Animation',
+    href: '#click_animation',
+  },
+  {
+    id: 10,
+    title: 'Border Animation',
+    href: '#border_animated',
+  },
+  {
+    id: 11,
+    title: 'Bg Hover Animation',
+    href: '#bg_hover_animation',
+  },
+  {
+    id: 12,
+    title: 'Bg Slide Up Animation',
+    href: '#bg_slide_up_animation',
+  },
+  {
+    id: 13,
+    title: 'Bg Slide Animation',
+    href: '#bg_slide_animation',
+  },
+  {
+    id: 14,
+    title: 'Bg Bounce Up Animation',
+    href: '#bg_bounce_up_animation',
+  },
+  {
+    id: 15,
+    title: 'Bottom Border Animation',
+    href: '#bottom_border_animation',
+  },
+  {
+    id: 16,
+    title: 'Hover Bg Fill Animation',
+    href: '#hover_bg_fill_animation',
+  },
+  {
+    id: 17,
+    title: '2 Part Marge Animation',
+    href: '#2_part_marge_animation',
+  },
 ];
 
 // Dropdown Button contents
@@ -82,49 +127,5 @@ export const authButtonContents = [
 
 // Animated Button contents
 export const animatedButtonContents = [
-  {
-    id: 1,
-    title: 'Click Animation',
-    href: '#click_animation',
-  },
-  {
-    id: 2,
-    title: 'Border Animation',
-    href: '#border_animated',
-  },
-  {
-    id: 3,
-    title: 'Bg Hover Animation',
-    href: '#bg_hover_animation',
-  },
-  {
-    id: 4,
-    title: 'Bg Slide Up Animation',
-    href: '#bg_slide_up_animation',
-  },
-  {
-    id: 5,
-    title: 'Bg Slide Animation',
-    href: '#bg_slide_animation',
-  },
-  {
-    id: 6,
-    title: 'Bg Bounce Up Animation',
-    href: '#bg_bounce_up_animation',
-  },
-  {
-    id: 7,
-    title: 'Bottom Border Animation',
-    href: '#bottom_border_animation',
-  },
-  {
-    id: 8,
-    title: 'Hover Bg Fill Animation',
-    href: '#hover_bg_fill_animation',
-  },
-  {
-    id: 9,
-    title: '2 Part Marge Animation',
-    href: '#2_part_marge_animation',
-  },
+
 ];
