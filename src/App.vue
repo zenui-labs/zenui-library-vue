@@ -1,19 +1,11 @@
 <template>
   <div id="app">
-    <RouterView v-slot="{ Component }">
-      <Suspense>
-        <component :is="Component"/>
-        <template #fallback>
-          <div class="loading">Loading...</div>
-        </template>
-      </Suspense>
-    </RouterView>
+    <router-view :key="$route.fullPath"/>
     <DonationButton/>
   </div>
 </template>
 
 <script setup>
-import {RouterView} from 'vue-router'
 import DonationButton from "@/Shared/DonationButton.vue";
 </script>
 

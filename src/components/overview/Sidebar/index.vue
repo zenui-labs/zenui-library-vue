@@ -1,12 +1,14 @@
 <script setup>
 import Content from "./Content.vue";
 import {onMounted, onUnmounted, ref, watch} from "vue";
+import {useRoute} from "vue-router";
 
 const sidebarRef = ref(null);
+const route = useRoute();
 
 const scrollHandler = () => {
   if (sidebarRef.value) {
-    setScrollY(sidebarRef.value.scrollTop);
+    sessionStorage.setItem('zuivuesidebarScrollPosition', sidebarRef.value.scrollTop.toString());
   }
 };
 
@@ -15,9 +17,17 @@ onMounted(() => {
     const ele = sidebarRef.value;
     ele.addEventListener("scroll", scrollHandler);
 
-    ele.style.scrollBehavior = "auto";
-    ele.scrollTop = scrollY.value || 0;
-    ele.style.scrollBehavior = "smooth";
+    const savedScrollPosition = sessionStorage.getItem('zuivuesidebarScrollPosition');
+
+    if (savedScrollPosition) {
+      ele.style.scrollBehavior = "auto";
+      ele.scrollTop = parseInt(savedScrollPosition);
+
+      setTimeout(() => {
+        ele.scrollTop = parseInt(savedScrollPosition);
+        ele.style.scrollBehavior = "smooth";
+      }, 50);
+    }
 
     onUnmounted(() => {
       ele.removeEventListener("scroll", scrollHandler);
@@ -25,12 +35,17 @@ onMounted(() => {
   }
 });
 
-// Optional: watch scrollY and update scrollTop if scrollY changes externally
-watch(scrollY, (newVal) => {
-  if (sidebarRef.value && sidebarRef.value.scrollTop !== newVal) {
-    sidebarRef.value.scrollTop = newVal;
+watch(() => route.path, () => {
+  if (sidebarRef.value) {
+    setTimeout(() => {
+      const activeLink = sidebarRef.value.querySelector('a[class*="!text-"]');
+      if (activeLink) {
+        activeLink.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+      }
+    }, 100);
   }
 });
+
 </script>
 
 <template>
