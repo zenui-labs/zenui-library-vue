@@ -108,6 +108,21 @@ const routes = [
         name: "Pagination",
         component: () => import("@/Pages/Components/Navigation/PaginationPage.vue"),
     },
+    {
+        path: "/components/progress-bar",
+        name: "Progress Bar",
+        component: () => import("@/Pages/Components/Navigation/ProgressBarPage.vue"),
+    },
+    {
+        path: "/components/chip",
+        name: "Chip",
+        component: () => import("@/Pages/Components/Navigation/ChipPage.vue"),
+    },
+    {
+        path: "/components/marquee",
+        name: "Marquee",
+        component: () => import("@/Pages/Components/Navigation/MarqueePage.vue"),
+    },
 ];
 
 const router = createRouter({

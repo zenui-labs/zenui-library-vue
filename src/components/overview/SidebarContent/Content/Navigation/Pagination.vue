@@ -6,10 +6,10 @@ import ComponentWrapper from "@/Shared/Component/ComponentWrapper.vue";
 import ShowCode from "@/Shared/Component/ShowCode.vue";
 import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
-import { paginationContents } from "@/Utils/ContentsConfig/NavigationContents.js";
-import { useScrollSpy } from "@/CustomHooks/useScrollSpy.js";
-import { ref } from "vue";
-import { Icon } from "@iconify/vue";
+import {paginationContents} from "@/Utils/ContentsConfig/NavigationContents.js";
+import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
+import {ref} from "vue";
+import {Icon} from "@iconify/vue";
 
 const sectionIds = paginationContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
@@ -71,170 +71,170 @@ const handlePageClick4 = (pageNumber) => {
 
 <template>
   <aside
-    class="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10"
+      class="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10"
   >
     <div>
-      <ContentHeader text="animated pagination" id="animated_pagination" />
+      <ContentHeader text="animated pagination" id="animated_pagination"/>
 
       <ComponentDescription
-        text="An animated pagination component that seamlessly guides users through content with fluid transitions and intuitive design."
+          text="An animated pagination component that seamlessly guides users through content with fluid transitions and intuitive design."
       />
 
       <ToggleTab
-        :preview="animatedPaginationPreview"
-        @update:preview="(val) => (animatedPaginationPreview = val)"
-        @update:code="(val) => (animatedPaginationCode = val)"
-        :code="animatedPaginationCode"
+          :preview="animatedPaginationPreview"
+          @update:preview="(val) => (animatedPaginationPreview = val)"
+          @update:code="(val) => (animatedPaginationCode = val)"
+          :code="animatedPaginationCode"
       />
 
       <ComponentWrapper>
         <div
-          v-if="animatedPaginationPreview"
-          class="640px:p-8 mb-4 flex items-center gap-5 justify-center"
+            v-if="animatedPaginationPreview"
+            class="640px:p-8 mb-4 flex items-center gap-5 justify-center"
         >
           <div
-            class="flex items-center flex-wrap justify-center mt-8 space-x-1 640px:space-x-2"
+              class="flex items-center flex-wrap justify-center mt-8 space-x-1 640px:space-x-2"
           >
             <button
-              @click="handlePrevious"
-              :disabled="currentPage === 1"
-              class="mx-1 px-3.5 py-3.5 rounded-full bg-white text-blue-600 hover:bg-blue-100 transition-all duration-300 dark:bg-slate-700 dark:disabled:bg-slate-800 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                @click="handlePrevious"
+                :disabled="currentPage === 1"
+                class="mx-1 px-4 py-3.5 rounded-full bg-white text-[#3fb682] hover:bg-[#3fb682]/10 transition-all duration-300 dark:bg-slate-700 dark:disabled:bg-slate-800 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
-              <Icon icon="fa:chevron-left" />
+              <Icon icon="fa:chevron-left"/>
             </button>
             <button
-              v-for="i in totalPages"
-              :key="i"
-              @click="handlePageClick(i)"
-              :class="`mx-1 px-4 py-2 text-[0.9rem] 640px:text-[1rem] rounded-full transform transition-all duration-300 ${
+                v-for="i in totalPages"
+                :key="i"
+                @click="handlePageClick(i)"
+                :class="`mx-1 px-4 py-2 text-[0.9rem] 640px:text-[1rem] rounded-full transform transition-all duration-300 ${
                 currentPage === i
-                  ? 'bg-primary text-white scale-110 shadow-md'
-                  : 'bg-transparent text-blue-600 hover:bg-blue-100'
+                  ? 'bg-[#3fb682] text-white scale-110 shadow-md'
+                  : 'bg-transparent text-[#3fb682] hover:bg-blue-100'
               }`"
             >
               {{ i }}
             </button>
             <button
-              @click="handleNext"
-              :disabled="currentPage === totalPages"
-              class="mx-1 px-3.5 py-3.5 rounded-full bg-white text-blue-600 hover:bg-blue-100 transition-all duration-300 dark:bg-slate-700 dark:disabled:bg-slate-800 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                @click="handleNext"
+                :disabled="currentPage === totalPages"
+                class="mx-1 px-4 py-3.5 rounded-full bg-white text-[#3fb682] hover:bg-[#3fb682]/10 transition-all duration-300 dark:bg-slate-700 dark:disabled:bg-slate-800 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
-              <Icon icon="fa:chevron-right" />
+              <Icon icon="fa:chevron-right"/>
             </button>
           </div>
         </div>
-        <ShowCode v-else code="" />
+        <ShowCode v-else code=""/>
       </ComponentWrapper>
 
       <div class="mt-8">
         <ContentHeader
-          text="pagination with button"
-          id="pagination_with_button"
+            text="pagination with button"
+            id="pagination_with_button"
         />
       </div>
 
       <ComponentDescription
-        text="Pagination featuring user-friendly buttons for effortless navigation
+          text="Pagination featuring user-friendly buttons for effortless navigation
             through content, enhancing accessibility and interaction."
       />
 
       <ToggleTab
-        :preview="paginationWithButtonPreview"
-        @update:preview="(val) => (paginationWithButtonPreview = val)"
-        @update:code="(val) => (paginationWithButtonCode = val)"
-        :code="paginationWithButtonCode"
+          :preview="paginationWithButtonPreview"
+          @update:preview="(val) => (paginationWithButtonPreview = val)"
+          @update:code="(val) => (paginationWithButtonCode = val)"
+          :code="paginationWithButtonCode"
       />
 
       <ComponentWrapper>
         <div
-          v-if="paginationWithButtonPreview"
-          class="640px:p-8 mb-4 flex items-center gap-5 justify-center"
+            v-if="paginationWithButtonPreview"
+            class="640px:p-8 mb-4 flex items-center gap-5 justify-center"
         >
           <div class="flex items-center flex-wrap justify-center mt-4">
             <button
-              @click="handlePrevious"
-              :disabled="currentPage === 1"
-              class="mx-1 px-3 py-1 text-[0.9rem] dark:disabled:bg-slate-800 dark:disabled:text-slate-500 disabled:cursor-not-allowed dark:bg-slate-700 dark:text-[#abc2d3] 640px:text-[1rem] rounded bg-gray-200 text-text disabled:opacity-50"
+                @click="handlePrevious"
+                :disabled="currentPage === 1"
+                class="mx-1 px-3 py-1 text-[0.9rem] dark:disabled:bg-slate-800 dark:disabled:text-slate-500 disabled:cursor-not-allowed dark:bg-slate-700 dark:text-[#abc2d3] 640px:text-[1rem] rounded bg-gray-200 text-text disabled:opacity-50"
             >
               Previous
             </button>
             <button
-              v-for="i in totalPages"
-              :key="i"
-              @click="handlePageClick(i)"
-              :class="`mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] rounded ${
+                v-for="i in totalPages"
+                :key="i"
+                @click="handlePageClick(i)"
+                :class="`mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] rounded ${
                 currentPage === i
-                  ? 'bg-primary text-white'
+                  ? 'bg-[#3fb682] text-white'
                   : 'bg-gray-200 dark:bg-slate-700 dark:text-[#abc2d3] text-gray-700'
               }`"
             >
               {{ i }}
             </button>
             <button
-              @click="handleNext"
-              :disabled="currentPage === totalPages"
-              class="mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] dark:disabled:bg-slate-800 dark:disabled:text-slate-500 disabled:cursor-not-allowed dark:bg-slate-700 dark:text-[#abc2d3] rounded bg-gray-200 text-text disabled:opacity-50"
+                @click="handleNext"
+                :disabled="currentPage === totalPages"
+                class="mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] dark:disabled:bg-slate-800 dark:disabled:text-slate-500 disabled:cursor-not-allowed dark:bg-slate-700 dark:text-[#abc2d3] rounded bg-gray-200 text-text disabled:opacity-50"
             >
               Next
             </button>
           </div>
         </div>
         <ShowCode
-          v-else
-          code=''
+            v-else
+            code=''
         />
       </ComponentWrapper>
 
       <div class="mt-8">
         <ContentHeader
-          text="pagination with rounded button"
-          id="pagination_with_rounded_button"
+            text="pagination with rounded button"
+            id="pagination_with_rounded_button"
         />
       </div>
 
       <ComponentDescription
-        text="Pagination with rounded buttons offering smooth navigation through
+          text="Pagination with rounded buttons offering smooth navigation through
             content, enhancing both aesthetics and usability."
       />
 
       <ToggleTab
-        :preview="roundedButtonPaginationPreview"
-        @update:preview="(val) => (roundedButtonPaginationPreview = val)"
-        @update:code="(val) => (roundedButtonPaginationCode = val)"
-        :code="roundedButtonPaginationCode"
+          :preview="roundedButtonPaginationPreview"
+          @update:preview="(val) => (roundedButtonPaginationPreview = val)"
+          @update:code="(val) => (roundedButtonPaginationCode = val)"
+          :code="roundedButtonPaginationCode"
       />
 
       <ComponentWrapper>
         <div
-          v-if="roundedButtonPaginationPreview"
-          class="640px:p-8 mb-4 flex items-center gap-5 justify-center"
+            v-if="roundedButtonPaginationPreview"
+            class="640px:p-8 mb-4 flex items-center gap-5 justify-center"
         >
           <div
-            class="flex items-center flex-wrap justify-center mt-8 space-x-4"
+              class="flex items-center flex-wrap justify-center mt-8 space-x-4"
           >
             <button
-              @click="handlePrevious"
-              :disabled="currentPage === 1"
-              class="px-4 py-1 rounded-full bg-gray-200 text-gray-700 hover:bg-primary hover:text-secondary disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-gray-200 dark:bg-slate-700 dark:text-[#abc2d3] dark:disabled:bg-slate-800 dark:disabled:text-slate-500 dark:disabled:hover:bg-slate-800 dark:disabled:hover:text-slate-500 disabled:hover:text-gray-700 transition-all duration-300"
+                @click="handlePrevious"
+                :disabled="currentPage === 1"
+                class="px-4 py-1 rounded-full bg-gray-200 text-gray-700 hover:bg-[#3fb682] hover:text-secondary disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-gray-200 dark:bg-slate-700 dark:text-[#abc2d3] dark:disabled:bg-slate-800 dark:disabled:text-slate-500 dark:disabled:hover:bg-slate-800 dark:disabled:hover:text-slate-500 disabled:hover:text-gray-700 transition-all duration-300"
             >
               Previous
             </button>
             <div class="flex items-center space-x-2">
               <button
-                v-for="i in totalPages"
-                :key="i"
-                @click="handlePageClick(i)"
-                :class="`mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all dark:bg-slate-700 dark:text-[#abc2d3] duration-300 transform hover:scale-105 ${
-                  currentPage === i ? '!bg-primary !text-white shadow-lg' : ''
+                  v-for="i in totalPages"
+                  :key="i"
+                  @click="handlePageClick(i)"
+                  :class="`mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all dark:bg-slate-700 dark:text-[#abc2d3] duration-300 transform hover:scale-105 ${
+                  currentPage === i ? '!bg-[#3fb682] !text-white shadow-lg' : ''
                 }`"
               >
                 {{ i }}
               </button>
             </div>
             <button
-              @click="handleNext"
-              :disabled="currentPage === totalPages"
-              :class="`px-4 py-1 rounded-full bg-gray-200 text-gray-700 hover:bg-primary hover:text-secondary dark:bg-slate-700 dark:text-[#abc2d3] dark:disabled:bg-slate-800 dark:disabled:text-slate-500 dark:disabled:hover:bg-slate-800 dark:disabled:hover:text-slate-500 disabled:hover:bg-gray-200 disabled:hover:text-gray-700 transition-all duration-300 ${
+                @click="handleNext"
+                :disabled="currentPage === totalPages"
+                :class="`px-4 py-1 rounded-full bg-gray-200 text-gray-700 hover:bg-[#3fb682] hover:text-secondary dark:bg-slate-700 dark:text-[#abc2d3] dark:disabled:bg-slate-800 dark:disabled:text-slate-500 dark:disabled:hover:bg-slate-800 dark:disabled:hover:text-slate-500 disabled:hover:bg-gray-200 disabled:hover:text-gray-700 transition-all duration-300 ${
                 currentPage === totalPages
                   ? 'opacity-50 cursor-not-allowed'
                   : ''
@@ -245,48 +245,48 @@ const handlePageClick4 = (pageNumber) => {
           </div>
         </div>
         <ShowCode
-          v-else
-          code=''
+            v-else
+            code=''
         />
       </ComponentWrapper>
 
       <div class="mt-8">
-        <ContentHeader text="Smart Pagination" id="smart_pagination" />
+        <ContentHeader text="Smart Pagination" id="smart_pagination"/>
       </div>
 
       <ComponentDescription
-        text="Smart pagination that intelligently handles large page sets by showing only relevant page numbers with ellipses for better navigation experience."
+          text="Smart pagination that intelligently handles large page sets by showing only relevant page numbers with ellipses for better navigation experience."
       />
 
       <ToggleTab
-        :preview="smartPaginationPreview"
-        @update:preview="(val) => (smartPaginationPreview = val)"
-        @update:code="(val) => (smartPaginationCode = val)"
-        :code="smartPaginationCode"
+          :preview="smartPaginationPreview"
+          @update:preview="(val) => (smartPaginationPreview = val)"
+          @update:code="(val) => (smartPaginationCode = val)"
+          :code="smartPaginationCode"
       />
 
       <ComponentWrapper>
         <div
-          v-if="smartPaginationPreview"
-          class="640px:p-8 mb-4 flex items-center gap-5 justify-center"
+            v-if="smartPaginationPreview"
+            class="640px:p-8 mb-4 flex items-center gap-5 justify-center"
         >
           <div
-            class="flex items-center flex-wrap justify-center mt-8 space-x-1 640px:space-x-2"
+              class="flex items-center flex-wrap justify-center mt-8 space-x-1 640px:space-x-2"
           >
             <button
-              @click="handlePreviousPagination4"
-              :disabled="currentPagePagination4 === 1"
-              class="mx-1 px-3.5 py-3.5 rounded-full bg-white text-blue-600 hover:bg-blue-100 transition-all duration-300 dark:bg-slate-700 dark:disabled:bg-slate-800 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                @click="handlePreviousPagination4"
+                :disabled="currentPagePagination4 === 1"
+                class="mx-1 px-4 py-3.5 rounded-full bg-white text-[#3fb682] hover:bg-[#3fb682]/10 transition-all duration-300 dark:bg-slate-700 dark:disabled:bg-slate-800 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
-              <Icon icon="fa:chevron-left" />
+              <Icon icon="fa:chevron-left"/>
             </button>
 
             <!-- First page button -->
             <button
-              @click="handlePageClick4(1)"
-              :class="`mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] rounded ${
+                @click="handlePageClick4(1)"
+                :class="`mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] rounded ${
                 currentPagePagination4 === 1
-                  ? 'bg-primary text-white'
+                  ? 'bg-[#3fb682] text-white'
                   : 'bg-gray-200 dark:bg-slate-700 dark:text-[#abc2d3] text-gray-700'
               }`"
             >
@@ -295,24 +295,24 @@ const handlePageClick4 = (pageNumber) => {
 
             <!-- Show dots if not close to beginning -->
             <span
-              v-if="currentPagePagination4 > 3"
-              class="mx-1 px-2 dark:text-[#abc2d3] text-gray-500"
-              >...</span
+                v-if="currentPagePagination4 > 3"
+                class="mx-1 px-2 dark:text-[#abc2d3] text-gray-500"
+            >...</span
             >
 
             <!-- Show current page and surrounding pages -->
             <template v-for="i in FourPaginationTotalPages" :key="i">
               <button
-                v-if="
+                  v-if="
                   i !== 1 &&
                   i !== FourPaginationTotalPages &&
                   i >= currentPagePagination4 - 1 &&
                   i <= currentPagePagination4 + 1
                 "
-                @click="handlePageClick4(i)"
-                :class="`mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] rounded ${
+                  @click="handlePageClick4(i)"
+                  :class="`mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] rounded ${
                   currentPagePagination4 === i
-                    ? 'bg-primary text-white'
+                    ? 'bg-[#3fb682] text-white'
                     : 'bg-gray-200 dark:bg-slate-700 dark:text-[#abc2d3] text-gray-700'
                 }`"
               >
@@ -322,17 +322,17 @@ const handlePageClick4 = (pageNumber) => {
 
             <!-- Show dots if not close to end -->
             <span
-              v-if="currentPagePagination4 < FourPaginationTotalPages - 2"
-              class="mx-1 px-2 dark:text-[#abc2d3] text-gray-500"
-              >...</span
+                v-if="currentPagePagination4 < FourPaginationTotalPages - 2"
+                class="mx-1 px-2 dark:text-[#abc2d3] text-gray-500"
+            >...</span
             >
 
             <!-- Last page button -->
             <button
-              @click="handlePageClick4(FourPaginationTotalPages)"
-              :class="`mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] rounded ${
+                @click="handlePageClick4(FourPaginationTotalPages)"
+                :class="`mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] rounded ${
                 currentPagePagination4 === FourPaginationTotalPages
-                  ? 'bg-primary text-white'
+                  ? 'bg-[#3fb682] text-white'
                   : 'bg-gray-200 dark:bg-slate-700 dark:text-[#abc2d3] text-gray-700'
               }`"
             >
@@ -340,31 +340,31 @@ const handlePageClick4 = (pageNumber) => {
             </button>
 
             <button
-              @click="handleNextPagination4"
-              :disabled="currentPagePagination4 === FourPaginationTotalPages"
-              class="mx-1 px-3.5 py-3.5 rounded-full bg-white text-blue-600 hover:bg-blue-100 transition-all duration-300 dark:bg-slate-700 dark:disabled:bg-slate-800 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                @click="handleNextPagination4"
+                :disabled="currentPagePagination4 === FourPaginationTotalPages"
+                class="mx-1 px-4 py-3.5 rounded-full bg-white text-[#3fb682] hover:bg-[#3fb682]/10 transition-all duration-300 dark:bg-slate-700 dark:disabled:bg-slate-800 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
-              <Icon icon="fa:chevron-right" />
+              <Icon icon="fa:chevron-right"/>
             </button>
           </div>
         </div>
         <ShowCode
-          v-else
-          code=""
+            v-else
+            code=""
         />
       </ComponentWrapper>
 
       <OverviewFooter
-        backName="all components"
-        backUrl="/components/all-components"
-        forwardName="Progress Bar"
-        forwardUrl="/components/progress-bar"
+          backName="all components"
+          backUrl="/components/all-components"
+          forwardName="Progress Bar"
+          forwardUrl="/components/progress-bar"
       />
     </div>
 
     <ContentNavbar
-      :contents="paginationContents"
-      :activeSection="activeSection"
+        :contents="paginationContents"
+        :activeSection="activeSection"
     />
   </aside>
 </template>
