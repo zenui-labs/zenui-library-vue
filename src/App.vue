@@ -8,11 +8,13 @@
         </template>
       </Suspense>
     </RouterView>
+    <DonationButton/>
   </div>
 </template>
 
 <script setup>
 import {RouterView} from 'vue-router'
+import DonationButton from "@/Shared/DonationButton.vue";
 </script>
 
 <style scoped>

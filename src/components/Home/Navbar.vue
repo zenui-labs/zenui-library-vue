@@ -117,13 +117,6 @@ watch([showStars, stars], () => {
 
         <ul class="text-gray-600 flex items-center gap-8 font-[500] capitalize text-[1rem]">
           <RouterLink
-              to="/about-us"
-              class="dark:text-darkTextColor cursor-pointer hover:text-[#0FABCA] transition-all duration-200"
-          >
-            About Us
-          </RouterLink>
-
-          <RouterLink
               to="/docs/overview"
               class="dark:text-darkTextColor cursor-pointer py-[23px] hover:text-[#0FABCA] transition-all duration-200"
           >
