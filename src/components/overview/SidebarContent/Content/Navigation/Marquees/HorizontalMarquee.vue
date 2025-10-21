@@ -8,7 +8,7 @@ const doubledComponents = computed(() =>
 </script>
 
 <template>
-  <div>
+  <div class="w-full space-y-4">
     <div
         class="slider-container w-full flex-nowrap relative overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
     >
@@ -17,7 +17,7 @@ const doubledComponents = computed(() =>
             v-for="(item, index) in doubledComponents"
             :key="index"
             :href="item.url"
-            class="py-2 px-6 dark:bg-[#0FABCA]/90 bg-[#0FABCA] capitalize border dark:border-[#0FABCA]/90 border-[#0FABCA] text-white rounded font-medium whitespace-nowrap"
+            class="py-2 px-6 dark:bg-[#36af7b]/90 bg-[#36af7b] capitalize border dark:border-[#36af7b]/90 border-[#36af7b] text-white rounded font-medium whitespace-nowrap"
         >
           {{ item.title }}
         </a>
@@ -32,7 +32,7 @@ const doubledComponents = computed(() =>
             v-for="(item, index) in allComponents"
             :key="index"
             :href="item.url"
-            class="py-2 px-6 dark:bg-[#0FABCA]/90 bg-[#0FABCA] capitalize border dark:border-[#0FABCA]/90 border-[#0FABCA] text-white rounded font-medium whitespace-nowrap"
+            class="py-2 px-6 dark:bg-[#36af7b]/90 bg-[#36af7b] capitalize border dark:border-[#36af7b]/90 border-[#36af7b] text-white rounded font-medium whitespace-nowrap"
         >
           {{ item.title }}
         </a>

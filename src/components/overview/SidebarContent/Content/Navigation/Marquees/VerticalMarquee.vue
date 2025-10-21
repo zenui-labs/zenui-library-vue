@@ -17,7 +17,7 @@ const doubledComponents = computed(() =>
             v-for="(item, index) in doubledComponents"
             :key="index"
             :href="item.url"
-            class="py-2 px-4 640px:px-6 w-32 640px:w-48 text-center dark:bg-[#0FABCA]/90 bg-[#0FABCA] capitalize border dark:border-[#0FABCA]/90 border-[#0FABCA] text-white rounded font-medium"
+            class="py-2 px-4 640px:px-6 w-32 640px:w-48 text-center dark:bg-[#36af7b]/90 bg-[#36af7b] capitalize border dark:border-[#36af7b]/90 border-[#36af7b] text-white rounded font-medium"
         >
           {{ item.title }}
         </a>
@@ -32,7 +32,7 @@ const doubledComponents = computed(() =>
             v-for="(item, index) in doubledComponents"
             :key="index"
             :href="item.url"
-            class="py-2 px-4 640px:px-6 w-32 640px:w-48 text-center dark:bg-[#0FABCA]/90 bg-[#0FABCA] capitalize border dark:border-[#0FABCA]/90 border-[#0FABCA] text-white rounded font-medium"
+            class="py-2 px-4 640px:px-6 w-32 640px:w-48 text-center dark:bg-[#36af7b]/90 bg-[#36af7b] capitalize border dark:border-[#36af7b]/90 border-[#36af7b] text-white rounded font-medium"
         >
           {{ item.title }}
         </a>

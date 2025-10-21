@@ -91,7 +91,7 @@ const handlePageClick4 = (pageNumber) => {
       <ComponentWrapper>
         <div
             v-if="animatedPaginationPreview"
-            class='p-8 flex w-[320px] 640px:w-[700px] 1024px:w-[500px] 1360px:w-[600px] overflow-hidden flex-wrap items-center gap-5 justify-center'>
+            class='p-8 flex w-[320px] 640px:w-[700px] mx-auto 1024px:w-[500px] 1360px:w-[600px] overflow-hidden flex-wrap items-center gap-5 justify-center'>
           <HorizontalMarquee/>
         </div>
         <ShowCode v-else code=""/>
@@ -119,7 +119,7 @@ const handlePageClick4 = (pageNumber) => {
       <ComponentWrapper>
         <div
             v-if="paginationWithButtonPreview"
-            className='p-8 flex w-[320px] 640px:w-[700px] 1024px:w-[500px] 1360px:w-[600px] overflow-hidden flex-wrap items-center gap-5 justify-center'>
+            class='p-8 flex w-[320px] 640px:w-[700px] 1024px:w-[500px] 1360px:w-[600px] overflow-hidden flex-wrap items-center mx-auto gap-5 justify-center'>
           <VerticalMarquee/>
         </div>
         <ShowCode

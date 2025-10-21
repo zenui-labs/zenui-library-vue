@@ -123,6 +123,16 @@ const routes = [
         name: "Marquee",
         component: () => import("@/Pages/Components/Navigation/MarqueePage.vue"),
     },
+    {
+        path: "/components/timer",
+        name: "Timer",
+        component: () => import("@/Pages/Components/Navigation/TimerPage.vue"),
+    },
+    {
+        path: "/components/breadcrumb",
+        name: "Breadcrumb",
+        component: () => import("@/Pages/Components/Navigation/BreadcrumbPage.vue"),
+    },
 ];
 
 const router = createRouter({
