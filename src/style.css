@@ -514,3 +514,9 @@ input[type="number"] {
 #coffee_badge img {
     width: 30px;
 }
+
+.router-link-active .zenui-update-badge {
+    background-color: orange;
+    border-color: orange;
+    color: #fff;
+}

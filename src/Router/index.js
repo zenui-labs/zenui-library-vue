@@ -133,6 +133,21 @@ const routes = [
         name: "Breadcrumb",
         component: () => import("@/Pages/Components/Navigation/BreadcrumbPage.vue"),
     },
+    {
+        path: "/components/rating",
+        name: "Rating",
+        component: () => import("@/Pages/Components/Navigation/RatingPage.vue"),
+    },
+    {
+        path: "/components/stepper",
+        name: "Stepper",
+        component: () => import("@/Pages/Components/Navigation/StepsPage.vue"),
+    },
+    {
+        path: "/components/modal",
+        name: "Modal",
+        component: () => import("@/Pages/Components/Navigation/ModalPage.vue"),
+    },
 ];
 
 const router = createRouter({
