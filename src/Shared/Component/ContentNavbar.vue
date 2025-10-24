@@ -34,14 +34,14 @@
             @click="handleCreateIssue('bug')"
             class="flex text-text hover:text-[#0FABCA] transition-all duration-200 cursor-pointer dark:text-darkSubTextColor/90 items-center gap-1.5"
         >
-          <IconifyIcon icon="mdi:bug-outline"/>
+          <IconifyIcon icon="mdi:bug-outline" class="text-[1.3rem]"/>
           <span class="text-[0.94rem]">Report an issue</span>
         </p>
         <p
             @click="handleCreateIssue('feature')"
             class="flex text-text hover:text-[#0FABCA] transition-all duration-200 cursor-pointer dark:text-darkSubTextColor/90 items-center gap-1.5"
         >
-          <IconifyIcon icon="mdi:lightbulb-outline"/>
+          <IconifyIcon icon="mdi:lightbulb-outline" class="text-[1.3rem]"/>
           <span class="text-[0.94rem]">Request a feature</span>
         </p>
       </div>

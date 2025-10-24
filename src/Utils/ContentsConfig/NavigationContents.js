@@ -222,21 +222,6 @@ export const modalContents = [
         href: '#Form_modal',
     },
     {
-        id: 6,
-        title: 'Cookie Modal',
-        href: '#Cookie_modal',
-    },
-    {
-        id: 7,
-        title: 'FullScreen Modal',
-        href: '#full_screen_modal',
-    },
-    {
-        id: 8,
-        title: 'Side Modal',
-        href: '#side_modal',
-    },
-    {
         id: 9,
         title: 'Delete Modal',
         href: '#delete_modal',
@@ -247,13 +232,13 @@ export const modalContents = [
 export const tabsContents = [
     {
         id: 1,
-        title: 'Border Navigation',
-        href: '#Border_navigation',
+        title: 'Animated Tab',
+        href: '#animated_tab',
     },
     {
         id: 2,
-        title: 'Animated Tab',
-        href: '#animated_tab',
+        title: 'Border Navigation',
+        href: '#Border_navigation',
     },
     {
         id: 3,

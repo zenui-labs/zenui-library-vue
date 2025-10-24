@@ -148,6 +148,34 @@ const routes = [
         name: "Modal",
         component: () => import("@/Pages/Components/Navigation/ModalPage.vue"),
     },
+    {
+        path: "/components/tabs",
+        name: "Tabs",
+        component: () => import("@/Pages/Components/Navigation/TabsPage.vue"),
+    },
+
+    // ***********************  Feedback Routes  *********************** //
+
+    {
+        path: "/components/context-menu",
+        name: "Context Menu",
+        component: () => import("@/Pages/Components/Feedback/ContextMenuPage.vue"),
+    },
+    {
+        path: "/components/skeleton",
+        name: "Skeleton",
+        component: () => import("@/Pages/Components/Feedback/SkeletonPage.vue"),
+    },
+    {
+        path: "/components/alert-message",
+        name: "Alert Message",
+        component: () => import("@/Pages/Components/Feedback/AlertMessagePage.vue"),
+    },
+    {
+        path: "/components/dialog-message",
+        name: "Dialog Message",
+        component: () => import("@/Pages/Components/Feedback/DialogPage.vue"),
+    },
 ];
 
 const router = createRouter({

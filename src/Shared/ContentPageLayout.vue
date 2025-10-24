@@ -9,7 +9,7 @@ import Sidebar from "@/components/overview/Sidebar/index.vue";
 
   <div class="flex w-full mx-auto max-w-[1700px]">
     <!-- Sidebar Area -->
-    <div class="1024px:w-[32%] 1260px:w-[28%] relative 1404px:w-[19%] 2000px:w-[18%] 1024px:mr-[3rem]">
+    <div class="1024px:w-[32%] 1260px:w-[28%] relative 1404px:w-[19%] 2000px:w-[18%] 1024px:mr-[3rem] 1605px:mr-[0rem]">
       <div
           class="bg-gradient-to-b dark:from-darkBgColor dark:to-darkBgColor/20 from-white to-white/20 z-30 absolute top-0 left-0 w-full h-[80px] transition-opacity duration-300"
           :class="scrollY > 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'"

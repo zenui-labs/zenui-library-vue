@@ -1,10 +1,10 @@
 <script setup>
 import ContentPageLayout from "@/shared/ContentPageLayout.vue";
-import Modals from "@/components/overview/SidebarContent/Content/Navigation/Modals.vue";
+import Tabs from "@/components/overview/SidebarContent/Content/Navigation/Tabs.vue";
 </script>
 
 <template>
   <ContentPageLayout>
-    <Modals/>
+    <Tabs/>
   </ContentPageLayout>
 </template>

@@ -1,10 +1,10 @@
 <script setup>
 import ContentPageLayout from "@/shared/ContentPageLayout.vue";
-import Modals from "@/components/overview/SidebarContent/Content/Navigation/Modals.vue";
+import AlertMessage from "@/components/overview/SidebarContent/Content/Feedback/AlertMessage.vue";
 </script>
 
 <template>
   <ContentPageLayout>
-    <Modals/>
+    <AlertMessage/>
   </ContentPageLayout>
 </template>

@@ -1,10 +1,10 @@
 <script setup>
 import ContentPageLayout from "@/shared/ContentPageLayout.vue";
-import Modals from "@/components/overview/SidebarContent/Content/Navigation/Modals.vue";
+import Skeleton from "@/components/overview/SidebarContent/Content/Feedback/Skeleton.vue";
 </script>
 
 <template>
   <ContentPageLayout>
-    <Modals/>
+    <Skeleton/>
   </ContentPageLayout>
 </template>
