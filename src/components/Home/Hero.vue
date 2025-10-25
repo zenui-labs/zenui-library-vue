@@ -56,7 +56,7 @@ const darkModeWithDelay = ref(false);
     ></div>
 
     <div class="px-8 max-w-[1700px] mx-auto">
-      <div class="1024px:w-[80%] 1360px:w-[65%] text-center mx-auto w-full">
+      <div class="1024px:w-[80%] 1360px:w-[70%] text-center mx-auto w-full">
         <button
             class="py-1.5 pl-5 cursor-text dark:border-slate-500 dark:text-darkTextColor backdrop-blur-md pr-6 text-[0.8rem] 640px:text-[0.9rem] border mb-4 border-border rounded-full"
         >

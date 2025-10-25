@@ -215,7 +215,7 @@ export const resourcesData = [
         id: 18,
         logo: 'https://i.ibb.co.com/CWSNksV/images-3.png',
         name: 'react router',
-        description: 'React Router is a library for managing navigation in React applications. It allows developers to define routes, handle URL changes, and render components based on the current path, enhancing user experience.',
+        description: 'React Routes is a library for managing navigation in React applications. It allows developers to define routes, handle URL changes, and render components based on the current path, enhancing user experience.',
         websiteUrl: 'https://reactrouter.com/',
         isBookmarked: false,
         languages: [
@@ -228,7 +228,7 @@ export const resourcesData = [
         id: 19,
         logo: 'https://i.ibb.co.com/98ZNKm3/97daead1c859abcbc76e8ff6eb39d482.jpg',
         name: 'vue router',
-        description: 'Vue Router is the official routing library for Vue.js that enables navigation between components. It helps create single-page applications with dynamic URL handling for a seamless user experience.',
+        description: 'Vue Routes is the official routing library for Vue.js that enables navigation between components. It helps create single-page applications with dynamic URL handling for a seamless user experience.',
         websiteUrl: 'https://router.vuejs.org/',
         isBookmarked: false,
         languages: [

@@ -176,7 +176,7 @@ useHead({
       </a>
     </div>
 
-    <!-- Data Display -->
+    <!-- DataDisplay -->
     <h2 class="mt-12 font-[600] text-[1.5rem] mb-3 text-brandColor">Data Display</h2>
     <div class="grid grid-cols-2 425px:grid-cols-3 gap-8">
       <a
