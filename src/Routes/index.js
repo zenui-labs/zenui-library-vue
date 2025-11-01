@@ -236,6 +236,11 @@ const routes = [
     component: () =>
       import("@/Pages/Components/Surfaces/AnimatedCardsPage.vue"),
   },
+  {
+    path: "/components/accordion",
+    name: "Accordion",
+    component: () => import("@/Pages/Components/Surfaces/AccordionPage.vue"),
+  },
 ];
 
 const router = createRouter({
