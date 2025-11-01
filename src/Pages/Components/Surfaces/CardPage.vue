@@ -1,10 +1,10 @@
 <script setup>
-import ContentPageLayout from '@/Shared/ContentPageLayout.vue'
-import Card from "@/components/overview/SidebarContent/Content/Surfaces/Card.vue";
+import ContentPageLayout from "@/Shared/ContentPageLayout.vue";
+import Cards from "../../../components/overview/SidebarContent/Content/Surfaces/cards/cards.vue";
 </script>
 
 <template>
   <ContentPageLayout>
-    <Card/>
+    <Cards />
   </ContentPageLayout>
 </template>
