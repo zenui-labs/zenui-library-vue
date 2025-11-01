@@ -241,6 +241,11 @@ const routes = [
     name: "Accordion",
     component: () => import("@/Pages/Components/Surfaces/AccordionPage.vue"),
   },
+  {
+    path: "/components/image-gallery",
+    name: "Image Gallery",
+    component: () => import("@/Pages/Components/Surfaces/ImageGalleryPage.vue"),
+  },
 ];
 
 const router = createRouter({
