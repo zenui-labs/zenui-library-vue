@@ -230,6 +230,12 @@ const routes = [
     name: "Drawer",
     component: () => import("@/Pages/Components/Surfaces/DrawerPage.vue"),
   },
+  {
+    path: "/components/animated-cards",
+    name: "Animated Cards",
+    component: () =>
+      import("@/Pages/Components/Surfaces/AnimatedCardsPage.vue"),
+  },
 ];
 
 const router = createRouter({

@@ -248,23 +248,28 @@ export const cardContents = [
 export const drawerContents = [
   {
     id: 0,
-    title: "Ticket Card",
-    href: "#ticket_card",
+    title: "Drawer Top",
+    href: "#drawer_top",
   },
   {
     id: 1,
-    title: "Blog Card",
-    href: "#Blog_Card",
+    title: "Drawer Bottom",
+    href: "#drawer_bottom",
   },
   {
     id: 2,
-    title: "Product Card",
-    href: "#product_card",
+    title: "Drawer Left",
+    href: "#drawer_left",
   },
   {
     id: 3,
-    title: "Music Card",
-    href: "#music_card",
+    title: "Drawer Right",
+    href: "#drawer_right",
+  },
+  {
+    id: 4,
+    title: "Full Screen Drawer",
+    href: "#full_screen_drawer",
   },
 ];
 
