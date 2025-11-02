@@ -24,18 +24,27 @@
 }
 
 *::-webkit-scrollbar {
-    background-color: #3fb68225;
-    width: 0.1rem;
+    background-color: rgba(63, 182, 130, 0.13);
+    width: 8px
+}
+
+html.dark ::-webkit-scrollbar {
+    background-color: rgb(32, 32, 32);
+}
+
+html.dark ::-webkit-scrollbar-track {
+    background-color: rgb(32, 32, 32);
 }
 
 *::-webkit-scrollbar-track {
-    background-color: #3fb68225;
+    background-color: rgba(63, 182, 130, 0.13);
 }
 
 *::-webkit-scrollbar-thumb {
     background-color: #3fb682;
     border-radius: 30px;
 }
+
 
 .heroText {
     font-family: "Unbounded", sans-serif;
@@ -292,12 +301,6 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Hide the number input spinner in Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
-}
-
-/* icons */
-.iconContainer svg {
-    width: 26px;
-    height: 26px;
 }
 
 /* bouncing animation*/

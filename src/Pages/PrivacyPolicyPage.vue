@@ -1,15 +1,15 @@
 <script setup>
 import Navbar from "@/components/Home/Navbar.vue";
 import MobileNavbar from "@/components/Home/MobileNavbar.vue";
-import Hero from "@/components/Home/Hero.vue";
 import Footer from "@/components/Home/Footer.vue";
+import PrivacyPolicy from "@/components/Home/PrivacyPolicy.vue";
 </script>
 
 <template>
   <div class="overflow-clip">
     <Navbar/>
     <MobileNavbar/>
-    <Hero/>
+    <PrivacyPolicy/>
     <Footer/>
   </div>
 </template>

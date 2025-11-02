@@ -11,7 +11,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "@vueuse/head": "^2.0.0",
-    "lucide-vue-next": "^0.546.0",
+    "framer-motion": "^12.23.24",
     "pinia": "^3.0.3",
     "prismjs": "^1.30.0",
     "vue": "^3.5.17",

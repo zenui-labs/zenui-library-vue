@@ -1,7 +1,6 @@
 <script setup>
-import {computed, nextTick, onMounted, ref, watch} from 'vue';
+import {computed, onMounted, ref} from 'vue';
 import {RouterLink, useRoute, useRouter} from 'vue-router';
-import {ChevronDown, Command, Github, Menu, Moon, Search, Sun, X} from 'lucide-vue-next';
 import UpdateBadge from "@/Shared/UpdateBadge.vue";
 
 
@@ -98,7 +97,7 @@ const navBorderClass = computed(() =>
   >
     <div class="flex items-center gap-8 relative">
       <div class="relative">
-<!--        <VersionSelectBox/>-->
+        <!--        <VersionSelectBox/>-->
         <img
             src="/darklogo.png"
             alt="logo"
@@ -110,10 +109,10 @@ const navBorderClass = computed(() =>
 
     <div class="flex items-center gap-2">
       <div class="flex items-center gap-2">
-<!--        <a href="https://discord.gg/qbwytm4WUG" target="_blank" rel="noreferrer">-->
-<!--          <Discord-->
-<!--              class="text-[2.5rem] dark:border-darkBorderColor dark:text-slate-400 text-gray-400 rounded-normal p-[8px] border border-gray-200 cursor-pointer"/>-->
-<!--        </a>-->
+        <!--        <a href="https://discord.gg/qbwytm4WUG" target="_blank" rel="noreferrer">-->
+        <!--          <Discord-->
+        <!--              class="text-[2.5rem] dark:border-darkBorderColor dark:text-slate-400 text-gray-400 rounded-normal p-[8px] border border-gray-200 cursor-pointer"/>-->
+        <!--        </a>-->
 
         <a
             href="https://github.com/Asfak00/zenui-library"
@@ -127,7 +126,7 @@ const navBorderClass = computed(() =>
               class="transition-all duration-300"
           >
             <p ref="textRef" class="text-black text-[0.9rem] font-medium pr-4 whitespace-nowrap">
-             20+
+              20+
             </p>
           </div>
         </a>
@@ -135,22 +134,22 @@ const navBorderClass = computed(() =>
         <div
             class="text-[1.5rem] dark:border-darkBorderColor dark:text-slate-400 text-gray-500 overflow-hidden h-[40px] border border-border rounded-normal px-[8px] p-1 cursor-pointer"
         >
-<!--          <Sun-->
-<!--              :class="[-->
-<!--              theme === 'dark'-->
-<!--                ? 'translate-y-[3px] rotate-0'-->
-<!--                : 'translate-y-[-80px] rotate-[160deg]',-->
-<!--              'transition-all duration-500',-->
-<!--            ]"-->
-<!--          />-->
-<!--          <Moon-->
-<!--              :class="[-->
-<!--              theme === 'light'-->
-<!--                ? 'translate-y-[-21px] rotate-0'-->
-<!--                : 'translate-y-[80px] rotate-[-260deg]',-->
-<!--              'transition-all duration-500 text-gray-400',-->
-<!--            ]"-->
-<!--          />-->
+          <!--          <Sun-->
+          <!--              :class="[-->
+          <!--              theme === 'dark'-->
+          <!--                ? 'translate-y-[3px] rotate-0'-->
+          <!--                : 'translate-y-[-80px] rotate-[160deg]',-->
+          <!--              'transition-all duration-500',-->
+          <!--            ]"-->
+          <!--          />-->
+          <!--          <Moon-->
+          <!--              :class="[-->
+          <!--              theme === 'light'-->
+          <!--                ? 'translate-y-[-21px] rotate-0'-->
+          <!--                : 'translate-y-[80px] rotate-[-260deg]',-->
+          <!--              'transition-all duration-500 text-gray-400',-->
+          <!--            ]"-->
+          <!--          />-->
         </div>
       </div>
 
@@ -282,9 +281,9 @@ const navBorderClass = computed(() =>
     </ul>
   </aside>
 
-<!--  <div :class="[isSearchOpen ? 'visible z-[100]' : 'invisible z-[-1]', 'transition-all duration-500']">-->
-<!--    <SearchComponent :isSearchOpen="isSearchOpen"/>-->
-<!--  </div>-->
+  <!--  <div :class="[isSearchOpen ? 'visible z-[100]' : 'invisible z-[-1]', 'transition-all duration-500']">-->
+  <!--    <SearchComponent :isSearchOpen="isSearchOpen"/>-->
+  <!--  </div>-->
 </template>
 
 <style scoped>

@@ -1,7 +1,7 @@
 <script setup>
 import {ref} from "vue";
 import {useRouter} from "vue-router";
-import {ArrowRight} from 'lucide-vue-next'
+import {Icon} from '@iconify/vue';
 
 // If you have a store (like Pinia)
 
@@ -60,7 +60,7 @@ const darkModeWithDelay = ref(false);
         <button
             class="py-1.5 pl-5 cursor-text dark:border-slate-500 dark:text-darkTextColor backdrop-blur-md pr-6 text-[0.8rem] 640px:text-[0.9rem] border mb-4 border-border rounded-full"
         >
-          ✨ Introducing ZenUI VueJS Library
+          ✨ Introducing ZenUI Vue Library
         </button>
 
         <h1
@@ -82,18 +82,19 @@ const darkModeWithDelay = ref(false);
           <button
               type="button"
               @click="router.push('/components/all-components')"
-              class="py-3.5 px-6 640px:px-8 bg-gray-800 text-white rounded-high hover:bg-brandColor/90 transition-all flex items-center justify-center gap-3 duration-300 group"
+              class="py-3.5 px-6 640px:px-8 text-white rounded-high bg-brandColor/90 hover:bg-brandColor transition-all flex items-center justify-center gap-3 duration-300 group"
           >
             Browse Components
-            <ArrowRight/>
+            <Icon icon="formkit:arrowright" class="text-[1.3rem]"/>
           </button>
-          <!--          <button-->
-          <!--              @click="goTo('/templates')"-->
-          <!--              class="py-[11px] px-8 z-10 border-2 border-[#0FABCA] text-[#0FABCA] rounded-high transition-all flex items-center justify-center gap-3 duration-300 group"-->
-          <!--          >-->
-          <!--            Browse Templates-->
-          <!--            <ArrowRight />-->
-          <!--          </button>-->
+          <a href="https://github.com/zenui-labs/zenui-library-vue"
+             target="_blank"
+             @click="router.push('/components/all-components')"
+             class="py-3.5 px-6 640px:px-8 bg-gray-800 text-white rounded-high hover:bg-gray-700 transition-all flex items-center justify-center gap-3 duration-300 group"
+          >
+            Star Us On Github
+            <Icon icon="formkit:arrowright" class="text-[1.3rem]"/>
+          </a>
         </div>
 
         <div class="flex items-center gap-5 justify-center mt-6">

@@ -1,6 +1,7 @@
 <script setup>
 import Navbar from "@/components/Home/Navbar.vue";
 import Sidebar from "@/components/overview/Sidebar/index.vue";
+import Footer from "@/components/Home/Footer.vue";
 </script>
 
 <template>
@@ -19,13 +20,16 @@ import Sidebar from "@/components/overview/Sidebar/index.vue";
 
     <!-- Content Area -->
     <div
-        class="w-full h-[calc(100vh-76px)] overflow-y-auto pb-[2rem] pt-[5rem] 640px:py-[5rem] 1024px:py-[2rem] 1024px:px-[0.5rem] relative"
+        class="w-full h-[calc(100vh-76px)] overflow-y-auto pt-[5rem] 640px:pt-[5rem] 1024px:pt-[2rem] 1024px:px-[0.5rem] relative"
         style="scrollbar-width: none"
     >
       <!--      <MobileSidebar/>-->
       <slot/>
     </div>
   </div>
+
+
+  <Footer :need-much-margin="false"/>
 
   <!-- Dark mode blob -->
   <div

@@ -4,6 +4,7 @@ import {RouterLink, useRoute, useRouter} from 'vue-router'
 import CommandIcon from '@/SvgIcons/CommandIcon.vue'
 import {useGitHubStars} from '@/CustomHooks/useGithubStars.js'
 import {Icon} from "@iconify/vue"
+import UpdateBadge from "@/Shared/UpdateBadge.vue";
 
 // import {} from 'vue-countup-v2'
 
@@ -22,7 +23,7 @@ const textRef = ref(null)
 
 const {stars, loading} = useGitHubStars('Asfak00', 'zenui-library')
 
-const searchPlaceholderText = ref('search component')
+const searchPlaceholderText = ref('Search component')
 
 // const {theme, toggleTheme} = useZenuiStore()
 
@@ -91,6 +92,32 @@ watch([showStars, stars], () => {
     textWidth.value = textRef.value.offsetWidth
   }
 })
+
+const handleToolsMouseHover = () => {
+  isToolsHover.value = true;
+};
+
+// Animation hooks for Vue Transition (replaces framer-motion)
+const onBeforeEnter = (el) => {
+  el.style.opacity = '0';
+  el.style.transform = 'scale(0.8)';
+};
+
+const onEnter = (el, done) => {
+  el.offsetHeight; // Trigger reflow
+  el.style.transition = 'opacity 0.3s, transform 0.3s';
+  el.style.opacity = '1';
+  el.style.transform = 'scale(1)';
+  done();
+};
+
+const onLeave = (el, done) => {
+  el.style.transition = 'opacity 0.3s, transform 0.3s';
+  el.style.opacity = '0';
+  el.style.transform = 'scale(0.8)';
+  setTimeout(done, 300);
+};
+
 </script>
 
 <template>
@@ -118,18 +145,152 @@ watch([showStars, stars], () => {
         <ul class="text-gray-600 flex items-center gap-8 font-[500] capitalize text-[1rem]">
           <RouterLink
               to="/docs/overview"
-              class="dark:text-darkTextColor cursor-pointer py-[23px] hover:text-[#0FABCA] transition-all duration-200"
+              class="dark:text-darkTextColor cursor-pointer py-[23px] hover:text-[#3fb682] transition-all duration-200"
           >
             Documentation
           </RouterLink>
 
           <RouterLink
               to="/components/all-components"
-              class="dark:text-darkTextColor cursor-pointer hover:text-[#0FABCA] transition-all duration-200"
+              class="dark:text-darkTextColor cursor-pointer hover:text-[#3fb682] transition-all duration-200"
           >
             Components
           </RouterLink>
 
+          <li
+              @mouseenter="handleToolsMouseHover"
+              @mouseleave="isToolsHover = false"
+              :class="[
+      isToolsHover && 'text-[#3fb682]',
+      'cursor-pointer relative py-[23px] hover:text-[#3fb682] dark:text-darkTextColor transition-all duration-200 flex items-center gap-[8px]'
+    ]"
+          >
+            Tools
+            <Icon icon="fluent:chevron-down-16-filled"
+                  :class="[
+        isToolsHover ? 'rotate-[180deg]' : 'rotate-0',
+        'transition-all duration-300 text-[1.3rem]'
+      ]"
+            />
+
+            <Transition
+                name="dropdown"
+                @before-enter="onBeforeEnter"
+                @enter="onEnter"
+                @leave="onLeave"
+            >
+              <div
+                  v-if="isToolsHover"
+                  class="absolute dark:bg-slate-800 dark:border-darkBorderColor top-[64px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white shadow-[0px_40px_80px_-8px_rgba(145,158,171,0.24)] rounded-high p-5 mt-2"
+                  @mouseenter="isToolsHover = true"
+                  @mouseleave="isToolsHover = false"
+              >
+                <div class="flex flex-col gap-3">
+                  <a
+                      href="https://react.zenui.net/shortcut-generator"
+                      target="_blank"
+                      class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
+                  >
+                    <div class="bg-brandColor/5 p-[14px] rounded-normal text-[1.6rem]">
+                      <Icon icon="solar:keyboard-outline"/>
+                    </div>
+
+                    <div>
+                      <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
+                        ShotKey
+                      </p>
+                      <span class="text-[0.8rem] dark:text-darkSubTextColor font-[300] text-gray-500">
+                generate keyboard shortcuts easily.
+              </span>
+                    </div>
+                  </a>
+
+                  <a
+                      href="https://react.zenui.net/color-palette"
+                      target="_blank"
+                      class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
+                  >
+                    <div class="bg-brandColor/5 p-3 rounded-normal text-[1.7rem]">
+                      <Icon icon="proicons:color-palette"/>
+                    </div>
+
+                    <div>
+                      <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
+                        Color Palettes
+                      </p>
+                      <span class="text-[0.8rem] dark:text-darkSubTextColor font-[300] text-gray-500">
+                Harmonized color sets.
+              </span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                  <a
+                      href="https://react.zenui.net/icons"
+                      target="_blank"
+                      class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
+                  >
+                    <div class="bg-brandColor/5 p-3.5 rounded-normal text-[1.5rem]">
+                      <Icon icon="uil:icons"/>
+                    </div>
+
+                    <div>
+                      <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
+                        Icons
+                      </p>
+                      <span class="text-[0.8rem] dark:text-darkSubTextColor font-[300] text-gray-500">
+                Scalable icons for clear visuals.
+              </span>
+                    </div>
+                  </a>
+
+                  <a
+                      href="https://react.zenui.net/config-generator"
+                      target="_blank"
+                      class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
+                  >
+                    <div class="bg-brandColor/5 p-[14px] text-[1.6rem] rounded-normal">
+                      <Icon icon="hugeicons:configuration-01"/>
+                    </div>
+
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
+                          Config AI
+                        </p>
+                        <UpdateBadge/>
+                      </div>
+                      <span class="text-[0.8rem] dark:text-darkSubTextColor font-[300] text-gray-500">
+                Generate tailwind config file by AI.
+              </span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="flex flex-col">
+                  <a
+                      href="https://react.zenui.net/semantic-tag-master"
+                      target="_blank"
+                      class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
+                  >
+                    <div class="bg-brandColor/5 p-3.5 rounded-normal text-[1.5rem]">
+                      <Icon icon="proicons:html"/>
+                    </div>
+
+                    <div>
+                      <p class="cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200">
+                        Semantic TagMaster
+                      </p>
+                      <span class="text-[0.8rem] dark:text-darkSubTextColor font-[300] text-gray-500">
+                HTML semantic tags use cases
+              </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </Transition>
+          </li>
         </ul>
       </div>
 
@@ -231,5 +392,16 @@ watch([showStars, stars], () => {
 .fade-slide-leave-to {
   opacity: 0;
   transform: translateY(10px);
+}
+
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: opacity 0.1s, transform 0.1s;
+}
+
+.dropdown-enter-from,
+.dropdown-leave-to {
+  opacity: 0;
+  transform: scale(0.8);
 }
 </style>
