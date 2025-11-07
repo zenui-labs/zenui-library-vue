@@ -3,6 +3,7 @@ import Navbar from "@/components/Home/Navbar.vue";
 import MobileNavbar from "@/components/Home/MobileNavbar.vue";
 import Hero from "@/components/Home/Hero.vue";
 import Footer from "@/components/Home/Footer.vue";
+import AnimatedDarkBg from "@/Shared/AnimatedDarkBg.vue";
 </script>
 
 <template>
@@ -12,4 +13,6 @@ import Footer from "@/components/Home/Footer.vue";
     <Hero/>
     <Footer/>
   </div>
+
+  <AnimatedDarkBg/>
 </template>

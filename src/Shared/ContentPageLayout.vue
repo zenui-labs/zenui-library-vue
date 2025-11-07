@@ -2,6 +2,10 @@
 import Navbar from "@/components/Home/Navbar.vue";
 import Sidebar from "@/components/overview/Sidebar/index.vue";
 import Footer from "@/components/Home/Footer.vue";
+import {useZenuiStore} from "@/Store/Index.js";
+
+const store = useZenuiStore()
+
 </script>
 
 <template>
@@ -34,6 +38,6 @@ import Footer from "@/components/Home/Footer.vue";
   <!-- Dark mode blob -->
   <div
       class="fixed bottom-0 right-0 z-[-1] w-[230vmax] h-[280vmax] translate-x-1/2 translate-y-1/2 rounded-full bg-darkBgColor transition-transform duration-1000 ease-in-out"
-      :class="theme === 'dark' ? 'scale-100' : 'scale-0'"
+      :class="store.theme === 'dark' ? 'scale-100' : 'scale-0'"
   />
 </template>

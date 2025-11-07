@@ -180,7 +180,7 @@ const onSubmitSubscribe = async (event) => {
           <form @submit="onSubmitSubscribe" class="mt-2">
             <label
                 for="email"
-                class="text-black/70 text-[1rem] dark:text-darkSubTextColor font-[400] mb-2"
+                class="text-black/70 text-[0.9rem] dark:text-darkSubTextColor font-[400] mb-2"
             >
               Your Email
             </label>
@@ -276,7 +276,7 @@ const onSubmitSubscribe = async (event) => {
       </div>
 
       <div
-          class="w-full border-t dark:border-darkBorderColor border-gray-100 flex items-center 425px:flex-row flex-col 425px:gap-0 gap-5 justify-center mt-12 pt-6"
+          class="w-full border-t dark:border-darkBorderColor/30 border-gray-100 flex items-center 425px:flex-row flex-col 425px:gap-0 gap-5 justify-center mt-12 pt-6"
       >
         <p class="text-gray-400 dark:text-darkSubTextColor/70 font-normal text-center text-[0.8rem]">
           A product of

@@ -1,50 +1,13 @@
 <script setup>
-import {ref} from "vue";
 import {useRouter} from "vue-router";
 import {Icon} from '@iconify/vue';
 
-// If you have a store (like Pinia)
-
 const router = useRouter();
-// const { theme } = useZenuiStore();
-
-const darkModeWithDelay = ref(false);
-// let timer, notDarkMode;
-//
-// watch(
-//     () => theme.value,
-//     (newTheme) => {
-//       clearTimeout(timer);
-//       clearTimeout(notDarkMode);
-//
-//       timer = setTimeout(() => {
-//         if (newTheme === "dark") darkModeWithDelay.value = true;
-//       }, 500);
-//
-//       notDarkMode = setTimeout(() => {
-//         if (newTheme !== "dark") darkModeWithDelay.value = false;
-//       }, 200);
-//     },
-//     { immediate: true }
-// );
-//
-// onBeforeUnmount(() => {
-//   clearTimeout(timer);
-//   clearTimeout(notDarkMode);
-// });
-//
-// const goTo = (path) => {
-//   router.push(path);
-// };
 </script>
 
 <template>
   <main
-      :class="[
-      darkModeWithDelay
-        ? 'bg-[linear-gradient(to_right,#212121_1px,transparent_1px),linear-gradient(to_bottom,#212121_1px,transparent_1px)]'
-        : 'bg-[linear-gradient(to_right,#e3e3e32e_1px,transparent_1px),linear-gradient(to_bottom,#e3e3e32e_1px,transparent_1px)]',
-      'py-16 640px:py-0 w-full min-h-screen 1024px:min-h-[calc(100vh-50px)] flex items-center justify-center bg-[size:30px_30px] relative'
+      :class="['py-16 640px:py-0 w-full min-h-screen 1024px:min-h-[calc(100vh-50px)] flex items-center justify-center bg-[size:30px_30px] relative'
     ]"
   >
     <!-- Decorative gradient blobs -->
@@ -85,7 +48,7 @@ const darkModeWithDelay = ref(false);
               class="py-3.5 px-6 640px:px-8 text-white rounded-high bg-brandColor/90 hover:bg-brandColor transition-all flex items-center justify-center gap-3 duration-300 group"
           >
             Browse Components
-            <Icon icon="formkit:arrowright" class="text-[1.3rem]"/>
+            <Icon icon="formkit:arrowright" class="text-[1.1rem]"/>
           </button>
           <a href="https://github.com/zenui-labs/zenui-library-vue"
              target="_blank"
@@ -93,7 +56,7 @@ const darkModeWithDelay = ref(false);
              class="py-3.5 px-6 640px:px-8 bg-gray-800 text-white rounded-high hover:bg-gray-700 transition-all flex items-center justify-center gap-3 duration-300 group"
           >
             Star Us On Github
-            <Icon icon="formkit:arrowright" class="text-[1.3rem]"/>
+            <Icon icon="formkit:arrowright" class="text-[1.1rem]"/>
           </a>
         </div>
 

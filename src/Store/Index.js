@@ -1,23 +1,22 @@
-import {defineStore} from 'pinia';
-import {ref} from 'vue';
+import {defineStore} from 'pinia'
+import {ref} from 'vue'
 
-export const useZenuiStore = defineStore('zenui', () => {
-    const withDarkClasses = ref(false);
-    const theme = ref(localStorage.getItem('zenuiTheme') || 'light');
-
-    function handleToggle() {
-        withDarkClasses.value = !withDarkClasses.value;
-    }
+export const useZenuiStore = defineStore('useZenuiStore', () => {
+    const theme = ref(localStorage.getItem('zenui-vue-theme') || 'light')
 
     function toggleTheme() {
-        theme.value = theme.value === 'light' ? 'dark' : 'light';
-        localStorage.setItem('zenuiTheme', theme.value);
+        const newTheme = theme.value === 'light' ? 'dark' : 'light'
+        theme.value = newTheme
+        localStorage.setItem('zenui-vue-theme', newTheme)
     }
 
-    return {
-        withDarkClasses,
-        handleToggle,
-        theme,
-        toggleTheme,
-    };
-});
+    function isDark() {
+        return theme.value === 'dark'
+    }
+
+    if (theme.value === 'dark') {
+        document.documentElement.classList.add('dark')
+    }
+
+    return {theme, toggleTheme, isDark}
+})

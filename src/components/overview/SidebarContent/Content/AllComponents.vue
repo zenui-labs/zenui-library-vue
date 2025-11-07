@@ -199,7 +199,7 @@ useHead({
     </div>
   </aside>
 
-  <div class="px-8 425px:px-10">
+  <div class="px-6 425px:px-10">
     <BlocksFooter
         backUrl="/getting-started/templates"
         backName="templates"
