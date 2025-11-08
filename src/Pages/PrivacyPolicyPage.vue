@@ -3,6 +3,7 @@ import Navbar from "@/components/Home/Navbar.vue";
 import MobileNavbar from "@/components/Home/MobileNavbar.vue";
 import Footer from "@/components/Home/Footer.vue";
 import PrivacyPolicy from "@/components/Home/PrivacyPolicy.vue";
+import AnimatedDarkBg from "@/Shared/AnimatedDarkBg.vue";
 </script>
 
 <template>
@@ -12,4 +13,6 @@ import PrivacyPolicy from "@/components/Home/PrivacyPolicy.vue";
     <PrivacyPolicy/>
     <Footer/>
   </div>
+
+  <AnimatedDarkBg/>
 </template>

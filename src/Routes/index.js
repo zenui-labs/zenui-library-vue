@@ -1,11 +1,10 @@
 import {createRouter, createWebHistory} from "vue-router";
-import HomePage from "@/Pages/HomePage.vue";
 
 const routes = [
     {
         path: "/",
         name: "Home Page",
-        component: HomePage,
+        component: () => import("@/Pages/HomePage.vue"),
     },
     {
         path: "/privacy-policy",

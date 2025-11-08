@@ -1,6 +1,5 @@
 <script setup>
 import Navbar from "@/components/Home/Navbar.vue";
-import MobileNavbar from "@/components/Home/MobileNavbar.vue";
 import Hero from "@/components/Home/Hero.vue";
 import Footer from "@/components/Home/Footer.vue";
 import AnimatedDarkBg from "@/Shared/AnimatedDarkBg.vue";
@@ -9,7 +8,7 @@ import AnimatedDarkBg from "@/Shared/AnimatedDarkBg.vue";
 <template>
   <div class="overflow-clip">
     <Navbar/>
-    <MobileNavbar/>
+    <!--    <MobileNavbar/>-->
     <Hero/>
     <Footer/>
   </div>

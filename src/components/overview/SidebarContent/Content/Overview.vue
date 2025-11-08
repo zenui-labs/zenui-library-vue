@@ -27,7 +27,7 @@
     <div class="mt-8 w-full text-text">
       <ContentHeader text="What will you get?"/>
       <ul class="flex flex-col gap-3 list-disc ml-8 mt-3">
-        <li class="p-0 hover:bg-transparent border-none hover:border-none hover:font-[400] hover:bg-secondary">
+        <li class="p-0 hover:bg-transparent border-none hover:border-none dark:text-darkSubTextColor hover:font-[400] hover:bg-secondary">
           <b>Reusable Advanced Components:</b> Access a suite of highly customizable, production-ready
           components built with best practices in mind. From complex forms to interactive tabs and
           accordions, these components save development time while ensuring consistency across your

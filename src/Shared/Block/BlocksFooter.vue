@@ -40,7 +40,7 @@ const props = defineProps({
       <RouterLink
           v-if="isForwardButton"
           :to="forwardUrl"
-          class="flex w-full 640px:w-auto py-4 justify-end 640px:justify-start items-center gap-[5px] text-[0.9rem] 640px:py-2 pr-3 pl-1 border border-gray-200 hover:bg-gray-200 dark:bg-slate-900 dark:text-darkSubTextColor dark:border-darkBorderColor dark:hover:bg-slate-800 capitalize transition-all duration-200 text-gray-500 rounded-md bg-gray-100"
+          class="flex w-full 640px:w-auto py-4 justify-end 640px:justify-start items-center gap-[5px] text-[0.9rem] 640px:py-2 pl-3 pr-1 border border-gray-200 hover:bg-gray-200 dark:bg-slate-900 dark:text-darkSubTextColor dark:border-darkBorderColor dark:hover:bg-slate-800 capitalize transition-all duration-200 text-gray-500 rounded-md bg-gray-100"
       >
         {{ forwardName }}
         <Icon icon="material-symbols-light:chevron-left" width="24" height="24"

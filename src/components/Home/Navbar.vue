@@ -139,7 +139,7 @@ const onLeave = (el, done) => {
             >
               <div
                   v-if="isToolsHover"
-                  class="absolute dark:bg-slate-900 dark:border-darkBorderColor top-[64px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white rounded-high p-5 mt-2"
+                  class="absolute dark:bg-slate-900 dark:border-darkBorderColor top-[64px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white rounded-high p-5 mt-2 shadow-[0px_40px_40px_-8px_rgba(145,158,171,0.24)] dark:shadow-[0px_40px_40px_-8px_rgba(0,0,0,0.2)]"
                   @mouseenter="isToolsHover = true"
                   @mouseleave="isToolsHover = false"
               >
