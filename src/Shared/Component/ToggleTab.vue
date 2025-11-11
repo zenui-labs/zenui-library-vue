@@ -106,9 +106,9 @@ settingOpen
         <div
             :class="[
 store.withDarkClasses ? 'bg-brandColor' : 'bg-[#f0f0f0] dark:bg-slate-600',
-    'w-[50px] h-[26px] px-[0.150rem] py-[0.160rem] cursor-pointer dark:border-darkBorderColor border transition-colors duration-500 border-[#e5eaf2] rounded-full relative',
+    'w-[50px] h-[26px] px-[0.150rem] py-[0.120rem] cursor-pointer dark:border-darkBorderColor border transition-colors duration-500 border-[#e5eaf2] rounded-full relative',
 ]"
-            @click.stop="store.handleToggle()"
+            @click.stop="store.handleToggleDarkClasses()"
         >
           <div
               :class="[

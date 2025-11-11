@@ -48,7 +48,7 @@ const onSubmitSubscribe = async (event) => {
   <footer
       :class="[
       needMuchMargin ? 'mt-16' : 'mt-8',
-      '1404px:px-12 w-full border-t border-gray-100 pb-8 transition-all duration-500 dark:border-darkBorderColor'
+      '1404px:px-12 w-full border-t border-gray-100 pb-8 transition-all duration-500 dark:border-darkBorderColor/70'
     ]"
   >
     <SectionWrapper class="mt-8 max-w-[1600px]">
@@ -139,10 +139,6 @@ const onSubmitSubscribe = async (event) => {
         <div class="flex gap-2 flex-col mt-4">
           <h3 class="font-[600] dark:text-darkTextColor text-[20px] capitalize">Company</h3>
           <ul class="footer font-[400] text-[1rem] dark:text-darkSubTextColor mt-2 text-black/70 flex flex-col gap-2">
-            <!--            <li>-->
-            <!--              <p><a href="/about-us">About Us</a></p>-->
-            <!--              <span><a href="/about-us">About Us</a></span>-->
-            <!--            </li>-->
             <li>
               <p><a href="/privacy-policy">Privacy policy</a></p>
               <span><a href="/privacy-policy">Privacy policy</a></span>

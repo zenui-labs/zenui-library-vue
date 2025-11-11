@@ -1,7 +1,7 @@
 <script setup>
-import {onBeforeUnmount, onMounted, ref} from "vue";
-import {Menu} from "lucide-vue-next"; // closest to CiMenuFries
+import {onBeforeUnmount, onMounted, ref, watch} from "vue";
 import Content from "./Content.vue";
+import {Icon} from "@iconify/vue";
 
 const sidebarOpen = ref(false);
 
@@ -28,15 +28,25 @@ onMounted(() => {
 onBeforeUnmount(() => {
   document.removeEventListener("click", handleClickOutside);
 });
+
+watch(sidebarOpen, (newVal) => {
+  if (newVal) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+}, {immediate: true});
+
+
 </script>
 
 <template>
   <div
-      class="w-full 1024px:hidden bg-border mt-[4.9rem] 425px:mt-[4.3rem] py-3 fixed 425px:top-0 top-[-10px] px-6 640px:px-10 dark:bg-slate-800 640px:pr-7 z-30"
+      class="w-full 1024px:hidden bg-border mt-[4.9rem] 425px:mt-[4.3rem] pb-2 pt-2.5 fixed 425px:top-0 top-[-10px] px-6 640px:px-10 transition-colors duration-500 dark:bg-slate-800 640px:pr-7 z-30"
   >
-    <Menu
-        class="text-[1.7rem] dark:text-darkTextColor rotate-[180deg] text-text mobilesidebarIcon cursor-pointer"
-        @click="toggleSidebarOpen"
+    <Icon icon="heroicons-outline:menu-alt-1"
+          class="text-[1.8rem] dark:text-darkTextColor text-text mobilesidebarIcon cursor-pointer"
+          @click="toggleSidebarOpen"
     />
   </div>
 

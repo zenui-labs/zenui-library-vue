@@ -1,6 +1,19 @@
 import {createRouter, createWebHistory} from "vue-router";
 
-const routes = [
+const docsRoutes = [
+    {
+        path: "/docs/installation",
+        name: "Installation",
+        component: () => import("@/Pages/InstallationPage.vue"),
+    },
+    {
+        path: "/docs/overview",
+        name: "Overview",
+        component: () => import("@/Pages/OverviewPage.vue"),
+    }
+]
+
+const landingPageRoutes = [
     {
         path: "/",
         name: "Home Page",
@@ -11,19 +24,9 @@ const routes = [
         name: "Privacy Policy Page",
         component: () => import("@/Pages/PrivacyPolicyPage.vue"),
     },
-    {
-        path: "/docs/installation",
-        name: "Installation",
-        component: () => import("@/Pages/InstallationPage.vue"),
-    },
-    {
-        path: "/docs/overview",
-        name: "Overview",
-        component: () => import("@/Pages/OverviewPage.vue"),
-    },
+]
 
-    // ***********************  Component Routes  *********************** //
-
+const componentsRoutes = [
     {
         path: "/components/all-components",
         name: "All Components",
@@ -253,9 +256,16 @@ const routes = [
     },
 ];
 
+const routes = [
+    ...landingPageRoutes,
+    ...docsRoutes,
+    ...componentsRoutes,
+];
+
 const router = createRouter({
     history: createWebHistory(),
     routes,
+
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
             return savedPosition;
@@ -265,4 +275,5 @@ const router = createRouter({
     },
 });
 
+export {landingPageRoutes, componentsRoutes, docsRoutes};
 export default router;

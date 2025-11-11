@@ -5,6 +5,7 @@ import CommandIcon from '@/SvgIcons/CommandIcon.vue'
 import {Icon} from "@iconify/vue"
 import UpdateBadge from "@/Shared/UpdateBadge.vue";
 import {useZenuiStore} from "@/Store/Index.js";
+import Search from "@/Shared/Search.vue";
 
 const props = defineProps({
   className: {type: String, default: ''}
@@ -81,8 +82,7 @@ const onLeave = (el, done) => {
 <template>
   <nav
       :class="[
-        route.path === '/' ? 'border-transparent' : 'border-gray-100 dark:border-darkBorderColor',
-        'border-b 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[999] hidden transition-all duration-500',
+        'border-b 1024px:flex w-full px-10 backdrop-blur-2xl border-gray-100 dark:border-darkBorderColor/50 sticky top-0 left-0 z-[999] hidden transition-all duration-500',
         className
       ]"
   >
@@ -139,7 +139,7 @@ const onLeave = (el, done) => {
             >
               <div
                   v-if="isToolsHover"
-                  class="absolute dark:bg-slate-900 dark:border-darkBorderColor top-[64px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white rounded-high p-5 mt-2 shadow-[0px_40px_40px_-8px_rgba(145,158,171,0.24)] dark:shadow-[0px_40px_40px_-8px_rgba(0,0,0,0.2)]"
+                  class="absolute dark:bg-slate-900 border border-gray-50 dark:border-darkBorderColor/30 top-[60px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white rounded-high p-5 mt-2 shadow-[0px_40px_40px_-8px_rgba(145,158,171,0.24)] dark:shadow-[0px_40px_40px_-8px_rgba(0,0,0,0.2)]"
                   @mouseenter="isToolsHover = true"
                   @mouseleave="isToolsHover = false"
               >
@@ -304,9 +304,9 @@ const onLeave = (el, done) => {
                               'transition-all duration-500 text-[1.6rem]'
                             ]"
             />
-            <Icon icon="f7:moon-stars-fill"
+            <Icon icon="ri:moon-clear-line"
                   :class="[
-                              store.theme === 'light' ? 'translate-y-[-25px] rotate-0' : 'translate-y-[80px] rotate-[-260deg]',
+                              store.theme === 'light' ? 'translate-y-[-22px] rotate-0' : 'translate-y-[80px] rotate-[-260deg]',
                               'transition-all duration-500 text-[1.8rem]'
                             ]"
             />
@@ -316,9 +316,7 @@ const onLeave = (el, done) => {
     </div>
   </nav>
 
-  <!--  <div :class="[isSearchOpen ? 'visible z-[100]' : 'invisible z-[-1]', 'transition-all duration-500']">-->
-  <!--    <Search :isSearchOpen="isSearchOpen" @update:isSearchOpen="val => isSearchOpen = val"/>-->
-  <!--  </div>-->
+  <Search v-if="isSearchOpen" :isSearchOpen="isSearchOpen"/>
 </template>
 
 <style scoped>

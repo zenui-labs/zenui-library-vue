@@ -1,5 +1,6 @@
 <script setup>
 import {RouterLink, useRoute} from "vue-router";
+import {Icon} from '@iconify/vue';
 
 const props = defineProps({
   items: {
@@ -32,8 +33,8 @@ const isActiveLink = (url) => route.path === url || route.path.startsWith(url);
             isActiveLink(item.url) ? `${item.bgColor} ${item.borderColor}` : ''
           ]"
         >
-          <component
-              :is="item.icon"
+          <Icon
+              :icon="item.icon"
               :class="[
               'shrink-0 size-4 transition-all duration-200',
               `${item.textColor} group-hover:text-white`,

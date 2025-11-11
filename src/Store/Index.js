@@ -3,6 +3,11 @@ import {ref} from 'vue'
 
 export const useZenuiStore = defineStore('useZenuiStore', () => {
     const theme = ref(localStorage.getItem('zenui-vue-theme') || 'light')
+    const withDarkClasses = ref(true)
+
+    function handleToggleDarkClasses() {
+        withDarkClasses.value = !withDarkClasses.value
+    }
 
     function toggleTheme() {
         const newTheme = theme.value === 'light' ? 'dark' : 'light'
@@ -18,5 +23,5 @@ export const useZenuiStore = defineStore('useZenuiStore', () => {
         document.documentElement.classList.add('dark')
     }
 
-    return {theme, toggleTheme, isDark}
+    return {theme, toggleTheme, isDark, withDarkClasses, handleToggleDarkClasses}
 })

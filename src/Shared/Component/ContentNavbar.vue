@@ -1,5 +1,5 @@
 <template>
-  <div :class="`1024px:block sticky top-4 right-0 ${classNames} hidden`">
+  <div :class="`1024px:block sticky top-4 right-0 ${classs} hidden`">
     <h2 class="text-[0.9rem] dark:text-darkSubTextColor font-[600] text-text tracking-widest">
       CONTENTS
     </h2>
@@ -46,14 +46,14 @@
         </p>
       </div>
 
-      <div className='py-3 px-1.5 mb-5 mt-3 flex flex-col gap-3 max-w-[273px]'>
+      <div class='py-3 px-1.5 mb-5 mt-3 flex flex-col gap-3 max-w-[273px]'>
         <a href='https://readmestudio.zenui.net/' target='_blank' rel="noreferrer">
           <img src='https://i.ibb.co.com/svzKxvxY/small-ads-for-zenui.png' alt='Readme Studio Ads'
-               className='w-full rounded-xl active:scale-[0.95] transition-all duration-200 grayscale hover:grayscale-0'/>
+               class='w-full rounded-xl active:scale-[0.95] transition-all duration-200 grayscale hover:grayscale-0'/>
         </a>
         <a href='https://react-hooks.zenui.net/' target='_blank' rel="noreferrer">
           <img src='https://i.ibb.co.com/wNSCP9X1/small-ads-for-zenui-1.png' alt='React Hooks Ads'
-               className='w-full rounded-xl active:scale-[0.95] transition-all duration-200 grayscale hover:grayscale-0'/>
+               class='w-full rounded-xl active:scale-[0.95] transition-all duration-200 grayscale hover:grayscale-0'/>
         </a>
       </div>
     </div>
@@ -72,7 +72,7 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  classNames: {
+  classs: {
     type: String,
     default: 'w-[40%]',
   },

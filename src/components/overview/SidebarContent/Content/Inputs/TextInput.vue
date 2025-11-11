@@ -19,7 +19,6 @@ const selectedCurrencyType = ref('BDT');
 const sectionIds = textInputContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// states start
 const primaryInputPreview = ref(true);
 const primaryInputCode = ref(false);
 
@@ -47,15 +46,42 @@ const searchInputCode = ref(false);
 const joinUsInputPreview = ref(true);
 const joinUsInputCode = ref(false);
 
-// states end
-
-
 const allCurrencyTypes = ['USD', 'EUR', 'BDT'];
 
 const handlePriceDropdownClick = (currency) => {
   selectedCurrencyType.value = currency;
   priceDropdownOpen.value = !priceDropdownOpen.value;
 };
+
+const democodes = [
+  {
+    id: "1",
+    displayText: "Hello.demo",
+    language: "vue",
+    code: "<div v-if=\"bottomBorderInputPreview\" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>\n" +
+        "    <input\n" +
+        "        type='text'\n" +
+        "        name='name'\n" +
+        "        id='name'\n" +
+        "gdagdsgagdg\n" +
+        "        placeholder='Your name'\n" +
+        "        class='border-border dark:bg-slate-900 dark:text-[#abc2d3] dark:border-slate-600 border-b outline-none px-4 w-full 1024px:w-[80%] py-3 focus:border-brandColor transition-colors duration-300'\n" +
+        "    />\n" +
+        "</div>"
+  },
+  {
+    id: "2",
+    displayText: "Hello.demo",
+    language: "js",
+    code: 'gadsgdsgagdg'
+  },
+  {
+    id: "3",
+    displayText: "Hello.demo",
+    language: "css",
+    code: 'gadsgdsgagdg'
+  }
+]
 
 </script>
 
@@ -94,7 +120,7 @@ const handlePriceDropdownClick = (currency) => {
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="democodes"
         />
       </ComponentWrapper>
 
