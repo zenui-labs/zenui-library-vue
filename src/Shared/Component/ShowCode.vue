@@ -71,7 +71,7 @@
         </div>
 
         <pre
-            class="zenui_code_snippet overflow-x-auto pl-1 pr-4 text-[14px]">
+            class="zenui_code_snippet overflow-x-auto pl-1 pb-3 pr-4 min-w-[94.2%] text-[14px]">
           <code v-html="highlightedCode"></code>
         </pre>
       </div>

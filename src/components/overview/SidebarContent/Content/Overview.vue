@@ -1,7 +1,7 @@
 <template>
   <aside class="w-full 640px:pl-[2.5rem] px-6 640px:px-10">
     <h1 class="font-[600] pt-0 text-[2.5rem] 1024px:text-[3rem] uppercase text-brandColor">
-      ZenUI Library
+      ZenUI Library Vue
     </h1>
     <p class="w-full text-text dark:text-darkSubTextColor text-[1rem]">
       ZenUI is your ultimate destination for a comprehensive collection of UI components and designs, all
@@ -12,15 +12,16 @@
     <div class="mt-8 w-full text-text">
       <ContentHeader text="About ZenUI"/>
       <p class="mt-3 dark:text-darkSubTextColor">
-        ZenUI is a developer-friendly platform offering over 700+ meticulously crafted components and
-        templates. These resources are designed to save you time and elevate your creativity by providing
-        modern, reusable elements that fit seamlessly into any project.
+        ZenUI is a developer-friendly platform designed to accelerate your workflow and inspire creativity. It offers a
+        rich collection of meticulously crafted components that help you build modern, responsive, and
+        visually appealing web interfaces with ease.
       </p>
       <p class="mt-4 dark:text-darkSubTextColor">
-        Our collection includes an array of components and built-in web templates, enabling developers to
-        create stunning websites without the hassle of designing from scratch. Each element adheres to
-        contemporary design principles, ensuring that your projects are not only functional but also visually
-        appealing.
+        Our ecosystem includes ZenUI for <a href="#" class="text-brandColor hover:underline">React/Next.js</a> and ZenUI
+        for <a href="#" class="text-brandColor hover:underline">Vue</a>,
+        providing robust, framework-specific libraries
+        that integrate seamlessly into your projects. Every component is reusable, customizable, and built following
+        contemporary design standards to ensure consistency and performance.
       </p>
     </div>
 
@@ -34,29 +35,22 @@
           project.
         </li>
         <li class="p-0 hover:bg-transparent border-none dark:text-darkSubTextColor hover:border-none hover:font-[400] hover:bg-secondary">
-          <b>Multi-Page Website Templates:</b> Choose from a variety of pre-built multi-page templates,
+          <b>Multi-Page Website Templates<span class="text-yellow-600 font-normal">(coming)</span>:</b> Choose from a
+          variety of
+          pre-built multi-page templates,
           perfect for businesses, blogs, and more. These templates are crafted to help you quickly
           establish an online presence.
         </li>
         <li class="p-0 hover:bg-transparent border-none dark:text-darkSubTextColor hover:border-none hover:font-[400] hover:bg-secondary">
-          <b>Website Blocks:</b> Access a wide range of essential UI blocks that you can mix and match
+          <b>Website Blocks<span class="text-yellow-600 font-normal">(coming)</span>:</b> Access a wide range of
+          essential UI blocks that you can mix and match
           to create unique page layouts effortlessly.
         </li>
         <li class="p-0 hover:bg-transparent border-none dark:text-darkSubTextColor hover:border-none hover:font-[400] hover:bg-secondary">
-          <b>SVG Icons:</b> Our growing library of SVG icons provides a modern touch to any project, with
-          easy integration and customization options.
-        </li>
-        <li class="p-0 hover:bg-transparent border-none dark:text-darkSubTextColor hover:border-none hover:font-[400] hover:bg-secondary">
-          <b>Animated Components:</b> Bring your website to life with a collection of ready-to-use
+          <b>Animated Components<span class="text-yellow-600 font-normal">(coming)</span>:</b> Bring your website to
+          life with a collection of ready-to-use
           animated components using Framer-Motion. These subtle yet impactful animations improve user
           engagement and provide a polished, professional look to any design.
-        </li>
-        <li class="p-0 hover:bg-transparent border-none dark:text-darkSubTextColor hover:border-none hover:font-[400] hover:bg-secondary">
-          <b>Color Palette:</b> Introducing the custom color opacity palette. A versatile tool that
-          allows you to explore different opacity variations of colors. Simply paste your color code, and the
-          palette will generate a range of opacity levels along with the corresponding HEX, RGB, and HSL
-          codes. Clicking on a color code instantly copies it to your clipboard, making color management a
-          breeze.
         </li>
       </ul>
     </div>
@@ -81,7 +75,8 @@
           designing time.
         </li>
         <li class="p-0 hover:bg-transparent border-none dark:text-darkSubTextColor hover:border-none hover:font-[400] hover:bg-secondary">
-          <b>Pre build templetes:</b> ZenUI has many pre-built web templates.
+          <b>Pre build templetes<span class="text-yellow-600 font-normal">(coming)</span>:</b> ZenUI has many pre-built
+          web templates.
           You can create a website without using them without any code. We
           have tried to follow the most modern design by following the design.
           The ZenUI contains 20+ web templates.

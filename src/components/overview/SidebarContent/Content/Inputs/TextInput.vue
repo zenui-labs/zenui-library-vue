@@ -10,6 +10,17 @@ import {textInputContents} from "@/Utils/ContentsConfig/InputContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
 import {ref} from "vue";
 import {Icon} from "@iconify/vue";
+import {
+  animatedLabelInputCodes,
+  bottomBorderInputCodes,
+  inputWithIconCodes,
+  joinUsInputCodes,
+  linkInputCodes,
+  passwordInputCodes,
+  priceInputCodes,
+  primaryInputCodes,
+  searchInputCodes
+} from "@/components/overview/SidebarContent/Content/Inputs/PreviewCodes/TextInputPreviewCodes.js";
 
 const animatedInputValue = ref('');
 const isEyeOpen = ref(false);
@@ -53,42 +64,12 @@ const handlePriceDropdownClick = (currency) => {
   priceDropdownOpen.value = !priceDropdownOpen.value;
 };
 
-const democodes = [
-  {
-    id: "1",
-    displayText: "Hello.demo",
-    language: "vue",
-    code: "<div v-if=\"bottomBorderInputPreview\" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>\n" +
-        "    <input\n" +
-        "        type='text'\n" +
-        "        name='name'\n" +
-        "        id='name'\n" +
-        "gdagdsgagdg\n" +
-        "        placeholder='Your name'\n" +
-        "        class='border-border dark:bg-slate-900 dark:text-[#abc2d3] dark:border-slate-600 border-b outline-none px-4 w-full 1024px:w-[80%] py-3 focus:border-brandColor transition-colors duration-300'\n" +
-        "    />\n" +
-        "</div>"
-  },
-  {
-    id: "2",
-    displayText: "Hello.demo",
-    language: "js",
-    code: 'gadsgdsgagdg'
-  },
-  {
-    id: "3",
-    displayText: "Hello.demo",
-    language: "css",
-    code: 'gadsgdsgagdg'
-  }
-]
-
 </script>
 
 <template>
   <aside class='flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
     <div>
-      <ContentHeader text='required input' id='primary_input'/>
+      <ContentHeader text='primary input' id='primary_input'/>
 
       <ComponentDescription text='This is an input text field. Use it to enter your information, which
             will be processed accordingly.'/>
@@ -120,7 +101,7 @@ const democodes = [
         </div>
         <ShowCode
             v-else
-            :code="democodes"
+            :code="primaryInputCodes"
         />
       </ComponentWrapper>
 
@@ -148,7 +129,7 @@ const democodes = [
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='bottomBorderInputCodes'
         />
       </ComponentWrapper>
 
@@ -183,7 +164,7 @@ const democodes = [
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='animatedLabelInputCodes'
         />
       </ComponentWrapper>
 
@@ -239,7 +220,7 @@ const democodes = [
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='inputWithIconCodes'
         />
       </ComponentWrapper>
 
@@ -259,7 +240,7 @@ const democodes = [
         <div v-if="passwordInputPreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <div class='w-full 1024px:w-[80%]'>
             <label
-                htmlFor='password'
+                for='password'
                 class='text-[15px] dark:text-[#abc2d3] text-text font-[400]'
             >
               Password
@@ -287,7 +268,7 @@ const democodes = [
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='passwordInputCodes'
         />
       </ComponentWrapper>
 
@@ -320,7 +301,7 @@ const democodes = [
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='linkInputCodes'
         />
       </ComponentWrapper>
 
@@ -386,7 +367,7 @@ const democodes = [
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='priceInputCodes'
         />
       </ComponentWrapper>
 
@@ -443,7 +424,7 @@ const democodes = [
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='searchInputCodes'
         />
       </ComponentWrapper>
 
@@ -476,7 +457,7 @@ const democodes = [
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='joinUsInputCodes'
         />
       </ComponentWrapper>
 

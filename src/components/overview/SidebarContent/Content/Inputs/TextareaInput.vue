@@ -9,6 +9,11 @@ import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import {textareaInputContents} from "@/Utils/ContentsConfig/InputContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
 import {ref} from "vue";
+import {
+  animatedLabelTextareaCodes,
+  backgroundTextareaCodes,
+  requiredTextareaCodes
+} from "@/components/overview/SidebarContent/Content/Inputs/PreviewCodes/TextareaInputPreviewCodes.js";
 
 const animatedInputValue = ref('');
 
@@ -52,13 +57,13 @@ const animateLabelTextareaCode = ref(false);
                 id="description"
                 required
                 placeholder="Write something about zenUI"
-                class="border-border dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border rounded-md outline-none mt-1 px-4 w-full py-3 min-h-[200px] focus:border-primary transition-colors duration-300"
+                class="border-border dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border rounded-md outline-none mt-1 px-4 w-full py-3 min-h-[200px] focus:border-brandColor transition-colors duration-300"
             />
           </div>
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='requiredTextareaCodes'
         />
       </ComponentWrapper>
 
@@ -92,7 +97,7 @@ const animateLabelTextareaCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='backgroundTextareaCodes'
         />
       </ComponentWrapper>
 
@@ -116,25 +121,25 @@ const animateLabelTextareaCode = ref(false);
                    id="name"
                    :value="animatedInputValue"
                    @change="(e) => animatedInputValue = e.target.value"
-                   class="peer dark:border-slate-700 dark:bg-transparent border-[#e5eaf2] border rounded-md outline-none px-4 min-h-[200px] dark:text-darkTextColor py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
+                   class="peer dark:border-slate-700 dark:bg-transparent border-[#e5eaf2] border rounded-md outline-none px-4 min-h-[200px] dark:text-darkTextColor py-3 w-full focus:border-brandColor transition-colors duration-300"
                />
             <span
-                :class="`${animatedInputValue ? '-top-3 left-2 scale-[0.9] dark:bg-darkBgColor bg-white px-[4px]' : 'left-5 top-3.5'} absolute dark:text-slate-500 dark:peer-focus:bg-[#020617] peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300`">
+                :class="`${animatedInputValue ? '-top-3 left-2 scale-[0.9] dark:bg-darkBgColor bg-white px-[4px]' : 'left-5 top-3.5'} absolute dark:text-slate-500 dark:peer-focus:bg-[#020617] peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-brandColor text-[#777777] peer-focus:px-1 transition-all duration-300`">
               Write something about zenUI
               </span>
           </label>
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='animatedLabelTextareaCodes'
         />
       </ComponentWrapper>
 
       <OverviewFooter
-          backName='all components'
-          backUrl='/components/all-components'
-          forwardName='Textarea'
-          forwardUrl='/components/input-textarea'
+          backName='Text Input'
+          backUrl='/components/text-input'
+          forwardName='Number Input'
+          forwardUrl='/components/input-number'
       />
     </div>
 

@@ -9,8 +9,12 @@ import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import {switchInputContents} from "@/Utils/ContentsConfig/InputContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
 import {ref} from "vue";
+import {
+  animatedSwitchCodes,
+  circleSwitchCodes,
+  squareSwitchCodes
+} from "@/components/overview/SidebarContent/Content/Inputs/PreviewCodes/SwitchInputPreviewCodes.js";
 
-const roundedInputValue = ref(0);
 const squareToggle = ref(false);
 const toggle = ref(false);
 const animatedSwitch = ref(false);
@@ -119,7 +123,7 @@ const handleAnimatedSwitch = () => {
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='circleSwitchCodes'
         />
       </ComponentWrapper>
 
@@ -202,7 +206,7 @@ const handleAnimatedSwitch = () => {
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='squareSwitchCodes'
         />
       </ComponentWrapper>
 
@@ -303,15 +307,15 @@ const handleAnimatedSwitch = () => {
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='animatedSwitchCodes'
         />
       </ComponentWrapper>
 
       <OverviewFooter
-          backName='all components'
-          backUrl='/components/all-components'
-          forwardName='Textarea'
-          forwardUrl='/components/input-textarea'
+          backName='Checkbox'
+          backUrl='/components/input-checkbox'
+          forwardName='Strong password'
+          forwardUrl='/components/strong-password'
       />
     </div>
 
