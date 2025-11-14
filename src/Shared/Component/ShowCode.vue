@@ -104,7 +104,7 @@ const activeTab = ref(isMultiTab ? props.code[0].id : "default");
 
 const formattedCode = computed(() => {
   if (isMultiTab) return props.code;
-  return [{id: "default", displayText: "", language: "jsx", code: props.code}];
+  return [{id: "default", displayText: "", language: "html", code: props.code}];
 });
 
 const currentCode = computed(() => {
@@ -116,7 +116,7 @@ const highlightedCode = computed(() => {
   if (!currentCode.value) return "";
   const lang =
       formattedCode.value.find((item) => item.id === activeTab.value)?.language ||
-      "jsx";
+      "vue";
   return Prism.highlight(
       currentCode.value,
       Prism.languages[lang] || Prism.languages.jsx,

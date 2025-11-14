@@ -18,7 +18,7 @@
       </p>
       <p class="mt-4 dark:text-darkSubTextColor">
         Our ecosystem includes ZenUI for <a href="#" class="text-brandColor hover:underline">React/Next.js</a> and ZenUI
-        for <a href="#" class="text-brandColor hover:underline">Vue</a>,
+        for Vue,
         providing robust, framework-specific libraries
         that integrate seamlessly into your projects. Every component is reusable, customizable, and built following
         contemporary design standards to ensure consistency and performance.

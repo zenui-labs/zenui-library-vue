@@ -10,6 +10,12 @@ import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
 import {computed, ref} from "vue";
 import {Icon} from "@iconify/vue";
 import {strongPasswordContents} from "@/Utils/ContentsConfig/InputContents.js";
+import {
+  checkByIndicatorCodes,
+  checkPasswordWithHintCodes,
+  checkPasswordWithHintDropdownCodes,
+  inlineCheckingPasswordCodes
+} from "@/components/overview/SidebarContent/Content/Inputs/PreviewCodes/StrongPasswordPreviewCodes.js";
 
 
 const isEyeOpen = ref(true);
@@ -198,7 +204,7 @@ const hintList = [
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="inlineCheckingPasswordCodes"
         />
       </ComponentWrapper>
 
@@ -260,7 +266,7 @@ const hintList = [
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="checkByIndicatorCodes"
         />
       </ComponentWrapper>
 
@@ -330,7 +336,7 @@ const hintList = [
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="checkPasswordWithHintCodes"
         />
       </ComponentWrapper>
 
@@ -366,7 +372,7 @@ const hintList = [
                   @focus="hintDropdownOpen = true"
                   @blur="hintDropdownOpen = false"
                   placeholder="Password"
-                  class="peer border-border dark:border-slate-600 dark:bg-slate-900 dark:placeholder:text-slate-500 dark:text-[#abc2d3] border rounded-md outline-none pl-4 pr-12 py-3 w-full mt-1 focus:border-primary transition-colors duration-300"
+                  class="peer border-border dark:border-slate-600 dark:bg-slate-900 dark:placeholder:text-slate-500 dark:text-[#abc2d3] border rounded-md outline-none pl-4 pr-12 py-3 w-full mt-1 focus:border-brandColor transition-colors duration-300"
               />
 
               <Transition
@@ -417,15 +423,15 @@ const hintList = [
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="checkPasswordWithHintDropdownCodes"
         />
       </ComponentWrapper>
 
       <OverviewFooter
-          backName='all components'
-          backUrl='/components/all-components'
-          forwardName='Textarea'
-          forwardUrl='/components/input-textarea'
+          backName='Switch'
+          backUrl='/components/input-switch'
+          forwardName='Select'
+          forwardUrl='/components/select-box'
       />
     </div>
 

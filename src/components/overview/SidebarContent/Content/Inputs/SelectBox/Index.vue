@@ -20,6 +20,14 @@ import SingleSelectWithSearch
   from "@/components/overview/SidebarContent/Content/Inputs/SelectBox/SingleSelectWithSearch.vue";
 import SingleSelectWithSearchAndBadge
   from "@/components/overview/SidebarContent/Content/Inputs/SelectBox/SingleSelectWithSearchAndBadge.vue";
+import {
+  basicSelectBoxCodes,
+  multipleSelectBoxWithSearchCodes,
+  multipleSelectWithSearchAndBadgeCodes,
+  selectBoxWithIconCodes,
+  singleSelectBoxWithSearchCodes,
+  singleSelectWithSearchAndBadgeCodes
+} from "@/components/overview/SidebarContent/Content/Inputs/PreviewCodes/SelectBoxPreviewCodes.js";
 
 const sectionIds = selectInputContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
@@ -64,7 +72,7 @@ const multipleSelectWithSearchAndBadgeCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="basicSelectBoxCodes"
         />
       </ComponentWrapper>
 
@@ -86,7 +94,7 @@ const multipleSelectWithSearchAndBadgeCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="selectBoxWithIconCodes"
         />
       </ComponentWrapper>
 
@@ -108,7 +116,7 @@ const multipleSelectWithSearchAndBadgeCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='multipleSelectBoxWithSearchCodes'
         />
       </ComponentWrapper>
 
@@ -130,7 +138,7 @@ const multipleSelectWithSearchAndBadgeCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="singleSelectBoxWithSearchCodes"
         />
       </ComponentWrapper>
 
@@ -147,12 +155,13 @@ const multipleSelectWithSearchAndBadgeCode = ref(false);
                  :code="singleSelectWithSearchAndBadgeCode"/>
 
       <ComponentWrapper>
-        <div v-if="singleSelectWithSearchAndBadgePreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="singleSelectWithSearchAndBadgePreview"
+             class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <SingleSelectWithSearchAndBadge/>
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="singleSelectWithSearchAndBadgeCodes"
         />
       </ComponentWrapper>
 
@@ -169,20 +178,21 @@ const multipleSelectWithSearchAndBadgeCode = ref(false);
                  :code="multipleSelectWithSearchAndBadgeCode"/>
 
       <ComponentWrapper>
-        <div v-if="multipleSelectWithSearchAndBadgePreview" class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+        <div v-if="multipleSelectWithSearchAndBadgePreview"
+             class='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
           <MultipleSelectWithSearchAndBadge/>
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="multipleSelectWithSearchAndBadgeCodes"
         />
       </ComponentWrapper>
 
       <OverviewFooter
-          backName='all components'
-          backUrl='/components/all-components'
-          forwardName='Textarea'
-          forwardUrl='/components/input-textarea'
+          backName='Strong password'
+          backUrl='/components/strong-password'
+          forwardName='radio'
+          forwardUrl='/components/input-radio'
       />
     </div>
 
