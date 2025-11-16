@@ -13,6 +13,10 @@ import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
 
 import VerticalComparisonExample from "./VerticalComparisonExample.vue";
 import HorizontalComparisonExample from "./HorizontalComparisonExample.vue";
+import {
+  horizontalComparisonCardCodes,
+  verticalComparisonCardCodes
+} from "@/components/overview/SidebarContent/Content/Surfaces/PreviewCodes/ComparisonCardPreviewCodes.js";
 
 const sectionIds = comparisonContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
@@ -50,7 +54,7 @@ const horizontalComparisonCode = ref(false);
           <VerticalComparisonExample/>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="verticalComparisonCardCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -71,12 +75,12 @@ const horizontalComparisonCode = ref(false);
       <ComponentWrapper>
         <div
             v-if="horizontalComparisonPreview"
-            class="p-8 mb-4 flex flex-col items-center gap-5 h-[400px] justify-center"
+            class="p-8 mb-4 flex flex-col items-center gap-5 justify-center"
         >
           <HorizontalComparisonExample/>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="horizontalComparisonCardCodes"/>
       </ComponentWrapper>
 
       <OverviewFooter

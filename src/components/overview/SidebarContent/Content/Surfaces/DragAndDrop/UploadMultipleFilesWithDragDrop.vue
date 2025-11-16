@@ -5,7 +5,6 @@ import {Icon} from "@iconify/vue";
 const images = ref([]);
 const dragging = ref(false);
 
-// Handle files when dropped or selected
 const handleMultipleFileDrop = (e) => {
   e.preventDefault();
   dragging.value = false;
@@ -16,7 +15,6 @@ const handleMultipleFileDrop = (e) => {
   }
 };
 
-// Function to simulate file upload and track progress
 const uploadFiles = (files) => {
   const fileList = Array.from(files).map((file) => ({
     file,
@@ -34,15 +32,12 @@ const uploadFiles = (files) => {
 
 const formatFileSize = (sizeInBytes) => {
   if (sizeInBytes < 1024 * 1024) {
-    // Show size in KB for files less than 1 MB
     return (sizeInBytes / 1024).toFixed(2) + " KB";
   } else {
-    // Show size in MB for files 1 MB or larger
     return (sizeInBytes / (1024 * 1024)).toFixed(2) + " MB";
   }
 };
 
-// Simulate upload progress
 const simulateUpload = (fileObj, index) => {
   const interval = setInterval(() => {
     const newImages = [...images.value];
@@ -59,10 +54,9 @@ const simulateUpload = (fileObj, index) => {
       clearInterval(interval);
     }
     images.value = newImages;
-  }, 300); // Simulate upload progress every 300ms
+  }, 300);
 };
 
-// Handle drag events
 const handleMultipleDragOver = (e) => {
   e.preventDefault();
 };
@@ -75,7 +69,6 @@ const handleMultipleDragLeave = () => {
   dragging.value = false;
 };
 
-// Cancel the upload of a specific file
 const cancelUpload = (index) => {
   const newImages = [...images.value];
   newImages[index].cancelled = true;
@@ -90,7 +83,6 @@ const resetImages = () => {
 <template>
   <div class="p-8 mb-4 flex flex-col items-center gap-5 justify-center">
     <div class="flex flex-col justify-center items-center w-full">
-      <!-- Drop Zone -->
       <div
           :class="[
           'border-2 p-6 rounded-lg dark:bg-slate-800 dark:border-slate-600 w-full h-64 flex flex-col justify-center items-center bg-white transition-colors duration-300 ease-in-out',
@@ -127,7 +119,6 @@ const resetImages = () => {
         />
       </div>
 
-      <!-- Images Uploading List -->
       <div
           class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full"
       >

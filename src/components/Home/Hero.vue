@@ -45,18 +45,18 @@ const router = useRouter();
           <button
               type="button"
               @click="router.push('/components/all-components')"
-              class="py-3.5 px-6 640px:px-8 text-white rounded-high bg-brandColor/90 hover:bg-brandColor transition-all flex items-center justify-center gap-3 duration-300 group"
+              class="py-3.5 px-6 640px:px-8 text-white rounded-high bg-brandColor/90 hover:bg-brandColor transition-all flex items-center justify-center gap-2 duration-300 group"
           >
+            <Icon icon="fluent-mdl2:web-components" class="text-[1.4rem]"/>
             Browse Components
-            <Icon icon="formkit:arrowright" class="text-[0.9rem] group-hover:ml-1 transition-all duration-200"/>
           </button>
           <a href="https://github.com/zenui-labs/zenui-library-vue"
              target="_blank"
              @click="router.push('/components/all-components')"
-             class="py-3.5 px-6 640px:px-8 bg-gray-800 text-white rounded-high hover:bg-gray-700 transition-all flex items-center justify-center gap-3 duration-300 group"
+             class="py-3.5 px-6 640px:px-8 bg-gray-800 text-white rounded-high hover:bg-gray-700 transition-all flex items-center justify-center gap-2 duration-300 group"
           >
+            <Icon icon="mynaui:star" class="text-[1.5rem]"/>
             Star Us On Github
-            <Icon icon="formkit:arrowright" class="text-[0.9rem] group-hover:ml-1 transition-all duration-200"/>
           </a>
         </div>
 

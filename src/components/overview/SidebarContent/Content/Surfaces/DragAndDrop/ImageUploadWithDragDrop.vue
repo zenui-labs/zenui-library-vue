@@ -6,7 +6,6 @@ const selectedImage = ref(null);
 const errorMessage = ref("");
 const isDragging = ref(false);
 
-// Handle file selection when dropped or clicked
 const handleFileDrop = (e) => {
   e.preventDefault();
   const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -14,7 +13,6 @@ const handleFileDrop = (e) => {
   isDragging.value = false;
 };
 
-// Function to validate and display the image
 const handleFile = (file) => {
   if (!file) return;
 
@@ -29,7 +27,6 @@ const handleFile = (file) => {
   }
 };
 
-// Handle drag over event to allow the drop
 const handleImageDragOver = (e) => {
   e.preventDefault();
 };

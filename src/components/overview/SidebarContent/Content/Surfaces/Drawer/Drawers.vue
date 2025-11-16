@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from "vue";
-import { useScrollSpy } from "@/CustomHooks/useScrollSpy"; // your composable
+import {ref} from "vue";
+import {useScrollSpy} from "@/CustomHooks/useScrollSpy"; // your composable
 import Showcode from "@/Shared/Component/ShowCode.vue";
 import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ContentHeader from "@/Shared/ContentHeader.vue";
@@ -17,17 +17,8 @@ import DrawerLeft from "./DrawerLeft.vue";
 import DrawerRight from "./DrawerRight.vue";
 import DrawerFullScreen from "./DrawerFullScreen.vue";
 
-// Codes
-// import {
-//   DrawerTopCode,
-//   DrawerBottomCode,
-//   DrawerLeftCode,
-//   DrawerRightCode,
-//   DrawerFullScreenCode,
-// } from "@components/Surfaces/Drawer/PreviewCodes.js";
-
 // Navigation contents
-import { drawerContents } from "@/Utils/ContentsConfig/SurfacesContents.js";
+import {drawerContents} from "@/Utils/ContentsConfig/SurfacesContents.js";
 
 // State
 const sectionIds = drawerContents.map((item) => item.href.slice(1));
@@ -51,141 +42,141 @@ const fullScreenDrawerCode = ref(false);
 
 <template>
   <aside
-    class="flex items-start gap-6 justify-between w-full 640px:pl-[2.5rem] px-6 640px:px-10"
+      class="flex items-start gap-6 justify-between w-full 640px:pl-[2.5rem] px-6 640px:px-10"
   >
     <div>
       <WarningMessageCard
-        text="Note, when you use the drawer you will first connect it to the
+          text="Note, when you use the drawer you will first connect it to the
         button in your project. And it's handled by the state here using
         'ref', so you'll get a good look at it. Only the structure of the drawer
         is given with animation; you can design it as per your requirement."
       />
 
       <!-- Top Drawer -->
-      <ContentHeader id="drawer_top" text="Drawer Top" />
+      <ContentHeader id="drawer_top" text="Drawer Top"/>
       <ComponentDescription
-        text="This is a top drawer modal that slides down from the top to reveal content or actions."
+          text="This is a top drawer modal that slides down from the top to reveal content or actions."
       />
       <ToggleTab
-        :code="topDrawerCode"
-        :preview="topDrawerPreview"
-        @update:code="(val) => (topDrawerCode = val)"
-        @update:preview="(val) => (topDrawerPreview = val)"
+          :code="topDrawerCode"
+          :preview="topDrawerPreview"
+          @update:code="(val) => (topDrawerCode = val)"
+          @update:preview="(val) => (topDrawerPreview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="topDrawerPreview"
-          class="p-8 mb-4 flex items-center gap-5 justify-center"
+            v-if="topDrawerPreview"
+            class="p-8 mb-4 flex items-center gap-5 justify-center"
         >
-          <DrawerTop />
+          <DrawerTop/>
         </div>
-        <Showcode v-if="topDrawerCode" code="" />
+        <Showcode v-if="topDrawerCode" code=""/>
       </ComponentWrapper>
 
       <!-- Bottom Drawer -->
       <div class="mt-8">
-        <ContentHeader id="drawer_bottom" text="Drawer Bottom" />
+        <ContentHeader id="drawer_bottom" text="Drawer Bottom"/>
       </div>
       <ComponentDescription
-        text="This is a bottom drawer modal that slides up from the bottom to reveal content or actions."
+          text="This is a bottom drawer modal that slides up from the bottom to reveal content or actions."
       />
       <ToggleTab
-        :code="bottomDrawerCode"
-        :preview="bottomDrawerPreview"
-        @update:code="(val) => (bottomDrawerCode = val)"
-        @update:preview="(val) => (bottomDrawerPreview = val)"
+          :code="bottomDrawerCode"
+          :preview="bottomDrawerPreview"
+          @update:code="(val) => (bottomDrawerCode = val)"
+          @update:preview="(val) => (bottomDrawerPreview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="bottomDrawerPreview"
-          class="p-8 mb-4 flex items-center gap-5 justify-center"
+            v-if="bottomDrawerPreview"
+            class="p-8 mb-4 flex items-center gap-5 justify-center"
         >
-          <DrawerBottom />
+          <DrawerBottom/>
         </div>
-        <Showcode v-if="bottomDrawerCode" code="" />
+        <Showcode v-if="bottomDrawerCode" code=""/>
       </ComponentWrapper>
 
       <!-- Left Drawer -->
       <div class="mt-8">
-        <ContentHeader id="drawer_left" text="Drawer Left" />
+        <ContentHeader id="drawer_left" text="Drawer Left"/>
       </div>
       <ComponentDescription
-        text="This is a left drawer modal that slides in from the left side to reveal content or actions."
+          text="This is a left drawer modal that slides in from the left side to reveal content or actions."
       />
       <ToggleTab
-        :code="leftDrawerCode"
-        :preview="leftDrawerPreview"
-        @update:code="(val) => (leftDrawerCode = val)"
-        @update:preview="(val) => (leftDrawerPreview = val)"
+          :code="leftDrawerCode"
+          :preview="leftDrawerPreview"
+          @update:code="(val) => (leftDrawerCode = val)"
+          @update:preview="(val) => (leftDrawerPreview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="leftDrawerPreview"
-          class="p-8 mb-4 flex items-center gap-5 justify-center"
+            v-if="leftDrawerPreview"
+            class="p-8 mb-4 flex items-center gap-5 justify-center"
         >
-          <DrawerLeft />
+          <DrawerLeft/>
         </div>
-        <Showcode v-if="leftDrawerCode" code="" />
+        <Showcode v-if="leftDrawerCode" code=""/>
       </ComponentWrapper>
 
       <!-- Right Drawer -->
       <div class="mt-8">
-        <ContentHeader id="drawer_right" text="Drawer Right" />
+        <ContentHeader id="drawer_right" text="Drawer Right"/>
       </div>
       <ComponentDescription
-        text="This is a right drawer modal that slides in from the right side to reveal content or actions."
+          text="This is a right drawer modal that slides in from the right side to reveal content or actions."
       />
       <ToggleTab
-        :code="rightDrawerCode"
-        :preview="rightDrawerPreview"
-        @update:code="(val) => (rightDrawerCode = val)"
-        @update:preview="(val) => (rightDrawerPreview = val)"
+          :code="rightDrawerCode"
+          :preview="rightDrawerPreview"
+          @update:code="(val) => (rightDrawerCode = val)"
+          @update:preview="(val) => (rightDrawerPreview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="rightDrawerPreview"
-          class="p-8 mb-4 flex items-center gap-5 justify-center"
+            v-if="rightDrawerPreview"
+            class="p-8 mb-4 flex items-center gap-5 justify-center"
         >
-          <DrawerRight />
+          <DrawerRight/>
         </div>
-        <Showcode v-if="rightDrawerCode" code="" />
+        <Showcode v-if="rightDrawerCode" code=""/>
       </ComponentWrapper>
 
       <!-- Full Screen Drawer -->
       <div class="mt-8">
-        <ContentHeader id="full_screen_drawer" text="Full Screen Drawer" />
+        <ContentHeader id="full_screen_drawer" text="Full Screen Drawer"/>
       </div>
       <ComponentDescription
-        text="This is a full screen drawer modal that covers the entire viewport to display content or actions."
+          text="This is a full screen drawer modal that covers the entire viewport to display content or actions."
       />
       <ToggleTab
-        :code="fullScreenDrawerCode"
-        :preview="fullScreenDrawerPreview"
-        @update:code="(val) => (fullScreenDrawerCode = val)"
-        @update:preview="(val) => (fullScreenDrawerPreview = val)"
+          :code="fullScreenDrawerCode"
+          :preview="fullScreenDrawerPreview"
+          @update:code="(val) => (fullScreenDrawerCode = val)"
+          @update:preview="(val) => (fullScreenDrawerPreview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="fullScreenDrawerPreview"
-          class="p-8 mb-4 flex items-center gap-5 justify-center"
+            v-if="fullScreenDrawerPreview"
+            class="p-8 mb-4 flex items-center gap-5 justify-center"
         >
-          <DrawerFullScreen />
+          <DrawerFullScreen/>
         </div>
-        <Showcode v-if="fullScreenDrawerCode" code="" />
+        <Showcode v-if="fullScreenDrawerCode" code=""/>
       </ComponentWrapper>
 
       <OverviewFooter
-        backUrl="/components/stepper"
-        backName="stepper"
-        forwardName="tabs"
-        forwardUrl="/components/tabs"
+          backUrl="/components/stepper"
+          backName="stepper"
+          forwardName="tabs"
+          forwardUrl="/components/tabs"
       />
     </div>
 
     <ContentNavbar
-      :contents="drawerContents"
-      :activeSection="activeSection"
-      width="70%"
+        :contents="drawerContents"
+        :activeSection="activeSection"
+        width="70%"
     />
   </aside>
 </template>

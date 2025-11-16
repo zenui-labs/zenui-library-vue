@@ -45,22 +45,18 @@ const listItems = ref([...listsData]);
 const listDraggedItem = ref(null);
 const listHoveredItem = ref(null);
 
-// Handle drag start event from the icon
 const handleListDragStart = (item) => {
   listDraggedItem.value = item;
 };
 
-// Handle drag over event and show hover indicator
 const handleListDragOver = (e, item) => {
   e.preventDefault();
   listHoveredItem.value = item;
 };
 
-// Handle drop event and swap items
 const handleListDrop = (e, dropItem) => {
   e.preventDefault();
 
-  // Swap dragged item with drop target
   const newGrid = listItems.value.map((item) => {
     if (item.id === dropItem.id) {
       return listDraggedItem.value;

@@ -1,5 +1,6 @@
 <script setup>
 import {ref} from "vue";
+
 import ContentHeader from "@/Shared/ContentHeader.vue";
 import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ShowCode from "@/Shared/Component/ShowCode.vue";
@@ -16,11 +17,17 @@ import UploadMultipleFilesWithDragDrop from "./UploadMultipleFilesWithDragDrop.v
 import ImageUploadWithDragDrop from "./ImageUploadWithDragDrop.vue";
 import ListDragDrop from "./ListDragDrop.vue";
 import TodoAppDragDrop from "./TodoAppDragDrop.vue";
+import {
+  dragAndDropWithIndicatorCodes,
+  listDragAndDropCodes,
+  todoAppDragAndDropCodes,
+  uploadFileWithDragAndDropCodes,
+  uploadMultipleFilesDragAndDropCodes
+} from "@/components/overview/SidebarContent/Content/Surfaces/PreviewCodes/DragAndDropPreviewCodes.js";
 
 const sectionIds = dragAndDropContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// actions
 const dragDrop1Preview = ref(true);
 const dragDrop1Code = ref(false);
 
@@ -66,7 +73,7 @@ const dragDrop5Code = ref(false);
           <DragWithIndicator/>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="dragAndDropWithIndicatorCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -91,7 +98,7 @@ const dragDrop5Code = ref(false);
       <ComponentWrapper>
         <UploadMultipleFilesWithDragDrop v-if="dragDrop2Preview"/>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="uploadMultipleFilesDragAndDropCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -120,7 +127,7 @@ const dragDrop5Code = ref(false);
           <ImageUploadWithDragDrop/>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="uploadFileWithDragAndDropCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -146,7 +153,7 @@ const dragDrop5Code = ref(false);
           <ListDragDrop/>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="listDragAndDropCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -170,12 +177,12 @@ const dragDrop5Code = ref(false);
       <ComponentWrapper>
         <TodoAppDragDrop v-if="dragDrop5Preview"/>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="todoAppDragAndDropCodes"/>
       </ComponentWrapper>
 
       <OverviewFooter
-          backUrl="/components/animated-button"
-          backName="animated button"
+          backUrl="/components/dropdown-button"
+          backName="dropdown button"
           forwardName="Comparison Card"
           forwardUrl="/components/comparison-card"
       />

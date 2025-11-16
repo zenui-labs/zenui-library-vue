@@ -5,7 +5,6 @@ const sliderPosition = ref(50);
 const containerRef = ref(null);
 const isDragging = ref(false);
 
-// handle mouse move and calculate the comparison
 const handleMove = (clientY) => {
   if (!isDragging.value) return;
 
@@ -22,12 +21,10 @@ const handleMove = (clientY) => {
 const handleMouseMove = (e) => handleMove(e.clientY);
 const handleTouchMove = (e) => handleMove(e.touches[0].clientY);
 
-// start dragging
 const startDragging = () => {
   isDragging.value = true;
 };
 
-// stop the comparison dragging
 const stopDragging = () => {
   isDragging.value = false;
 };

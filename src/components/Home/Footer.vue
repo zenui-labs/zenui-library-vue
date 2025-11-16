@@ -92,20 +92,20 @@ const onSubmitSubscribe = async (event) => {
           <h3 class="font-[600] dark:text-darkTextColor text-[20px] capitalize">tools</h3>
           <ul class="footer font-[400] text-black/70 dark:text-darkSubTextColor mt-2 text-[1rem] flex flex-col gap-2">
             <li>
-              <p><a href="https://react.zenui.net/shortcut-generator">ShortKey</a></p>
-              <span><a href="https://react.zenui.net/shortcut-generator">ShortKey</a></span>
+              <p><a href="https://react-ui.zenui.net/shortcut-generator">ShortKey</a></p>
+              <span><a href="https://react-ui.zenui.net/shortcut-generator">ShortKey</a></span>
             </li>
             <li>
-              <p><a href="https://react.zenui.net/color-palette">Colors Palette</a></p>
-              <span><a href="https://react.zenui.net/color-palette">Colors Palette</a></span>
+              <p><a href="https://react-ui.zenui.net/color-palette">Colors Palette</a></p>
+              <span><a href="https://react-ui.zenui.net/color-palette">Colors Palette</a></span>
             </li>
             <li>
-              <p><a href="https://react.zenui.net/icons">Icons</a></p>
-              <span><a href="https://react.zenui.net/icons">Icons</a></span>
+              <p><a href="https://react-ui.zenui.net/icons">Icons</a></p>
+              <span><a href="https://react-ui.zenui.net/icons">Icons</a></span>
             </li>
             <li>
-              <p><a href="https://react.zenui.net/config-generator">Config AI</a></p>
-              <span><a href="https://react.zenui.net/config-generator">Config AI</a></span>
+              <p><a href="https://react-ui.zenui.net/config-generator">Config AI</a></p>
+              <span><a href="https://react-ui.zenui.net/config-generator">Config AI</a></span>
             </li>
           </ul>
         </div>

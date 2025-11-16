@@ -44,22 +44,18 @@ const gridItems = ref([...initialGrid]);
 const draggedItem = ref(null);
 const hoveredItem = ref(null);
 
-// Handle drag start event
 const handleDragStart = (item) => {
   draggedItem.value = item;
 };
 
-// Handle drag over event and show hover indicator
 const handleDragOver = (e, item) => {
   e.preventDefault();
   hoveredItem.value = item;
 };
 
-// Handle drop event and swap items
 const handleDrop = (e, dropItem) => {
   e.preventDefault();
 
-  // Swap dragged item with drop target
   const newGrid = gridItems.value.map((item) => {
     if (item.id === dropItem.id) {
       return draggedItem.value;

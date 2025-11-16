@@ -130,7 +130,7 @@ const totalLines = computed(() => {
       : 1;
 });
 
-const maxWidth = computed(() => "700px");
+const maxWidth = computed(() => "800px");
 
 function copyToClipboard() {
   navigator.clipboard.writeText(currentCode.value).then(() => {
