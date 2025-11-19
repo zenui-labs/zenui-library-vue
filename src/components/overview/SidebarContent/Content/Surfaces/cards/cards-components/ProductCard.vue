@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from "vue";
-import { Icon } from "@iconify/vue";
+import {ref} from "vue";
+import {Icon} from "@iconify/vue";
 
 const isFavorite = ref(false);
 </script>
@@ -8,72 +8,63 @@ const isFavorite = ref(false);
 <template>
   <div class="p-8 mb-4 flex items-center gap-5 justify-center">
     <div
-      class="w-full 1024px:w-[70%] shadow-lg dark:bg-slate-800 bg-secondary rounded"
+        class="w-full 1024px:w-[70%] shadow-lg dark:bg-slate-800 bg-secondary rounded-lg"
     >
-      <!-- Image -->
       <img
-        src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=500&auto=format&fit=crop&q=60"
-        alt=""
-        class="w-full h-64 object-cover"
+          src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=500&auto=format&fit=crop&q=60"
+          alt=""
+          class="w-full h-64 object-cover rounded-t-lg"
       />
 
-      <!-- Header -->
-      <div class="flex w-full justify-between items-center p-4">
-        <div class="flex items-center gap-4">
-          <div class="flex flex-col items-center">
-            <h2 class="font-semibold dark:text-[#abc2d3] text-3xl">Shoes</h2>
-          </div>
+      <div class="p-4">
+        <h2 class="font-semibold dark:text-[#abc2d3] text-3xl mb-4">Shoes</h2>
+
+        <div class="flex flex-row dark:text-[#abc2d3] gap-3 mb-1">
+          <button class="flex items-center gap-1.5">
+            <Icon icon="bi:eye" class="text-[1rem]"/>
+            50
+          </button>
+          <button class="flex items-center gap-1.5">
+            <Icon icon="bi:hand-thumbs-up" class="text-[1rem]"/>
+            10
+          </button>
         </div>
-        <Icon
-          icon="bi:three-dots-vertical"
-          class="text-text dark:text-[#abc2d3] dark:hover:bg-slate-900/60 rounded-full text-[2.5rem] p-2 hover:bg-[#ececec] cursor-pointer"
-        />
-      </div>
 
-      <!-- Stats -->
-      <div class="flex flex-row gap-4 p-4">
-        <button class="flex items-center gap-1">
-          <Icon icon="bi:eye" class="text-2xl" /> 50
-        </button>
-        <button class="flex items-center gap-1">
-          <Icon icon="bi:hand-thumbs-up" class="text-2xl" /> 10
-        </button>
-      </div>
+        <p class="text-text dark:text-[#abc2d3]">
+          This impressive paella is a perfect party dish and a fun meal to cook
+          together with your guests.
+        </p>
 
-      <!-- Description -->
-      <p class="text-text dark:text-[#abc2d3] p-4">
-        This impressive paella is a perfect party dish and a fun meal to cook
-        together with your guests.
-      </p>
-
-      <!-- Actions -->
-      <div class="flex items-center justify-between w-full p-4">
-        <div class="flex flex-col items-center gap-4">
-          <div>
-            <p class="text-text dark:text-[#abc2d3] text-[0.9rem]">
-              Price : $25
-            </p>
-          </div>
-          <div class="flex flex-row gap-5">
-            <Icon
-              icon="fa:heart"
-              @click="isFavorite = !isFavorite"
-              :class="[
-                'text-[1.4rem] cursor-pointer',
+        <div class="flex items-center justify-between w-full mt-5">
+          <p class="text-text dark:text-[#abc2d3] text-[1rem]">
+            Price: <span class='text-[#36af7b] font-bold'>$25</span>
+          </p>
+          <div class='flex items-center gap-3'>
+            <button
+                @click="isFavorite = !isFavorite"
+                :class="[
+                'btn px-2.5 py-[0.65rem] rounded-lg',
+                isFavorite ? 'bg-red-100 dark:bg-red-800/20' : 'bg-gray-100 dark:bg-slate-700',
+              ]"
+            >
+              <Icon
+                  icon="fa:heart"
+                  :class="[
+                'text-[1.3rem]',
                 isFavorite ? 'text-[#ff3d3d]' : 'text-text dark:text-[#abc2d3]',
               ]"
-            />
-            <Icon
-              icon="hi:share"
-              class="text-text dark:text-[#abc2d3] text-[1.4rem] cursor-pointer"
-            />
+              />
+            </button>
+            <button
+                class="btn px-2.5 py-2 text-[0.9rem] rounded-lg bg-[#36af7b] text-white hover:bg-[#36af7b]/90"
+            >
+              <Icon
+                  icon="mynaui:cart-solid"
+                  class="text-white text-[1.6rem] cursor-pointer"
+              />
+            </button>
           </div>
         </div>
-        <button
-          class="btn p-3 rounded dark:bg-slate-900 dark:border-slate-700 border bg-black text-white hover:bg-blue-700 hover:text-white"
-        >
-          Add to cart
-        </button>
       </div>
     </div>
   </div>
