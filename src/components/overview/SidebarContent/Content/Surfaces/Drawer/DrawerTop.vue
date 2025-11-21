@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import {onBeforeUnmount, onMounted, ref} from "vue";
 
 const openDrawer = ref(false);
 
@@ -32,29 +32,29 @@ onBeforeUnmount(() => {
 <template>
   <div class="w-full flex items-center justify-center">
     <button
-      class="px-4 py-2 zenui_drawer_btn bg-primary text-secondary rounded-md"
-      @click="openDrawer = true"
+        class="px-4 py-2 zenui_drawer_btn bg-[#36af7b] text-white rounded-md"
+        @click="openDrawer = true"
     >
       Open Drawer
     </button>
   </div>
 
   <div
-    :class="[
+      :class="[
       openDrawer ? 'visible' : 'invisible',
-      'w-full h-screen fixed top-0 left-0 z-[200000000] dark:bg-black/40 transition-all duration-300'
+      'w-full h-screen fixed top-0 left-0 z-[200000000] dark:bg-black/40 bg-black/10 backdrop-blur-[2px] transition-all duration-300'
     ]"
   >
     <div
-      :class="[
+        :class="[
         openDrawer
           ? 'translate-y-[0px] opacity-100'
           : 'translate-y-[-200px] opacity-0',
-        'w-full dark:bg-slate-800 bg-secondary zenui_drawer transition-all shadow-[0px_0px_20px_0px_rgb(0,0,0,0.2)] duration-300 mx-auto'
+        'w-full dark:bg-slate-800 bg-secondary zenui_drawer transition-all shadow-[0px_0px_20px_0px_rgb(0,0,0,0.1)] duration-300 mx-auto'
       ]"
     >
-      <div class="flex 640px::flex-row flex-col justify-between w-full gap-5 px-8 py-12">
-        <p class="text-[1.2rem] dark:text-[#abc2d3] text-text w-full 640px:w-[70%]">
+      <div class="flex 640px:flex-row flex-col justify-between w-full gap-5 px-8 py-10">
+        <p class="text-[1rem] dark:text-[#abc2d3] text-text w-full 640px:w-[70%]">
           This site uses cookies and related technologies, as
           described in our privacy policy, for purposes that may
           include site operation, analytics, enhanced user
@@ -63,16 +63,16 @@ onBeforeUnmount(() => {
           preferences.
         </p>
 
-        <div class="flex items-end justify-end gap-4 flex-col 1024px:flex-row w-full 640px:w-[20%]">
+        <div class="flex items-end justify-end mt-5 gap-4 flex-col 1024px:flex-row w-full 640px:w-[20%]">
           <button
-            class="py-2 w-full px-4 dark:border-slate-800 border border-[#d1d1d1] rounded-md outline-none bg-primary text-[#fff]"
-            @click="openDrawer = false"
+              class="py-2 w-full px-4 dark:border-slate-800 border border-[#d1d1d1] rounded-md outline-none bg-[#36af7b] text-[#fff]"
+              @click="openDrawer = false"
           >
             Accept
           </button>
           <button
-            class="py-2 w-full dark:border-slate-700 dark:text-[#abc2d3] dark:hover:bg-slate-900/50 hover:bg-gray-100 px-4 border border-[#d1d1d1] rounded-md outline-none text-[#353535]"
-            @click="openDrawer = false"
+              class="py-2 w-full dark:border-slate-700 dark:text-[#abc2d3] dark:hover:bg-slate-900/50 hover:bg-gray-100 px-4 border border-[#d1d1d1] rounded-md outline-none text-[#353535]"
+              @click="openDrawer = false"
           >
             Decline
           </button>

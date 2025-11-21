@@ -68,7 +68,6 @@ const componentsItems = [
     title: "Drawer",
     url: "/components/drawer",
     parent: "SURFACES",
-    isNewComponent: true,
   },
   {
     title: "Animated Cards",
@@ -101,7 +100,6 @@ const componentsItems = [
     title: "Modal",
     url: "/components/modal",
     parent: "NAVIGATION",
-    isUpdated: true,
   },
   {title: "Tabs", url: "/components/tabs", parent: "NAVIGATION"},
   {label: "FEEDBACK"},

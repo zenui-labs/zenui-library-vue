@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <div class="p-8 mb-4 flex items-center gap-5 justify-center">
     <div

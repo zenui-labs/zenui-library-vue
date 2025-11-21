@@ -29,11 +29,34 @@ import RandomCard6 from "./cards-components/RandomCard6.vue";
 import RandomCard7 from "./cards-components/RandomCard7.vue";
 import RandomCard8 from "./cards-components/RandomCard8.vue";
 import RandomCard9 from "./cards-components/RandomCard9.vue";
-import RandomCard10 from "./cards-components/RandomCard10.vue";
 import RandomCard11 from "./cards-components/RandomCard11.vue";
 import RandomCard12 from "./cards-components/RandomCard12.vue";
 import RandomCard13 from "./cards-components/RandomCard13.vue";
 import RandomCard14 from "./cards-components/RandomCard14.vue";
+import {
+  BlogCardCodes,
+  MusicCardCodes,
+  PricingCard1Codes,
+  PricingCard2Codes,
+  ProductCardCodes,
+  ProfileCardCodes,
+  RandomCard10Codes,
+  RandomCard11Codes,
+  RandomCard12Codes,
+  RandomCard13Codes,
+  RandomCard1Codes,
+  RandomCard2Codes,
+  RandomCard3Codes,
+  RandomCard4Codes,
+  RandomCard5Codes,
+  RandomCard6Codes,
+  RandomCard7Codes,
+  RandomCard8Codes,
+  RandomCard9Codes,
+  SimpleProfileCardCodes,
+  TeamCardCodes,
+  TicketCardCodes
+} from "@/components/overview/SidebarContent/Content/Surfaces/PreviewCodes/CardsPreviewCodes.js";
 
 const ticketCardPreview = ref(true);
 const ticketCardCode = ref(false);
@@ -71,8 +94,6 @@ const randomCardPreview8 = ref(true);
 const randomCardCode8 = ref(false);
 const randomCardPreview9 = ref(true);
 const randomCardCode9 = ref(false);
-const randomCardPreview10 = ref(true);
-const randomCardCode10 = ref(false);
 const randomCardPreview11 = ref(true);
 const randomCardCode11 = ref(false);
 const randomCardPreview12 = ref(true);
@@ -103,7 +124,7 @@ const activeSection = useScrollSpy(sectionIds);
       />
       <ComponentWrapper>
         <TicketCard v-if="ticketCardPreview"/>
-        <Showcode v-if="ticketCardCode" code=""/>
+        <Showcode v-if="ticketCardCode" :code="TicketCardCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -120,7 +141,7 @@ const activeSection = useScrollSpy(sectionIds);
       />
       <ComponentWrapper>
         <BlogCard v-if="blogCardPreview"/>
-        <Showcode v-if="blogCardCode" code=""/>
+        <Showcode v-if="blogCardCode" :code="BlogCardCodes"/>
       </ComponentWrapper>
 
       <ContentHeader id="product_card" class="mt-8" text="Product Card"/>
@@ -135,7 +156,7 @@ const activeSection = useScrollSpy(sectionIds);
       />
       <ComponentWrapper>
         <ProductCard v-if="productCardPreview"/>
-        <Showcode v-if="productCardCode" code=""/>
+        <Showcode v-if="productCardCode" :code="ProductCardCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -152,7 +173,7 @@ const activeSection = useScrollSpy(sectionIds);
       />
       <ComponentWrapper>
         <MusicCard v-if="musicCardPreview"/>
-        <Showcode v-if="musicCardCode" code=""/>
+        <Showcode v-if="musicCardCode" :code="MusicCardCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -169,7 +190,7 @@ const activeSection = useScrollSpy(sectionIds);
       />
       <ComponentWrapper>
         <SimpleProfileCard v-if="simpleProfileCardPreview"/>
-        <Showcode v-if="simpleProfileCardCode" code=""/>
+        <Showcode v-if="simpleProfileCardCode" :code="SimpleProfileCardCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -186,7 +207,7 @@ const activeSection = useScrollSpy(sectionIds);
       />
       <ComponentWrapper>
         <ProfileCard v-if="profileCardPreview"/>
-        <Showcode v-if="profileCardCode" code=""/>
+        <Showcode v-if="profileCardCode" :code="ProfileCardCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -203,7 +224,7 @@ const activeSection = useScrollSpy(sectionIds);
       />
       <ComponentWrapper>
         <TeamCard v-if="teamCardPreview"/>
-        <Showcode v-if="teamCardCode" code=""/>
+        <Showcode v-if="teamCardCode" :code="TeamCardCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -220,7 +241,7 @@ const activeSection = useScrollSpy(sectionIds);
       />
       <ComponentWrapper>
         <PricingCard1 v-if="pricingCardPreview"/>
-        <Showcode v-if="pricingCardCode" code=""/>
+        <Showcode v-if="pricingCardCode" :code="PricingCard1Codes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -237,7 +258,7 @@ const activeSection = useScrollSpy(sectionIds);
       />
       <ComponentWrapper>
         <PricingCard2 v-if="pricingCard2Preview"/>
-        <Showcode v-if="pricingCard2Code" code=""/>
+        <Showcode v-if="pricingCard2Code" :code="PricingCard2Codes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -254,7 +275,7 @@ const activeSection = useScrollSpy(sectionIds);
       />
       <ComponentWrapper>
         <RandomCard1 v-if="randomCardPreview1"/>
-        <Showcode v-if="randomCardCode1" code=""/>
+        <Showcode v-if="randomCardCode1" :code="RandomCard1Codes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -271,7 +292,7 @@ const activeSection = useScrollSpy(sectionIds);
       />
       <ComponentWrapper>
         <RandomCard2 v-if="randomCardPreview2"/>
-        <Showcode v-if="randomCardCode2" code=""/>
+        <Showcode v-if="randomCardCode2" :code="RandomCard2Codes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -291,7 +312,7 @@ const activeSection = useScrollSpy(sectionIds);
         <RandomCard3 v-if="randomCardPreview3"/>
         <Showcode
             v-if="randomCardCode3"
-            code='import RandomCard3 from "./RandomCard3";'
+            :code='RandomCard3Codes'
         />
       </ComponentWrapper>
 
@@ -309,7 +330,7 @@ const activeSection = useScrollSpy(sectionIds);
       />
       <ComponentWrapper>
         <RandomCard4 v-if="randomCardPreview4"/>
-        <Showcode v-if="randomCardCode4" code=""/>
+        <Showcode v-if="randomCardCode4" :code="RandomCard4Codes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -328,7 +349,7 @@ const activeSection = useScrollSpy(sectionIds);
         <RandomCard5 v-if="randomCardPreview5"/>
         <Showcode
             v-if="randomCardCode5"
-            code='import RandomCard5 from "./RandomCard5";'
+            :code='RandomCard5Codes'
         />
       </ComponentWrapper>
 
@@ -348,7 +369,7 @@ const activeSection = useScrollSpy(sectionIds);
         <RandomCard6 v-if="randomCardPreview6"/>
         <Showcode
             v-if="randomCardCode6"
-            code='import RandomCard6 from "./RandomCard6";'
+            :code='RandomCard6Codes'
         />
       </ComponentWrapper>
 
@@ -364,13 +385,11 @@ const activeSection = useScrollSpy(sectionIds);
           @update:code="(val) => (randomCardCode7 = val)"
           @update:preview="(val) => (randomCardPreview7 = val)"
       />
-
-      />
       <ComponentWrapper>
         <RandomCard7 v-if="randomCardPreview7"/>
         <Showcode
             v-if="randomCardCode7"
-            code='import RandomCard7 from "./RandomCard7";'
+            :code="RandomCard7Codes"
         />
       </ComponentWrapper>
 
@@ -391,7 +410,7 @@ const activeSection = useScrollSpy(sectionIds);
         <RandomCard8 v-if="randomCardPreview8"/>
         <Showcode
             v-if="randomCardCode8"
-            code='import RandomCard8 from "./RandomCard8";'
+            :code='RandomCard8Codes'
         />
       </ComponentWrapper>
 
@@ -412,40 +431,12 @@ const activeSection = useScrollSpy(sectionIds);
         <RandomCard9 v-if="randomCardPreview9"/>
         <Showcode
             v-if="randomCardCode9"
-            code='import RandomCard9 from "./RandomCard9";'
-        />
-      </ComponentWrapper>
-
-      <ComponentWrapper>
-        <RandomCard9 v-if="randomCardPreview9"/>
-        <Showcode
-            v-if="randomCardCode9"
-            code='import RandomCard9 from "./RandomCard9";'
+            :code='RandomCard9Codes'
         />
       </ComponentWrapper>
 
       <div class="mt-8">
         <ContentHeader id="random_card_10" text="random card 10"/>
-      </div>
-      <ComponentDescription
-          text="A container for displaying content and actions on a single topic, often used for organizing information into sections."
-      />
-      <ToggleTab
-          :code="randomCardCode10"
-          :preview="randomCardPreview10"
-          @update:code="(val) => (randomCardCode10 = val)"
-          @update:preview="(val) => (randomCardPreview10 = val)"
-      />
-      <ComponentWrapper>
-        <RandomCard10 v-if="randomCardPreview10"/>
-        <Showcode
-            v-if="randomCardCode10"
-            code='import RandomCard10 from "./RandomCard10";'
-        />
-      </ComponentWrapper>
-
-      <div class="mt-8">
-        <ContentHeader id="random_card_11" text="random card 11"/>
       </div>
       <ComponentDescription
           text="A container for displaying content and actions on a single topic, often used for organizing information into sections."
@@ -461,12 +452,12 @@ const activeSection = useScrollSpy(sectionIds);
         <RandomCard11 v-if="randomCardPreview11"/>
         <Showcode
             v-if="randomCardCode11"
-            code='import RandomCard11 from "./RandomCard11";'
+            :code='RandomCard10Codes'
         />
       </ComponentWrapper>
 
       <div class="mt-8">
-        <ContentHeader id="random_card_12" text="random card 12"/>
+        <ContentHeader id="random_card_11" text="random card 11"/>
       </div>
       <ComponentDescription
           text="A container for displaying content and actions on a single topic, often used for organizing information into sections."
@@ -482,12 +473,12 @@ const activeSection = useScrollSpy(sectionIds);
         <RandomCard12 v-if="randomCardPreview12"/>
         <Showcode
             v-if="randomCardCode12"
-            code='import RandomCard12 from "./RandomCard12";'
+            :code="RandomCard11Codes"
         />
       </ComponentWrapper>
 
       <div class="mt-8">
-        <ContentHeader id="random_card_13" text="random card 13"/>
+        <ContentHeader id="random_card_12" text="random card 12"/>
       </div>
       <ComponentDescription
           text="A container for displaying content and actions on a single topic, often used for organizing information into sections."
@@ -503,12 +494,12 @@ const activeSection = useScrollSpy(sectionIds);
         <RandomCard13 v-if="randomCardPreview13"/>
         <Showcode
             v-if="randomCardCode13"
-            code='import RandomCard13 from "./RandomCard13";'
+            :code="RandomCard12Codes"
         />
       </ComponentWrapper>
 
       <div class="mt-8">
-        <ContentHeader id="random_card_14" text="random card 14"/>
+        <ContentHeader id="random_card_13" text="random card 13"/>
       </div>
       <ComponentDescription
           text="A container for displaying content and actions on a single topic, often used for organizing information into sections."
@@ -523,15 +514,15 @@ const activeSection = useScrollSpy(sectionIds);
         <RandomCard14 v-if="randomCardPreview14"/>
         <Showcode
             v-if="randomCardCode14"
-            code='import RandomCard14 from "./RandomCard14";'
+            :code="RandomCard13Codes"
         />
       </ComponentWrapper>
 
       <OverviewFooter
           backUrl="/components/comparison-card"
           backName="Comparison Card"
-          forwardName="animated cards"
-          forwardUrl="/components/animated-cards"
+          forwardName="drawer"
+          forwardUrl="/components/drawer"
       />
     </div>
 

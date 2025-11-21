@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from "vue";
-import {useScrollSpy} from "@/CustomHooks/useScrollSpy"; // your composable
+import {useScrollSpy} from "@/CustomHooks/useScrollSpy";
+
 import Showcode from "@/Shared/Component/ShowCode.vue";
 import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ContentHeader from "@/Shared/ContentHeader.vue";
@@ -10,17 +11,20 @@ import ComponentWrapper from "@/Shared/Component/ComponentWrapper.vue";
 import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import WarningMessageCard from "@/Shared/Component/WarningMessageCard.vue";
 
-// Drawer components
 import DrawerTop from "./DrawerTop.vue";
 import DrawerBottom from "./DrawerBottom.vue";
 import DrawerLeft from "./DrawerLeft.vue";
 import DrawerRight from "./DrawerRight.vue";
 import DrawerFullScreen from "./DrawerFullScreen.vue";
-
-// Navigation contents
 import {drawerContents} from "@/Utils/ContentsConfig/SurfacesContents.js";
+import {
+  DrawerBottomCodes,
+  DrawerLeftCodes,
+  DrawerRightCodes,
+  DrawerTopCodes,
+  FullScreenDrawerCodes
+} from "@/components/overview/SidebarContent/Content/Surfaces/PreviewCodes/DrawerPreviewCodes.js";
 
-// State
 const sectionIds = drawerContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
@@ -52,7 +56,6 @@ const fullScreenDrawerCode = ref(false);
         is given with animation; you can design it as per your requirement."
       />
 
-      <!-- Top Drawer -->
       <ContentHeader id="drawer_top" text="Drawer Top"/>
       <ComponentDescription
           text="This is a top drawer modal that slides down from the top to reveal content or actions."
@@ -66,14 +69,13 @@ const fullScreenDrawerCode = ref(false);
       <ComponentWrapper>
         <div
             v-if="topDrawerPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <DrawerTop/>
         </div>
-        <Showcode v-if="topDrawerCode" code=""/>
+        <Showcode v-if="topDrawerCode" :code="DrawerTopCodes"/>
       </ComponentWrapper>
 
-      <!-- Bottom Drawer -->
       <div class="mt-8">
         <ContentHeader id="drawer_bottom" text="Drawer Bottom"/>
       </div>
@@ -89,14 +91,13 @@ const fullScreenDrawerCode = ref(false);
       <ComponentWrapper>
         <div
             v-if="bottomDrawerPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <DrawerBottom/>
         </div>
-        <Showcode v-if="bottomDrawerCode" code=""/>
+        <Showcode v-if="bottomDrawerCode" :code="DrawerBottomCodes"/>
       </ComponentWrapper>
 
-      <!-- Left Drawer -->
       <div class="mt-8">
         <ContentHeader id="drawer_left" text="Drawer Left"/>
       </div>
@@ -112,14 +113,13 @@ const fullScreenDrawerCode = ref(false);
       <ComponentWrapper>
         <div
             v-if="leftDrawerPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <DrawerLeft/>
         </div>
-        <Showcode v-if="leftDrawerCode" code=""/>
+        <Showcode v-if="leftDrawerCode" :code="DrawerLeftCodes"/>
       </ComponentWrapper>
 
-      <!-- Right Drawer -->
       <div class="mt-8">
         <ContentHeader id="drawer_right" text="Drawer Right"/>
       </div>
@@ -135,14 +135,13 @@ const fullScreenDrawerCode = ref(false);
       <ComponentWrapper>
         <div
             v-if="rightDrawerPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <DrawerRight/>
         </div>
-        <Showcode v-if="rightDrawerCode" code=""/>
+        <Showcode v-if="rightDrawerCode" :code="DrawerRightCodes"/>
       </ComponentWrapper>
 
-      <!-- Full Screen Drawer -->
       <div class="mt-8">
         <ContentHeader id="full_screen_drawer" text="Full Screen Drawer"/>
       </div>
@@ -158,25 +157,25 @@ const fullScreenDrawerCode = ref(false);
       <ComponentWrapper>
         <div
             v-if="fullScreenDrawerPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <DrawerFullScreen/>
         </div>
-        <Showcode v-if="fullScreenDrawerCode" code=""/>
+        <Showcode v-if="fullScreenDrawerCode" :code="FullScreenDrawerCodes"/>
       </ComponentWrapper>
 
       <OverviewFooter
-          backUrl="/components/stepper"
-          backName="stepper"
-          forwardName="tabs"
-          forwardUrl="/components/tabs"
+          backUrl="/components/cards"
+          backName="cards"
+          forwardName="animated cards"
+          forwardUrl="/components/animated-cards"
       />
     </div>
 
     <ContentNavbar
         :contents="drawerContents"
         :activeSection="activeSection"
-        width="70%"
+        classs="w-[70%]"
     />
   </aside>
 </template>

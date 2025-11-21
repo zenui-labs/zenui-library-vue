@@ -1,8 +1,7 @@
 <script setup>
-import { ref } from "vue";
-import { useScrollSpy } from "@/CustomHooks/useScrollSpy";
+import {ref} from "vue";
+import {useScrollSpy} from "@/CustomHooks/useScrollSpy";
 
-// Components
 import ContentHeader from "@/Shared/ContentHeader.vue";
 import ShowCode from "@/Shared/Component/ShowCode.vue";
 import OverviewFooter from "@/Shared/OverviewFooter.vue";
@@ -11,7 +10,6 @@ import ToggleTab from "@/Shared/Component/ToggleTab.vue";
 import ComponentWrapper from "@/Shared/Component/ComponentWrapper.vue";
 import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 
-// Animated Cards
 import AnimatedCard1 from "./AnimatedCard1.vue";
 import AnimatedCard2 from "./AnimatedCard2.vue";
 import AnimatedCard3 from "./AnimatedCard3.vue";
@@ -24,13 +22,24 @@ import AnimatedCard9 from "./AnimatedCard9.vue";
 import AnimatedCard10 from "./AnimatedCard10.vue";
 import AnimatedCard11 from "./AnimatedCard11.vue";
 
-// Utils
-import { animatedCardsContents } from "@/Utils/ContentsConfig/SurfacesContents.js";
+import {animatedCardsContents} from "@/Utils/ContentsConfig/SurfacesContents.js";
+import {
+  AnimatedCard10Codes,
+  AnimatedCard11Codes,
+  AnimatedCard1Codes,
+  AnimatedCard2Codes,
+  AnimatedCard3Codes,
+  AnimatedCard4Codes,
+  AnimatedCard5Codes,
+  AnimatedCard6Codes,
+  AnimatedCard7Codes,
+  AnimatedCard8Codes,
+  AnimatedCard9Codes
+} from "@/components/overview/SidebarContent/Content/Surfaces/PreviewCodes/AnimatedCardPreviewCodes.js";
 
 const sectionIds = animatedCardsContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// States for each card
 const animatedCard1Preview = ref(true);
 const animatedCard1Code = ref(false);
 
@@ -67,335 +76,324 @@ const animatedCard11Code = ref(false);
 
 <template>
   <aside
-    class="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10"
+      class="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10"
   >
     <div class="w-full 425px:w-[80%]">
-      <!-- Card 1 -->
-      <ContentHeader id="hover-animated-card-1" text="hover animated card 1" />
+      <ContentHeader id="hover-animated-card-1" text="hover animated card 1"/>
       <ComponentDescription
-        text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
+          text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
       />
       <ToggleTab
-        :code="animatedCard1Code"
-        :preview="animatedCard1Preview"
-        @update:code="(val) => (animatedCard1Code = val)"
-        @update:preview="(val) => (animatedCard1Preview = val)"
+          :code="animatedCard1Code"
+          :preview="animatedCard1Preview"
+          @update:code="(val) => (animatedCard1Code = val)"
+          @update:preview="(val) => (animatedCard1Preview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="animatedCard1Preview"
-          class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            v-if="animatedCard1Preview"
+            class="p-8 pt-12 mb-4 flex items-center flex-col gap-5 justify-center"
         >
-          <AnimatedCard1 />
+          <AnimatedCard1/>
         </div>
         <ShowCode
-          v-if="animatedCard1Code"
-          code="// See AnimatedCard1.vue for code"
+            v-if="animatedCard1Code"
+            :code="AnimatedCard1Codes"
         />
       </ComponentWrapper>
 
-      <!-- Card 2 -->
       <div class="mt-8">
         <ContentHeader
-          id="hover-animated-card-2"
-          text="hover animated card 2"
+            id="hover-animated-card-2"
+            text="hover animated card 2"
         />
       </div>
       <ComponentDescription
-        text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
+          text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
       />
       <ToggleTab
-        :code="animatedCard2Code"
-        :preview="animatedCard2Preview"
-        @update:code="(val) => (animatedCard2Code = val)"
-        @update:preview="(val) => (animatedCard2Preview = val)"
+          :code="animatedCard2Code"
+          :preview="animatedCard2Preview"
+          @update:code="(val) => (animatedCard2Code = val)"
+          @update:preview="(val) => (animatedCard2Preview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="animatedCard2Preview"
-          class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            v-if="animatedCard2Preview"
+            class="p-8 pt-12 mb-4 flex items-center flex-col gap-5 justify-center"
         >
-          <AnimatedCard2 />
+          <AnimatedCard2/>
         </div>
         <ShowCode
-          v-if="animatedCard2Code"
-          code="// See AnimatedCard2.vue for code"
+            v-if="animatedCard2Code"
+            :code="AnimatedCard2Codes"
         />
       </ComponentWrapper>
 
-      <!-- Card 3 -->
       <div class="mt-8">
         <ContentHeader
-          id="hover-animated-card-3"
-          text="hover animated card 3"
+            id="hover-animated-card-3"
+            text="hover animated card 3"
         />
       </div>
       <ComponentDescription
-        text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
+          text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
       />
       <ToggleTab
-        :code="animatedCard3Code"
-        :preview="animatedCard3Preview"
-        @update:code="(val) => (animatedCard3Code = val)"
-        @update:preview="(val) => (animatedCard3Preview = val)"
+          :code="animatedCard3Code"
+          :preview="animatedCard3Preview"
+          @update:code="(val) => (animatedCard3Code = val)"
+          @update:preview="(val) => (animatedCard3Preview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="animatedCard3Preview"
-          class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            v-if="animatedCard3Preview"
+            class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
         >
-          <AnimatedCard3 />
+          <AnimatedCard3/>
         </div>
         <ShowCode
-          v-if="animatedCard3Code"
-          code="// See AnimatedCard3.vue for code"
+            v-if="animatedCard3Code"
+            :code="AnimatedCard3Codes"
         />
       </ComponentWrapper>
 
-      <!-- Card 4 -->
       <div class="mt-8">
         <ContentHeader
-          id="hover-animated-card-4"
-          text="hover animated card 4"
+            id="hover-animated-card-4"
+            text="hover animated card 4"
         />
       </div>
       <ComponentDescription
-        text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
+          text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
       />
       <ToggleTab
-        :code="animatedCard4Code"
-        :preview="animatedCard4Preview"
-        @update:code="(val) => (animatedCard4Code = val)"
-        @update:preview="(val) => (animatedCard4Preview = val)"
+          :code="animatedCard4Code"
+          :preview="animatedCard4Preview"
+          @update:code="(val) => (animatedCard4Code = val)"
+          @update:preview="(val) => (animatedCard4Preview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="animatedCard4Preview"
-          class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            v-if="animatedCard4Preview"
+            class="p-8 pt-12 mb-4 flex items-center flex-col gap-5 justify-center"
         >
-          <AnimatedCard4 />
+          <AnimatedCard4/>
         </div>
         <ShowCode
-          v-if="animatedCard4Code"
-          code="// See AnimatedCard4.vue for code"
+            v-if="animatedCard4Code"
+            :code="AnimatedCard4Codes"
         />
       </ComponentWrapper>
 
-      <!-- Card 5 -->
       <div class="mt-8">
         <ContentHeader
-          id="hover-animated-card-5"
-          text="hover animated card 5"
+            id="hover-animated-card-5"
+            text="hover animated card 5"
         />
       </div>
       <ComponentDescription
-        text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
+          text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
       />
       <ToggleTab
-        :code="animatedCard5Code"
-        :preview="animatedCard5Preview"
-        @update:code="(val) => (animatedCard5Code = val)"
-        @update:preview="(val) => (animatedCard5Preview = val)"
+          :code="animatedCard5Code"
+          :preview="animatedCard5Preview"
+          @update:code="(val) => (animatedCard5Code = val)"
+          @update:preview="(val) => (animatedCard5Preview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="animatedCard5Preview"
-          class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            v-if="animatedCard5Preview"
+            class="p-8 pt-12 mb-4 flex items-center flex-col gap-5 justify-center"
         >
-          <AnimatedCard5 />
+          <AnimatedCard5/>
         </div>
         <ShowCode
-          v-if="animatedCard5Code"
-          code="// See AnimatedCard5.vue for code"
+            v-if="animatedCard5Code"
+            :code="AnimatedCard5Codes"
         />
       </ComponentWrapper>
 
-      <!-- Card 6 -->
       <div class="mt-8">
         <ContentHeader
-          id="hover-animated-card-6"
-          text="hover animated card 6"
+            id="hover-animated-card-6"
+            text="hover animated card 6"
         />
       </div>
       <ComponentDescription
-        text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
+          text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
       />
       <ToggleTab
-        :code="animatedCard6Code"
-        :preview="animatedCard6Preview"
-        @update:code="(val) => (animatedCard6Code = val)"
-        @update:preview="(val) => (animatedCard6Preview = val)"
+          :code="animatedCard6Code"
+          :preview="animatedCard6Preview"
+          @update:code="(val) => (animatedCard6Code = val)"
+          @update:preview="(val) => (animatedCard6Preview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="animatedCard6Preview"
-          class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            v-if="animatedCard6Preview"
+            class="p-8 pt-12 mb-4 flex items-center flex-col gap-5 justify-center"
         >
-          <AnimatedCard6 />
+          <AnimatedCard6/>
         </div>
         <ShowCode
-          v-if="animatedCard6Code"
-          code="// See AnimatedCard6.vue for code"
+            v-if="animatedCard6Code"
+            :code="AnimatedCard6Codes"
         />
       </ComponentWrapper>
 
-      <!-- Card 7 -->
       <div class="mt-8">
         <ContentHeader
-          id="hover-animated-card-7"
-          text="hover animated card 7"
+            id="hover-animated-card-7"
+            text="hover animated card 7"
         />
       </div>
       <ComponentDescription
-        text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
+          text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
       />
       <ToggleTab
-        :code="animatedCard7Code"
-        :preview="animatedCard7Preview"
-        @update:code="(val) => (animatedCard7Code = val)"
-        @update:preview="(val) => (animatedCard7Preview = val)"
+          :code="animatedCard7Code"
+          :preview="animatedCard7Preview"
+          @update:code="(val) => (animatedCard7Code = val)"
+          @update:preview="(val) => (animatedCard7Preview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="animatedCard7Preview"
-          class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            v-if="animatedCard7Preview"
+            class="p-8 pt-12 mb-4 flex items-center flex-col gap-5 justify-center"
         >
-          <AnimatedCard7 />
+          <AnimatedCard7/>
         </div>
         <ShowCode
-          v-if="animatedCard7Code"
-          code="// See AnimatedCard7.vue for code"
+            v-if="animatedCard7Code"
+            :code="AnimatedCard7Codes"
         />
       </ComponentWrapper>
 
-      <!-- Card 8 -->
       <div class="mt-8">
         <ContentHeader
-          id="hover-animated-card-8"
-          text="hover animated card 8"
+            id="hover-animated-card-8"
+            text="hover animated card 8"
         />
       </div>
       <ComponentDescription
-        text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
+          text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
       />
       <ToggleTab
-        :code="animatedCard8Code"
-        :preview="animatedCard8Preview"
-        @update:code="(val) => (animatedCard8Code = val)"
-        @update:preview="(val) => (animatedCard8Preview = val)"
+          :code="animatedCard8Code"
+          :preview="animatedCard8Preview"
+          @update:code="(val) => (animatedCard8Code = val)"
+          @update:preview="(val) => (animatedCard8Preview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="animatedCard8Preview"
-          class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            v-if="animatedCard8Preview"
+            class="p-8 pt-12 mb-4 flex items-center flex-col gap-5 justify-center"
         >
-          <AnimatedCard8 />
+          <AnimatedCard8/>
         </div>
         <ShowCode
-          v-if="animatedCard8Code"
-          code="// See AnimatedCard8.vue for code"
+            v-if="animatedCard8Code"
+            :code="AnimatedCard8Codes"
         />
       </ComponentWrapper>
 
-      <!-- Card 9 -->
       <div class="mt-8">
         <ContentHeader
-          id="hover-animated-card-9"
-          text="hover animated card 9"
+            id="hover-animated-card-9"
+            text="hover animated card 9"
         />
       </div>
       <ComponentDescription
-        text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
+          text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
       />
       <ToggleTab
-        :code="animatedCard9Code"
-        :preview="animatedCard9Preview"
-        @update:code="(val) => (animatedCard9Code = val)"
-        @update:preview="(val) => (animatedCard9Preview = val)"
+          :code="animatedCard9Code"
+          :preview="animatedCard9Preview"
+          @update:code="(val) => (animatedCard9Code = val)"
+          @update:preview="(val) => (animatedCard9Preview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="animatedCard9Preview"
-          class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            v-if="animatedCard9Preview"
+            class="p-8 pt-12 mb-4 flex items-center flex-col gap-5 justify-center"
         >
-          <AnimatedCard9 />
+          <AnimatedCard9/>
         </div>
         <ShowCode
-          v-if="animatedCard9Code"
-          code="// See AnimatedCard9.vue for code"
+            v-if="animatedCard9Code"
+            :code="AnimatedCard9Codes"
         />
       </ComponentWrapper>
 
-      <!-- Card 10 -->
       <div class="mt-8">
         <ContentHeader
-          id="hover-animated-card-10"
-          text="hover animated card 10"
+            id="hover-animated-card-10"
+            text="hover animated card 10"
         />
       </div>
       <ComponentDescription
-        text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
+          text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
       />
       <ToggleTab
-        :code="animatedCard10Code"
-        :preview="animatedCard10Preview"
-        @update:code="(val) => (animatedCard10Code = val)"
-        @update:preview="(val) => (animatedCard10Preview = val)"
+          :code="animatedCard10Code"
+          :preview="animatedCard10Preview"
+          @update:code="(val) => (animatedCard10Code = val)"
+          @update:preview="(val) => (animatedCard10Preview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="animatedCard10Preview"
-          class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            v-if="animatedCard10Preview"
+            class="p-8 pt-12 mb-4 flex items-center flex-col gap-5 justify-center"
         >
-          <AnimatedCard10 />
+          <AnimatedCard10/>
         </div>
         <ShowCode
-          v-if="animatedCard10Code"
-          code="// See AnimatedCard10.vue for code"
+            v-if="animatedCard10Code"
+            :code="AnimatedCard10Codes"
         />
       </ComponentWrapper>
 
-      <!-- Card 11 -->
       <div class="mt-8">
         <ContentHeader
-          id="hover-animated-card-11"
-          text="hover animated card 11"
+            id="hover-animated-card-11"
+            text="hover animated card 11"
         />
       </div>
       <ComponentDescription
-        text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
+          text="This is a hover-animated card. Hover to reveal dynamic effects and animations."
       />
       <ToggleTab
-        :code="animatedCard11Code"
-        :preview="animatedCard11Preview"
-        @update:code="(val) => (animatedCard11Code = val)"
-        @update:preview="(val) => (animatedCard11Preview = val)"
+          :code="animatedCard11Code"
+          :preview="animatedCard11Preview"
+          @update:code="(val) => (animatedCard11Code = val)"
+          @update:preview="(val) => (animatedCard11Preview = val)"
       />
       <ComponentWrapper>
         <div
-          v-if="animatedCard11Preview"
-          class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            v-if="animatedCard11Preview"
+            class="p-8 pt-12 mb-4 flex items-center flex-col gap-5 justify-center"
         >
-          <AnimatedCard11 />
+          <AnimatedCard11/>
         </div>
         <ShowCode
-          v-if="animatedCard11Code"
-          code="// See AnimatedCard11.vue for code"
+            v-if="animatedCard11Code"
+            :code="AnimatedCard11Codes"
         />
       </ComponentWrapper>
 
       <OverviewFooter
-        back-url="/components/cards"
-        back-name="cards"
-        forward-name="image cropper"
-        forward-url="/components/image-cropper"
+          back-url="/components/drawer"
+          back-name="drawer"
+          forward-name="image cropper"
+          forward-url="/components/image-cropper"
       />
     </div>
 
     <ContentNavbar
-      :contents="animatedCardsContents"
-      :active-section="activeSection"
-      width="35%"
+        :contents="animatedCardsContents"
+        :active-section="activeSection"
+        width="35%"
     />
   </aside>
 </template>

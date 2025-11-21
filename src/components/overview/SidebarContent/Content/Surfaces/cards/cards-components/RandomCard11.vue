@@ -1,15 +1,15 @@
 <script setup>
-import { Icon } from "@iconify/vue";
+import {Icon} from "@iconify/vue";
 </script>
 
 <template>
   <div class="p-8 mb-4 flex items-center gap-5 justify-center">
     <div
-      class="bg-white dark:bg-slate-800 boxShadow rounded-md w-full 1024px:max-w-[80%]"
+        class="bg-white dark:bg-slate-800 boxShadow rounded-lg overflow-hidden w-full 1024px:max-w-[80%]"
     >
       <div class="p-5">
         <h1
-          class="text-[1.5rem] dark:text-[#abc2d3] font-semibold leading-[28px]"
+            class="text-[1.5rem] dark:text-[#abc2d3] font-semibold leading-[28px]"
         >
           Constructive and destructive waves
         </h1>
@@ -18,21 +18,21 @@ import { Icon } from "@iconify/vue";
           sint.
         </p>
         <span
-          class="text-[0.9rem] text-gray-400 dark:text-[#abc2d3] font-[300]"
+            class="text-[0.9rem] text-gray-400 dark:text-[#abc2d3] font-[300]"
         >
           2 hours 40 minutes
         </span>
       </div>
 
       <div
-        class="border-t dark:border-slate-600 border-gray-200 p-5 flex items-center justify-between w-full"
+          class="border-t hover:bg-gray-50 cursor-pointer dark:hover:bg-gray-900 dark:border-slate-600 border-gray-200 p-5 flex items-center justify-between w-full"
       >
         <button class="font-semibold dark:text-[#abc2d3] text-gray-700">
           View More
         </button>
         <Icon
-          icon="ri:arrow-right-s-line"
-          class="text-[1.4rem] dark:text-[#abc2d3] cursor-pointer"
+            icon="ri:arrow-right-s-line"
+            class="text-[1.4rem] dark:text-[#abc2d3] cursor-pointer"
         />
       </div>
     </div>

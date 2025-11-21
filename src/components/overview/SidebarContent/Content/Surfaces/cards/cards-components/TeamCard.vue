@@ -51,26 +51,24 @@ const members = [
         Simple Design
       </h2>
 
-      <div class="w-full flex items-center justify-between relative">
+      <div class="w-full flex items-center justify-between">
         <button
             class="py-1 px-4 dark:text-[#abc2d3] bg-[#3b9df828] text-[#2367a7] rounded"
         >
           Design
         </button>
 
-        <div class="flex items-center justify-end w-max relative">
+        <div class="flex items-center justify-center">
           <img
               v-for="(member, index) in members"
               :key="index"
               :src="member.img"
-              alt=""
-              class="w-[30px] h-[30px] relative object-cover rounded-full border border-secondary"
-              :style="{ left: `-${index * 8}%` }"
+              alt="members"
+              class="w-[30px] h-[30px] -ml-3 object-cover rounded-full border border-secondary"
           />
 
           <div
-              class="w-[30px] h-[30px] object-cover relative rounded-full border border-secondary bg-[#e5eaf2] text-[#424242] flex items-center justify-center"
-              :style="{ left: `-${members.length * 8}%` }"
+              class="w-[30px] h-[30px] object-cover -ml-3 rounded-full border border-secondary bg-[#e5eaf2] text-[#424242] flex items-center justify-center"
           >
             <p class="text-[0.7rem] cursor-pointer">18+</p>
           </div>
