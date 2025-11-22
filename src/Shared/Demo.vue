@@ -1,19 +1,29 @@
-<template>
-  <div
-      class="w-full md:w-[80%] lg:w-[50%] shadow-md h-[350px] transition-all duration-300 overflow-hidden rounded-lg dark:bg-slate-800 relative cursor-pointer group flex items-center justify-center flex-col gap-[10px]"
-  >
-    <div
-        class="w-[100px] relative z-0 h-[100px] before:w-full before:h-full before:absolute before:top-0 before:left-0 before:z-[-1] group-hover:before:scale-[20] before:transition-all before:duration-700 before:rounded-full before:bg-blue-200 flex items-center justify-center"
-    >
-      <img
-          src="https://i.ibb.co.com/0BZfPq6/darklogo.png"
-          alt="animated_card"
-          class="w-[80px]"
-      />
-    </div>
+<script setup>
+import {Icon} from "@iconify/vue";
+import galleryImages from "./Data.js";
+</script>
 
-    <h3 class="text-[1.5rem] dark:text-[#abc2d3] font-bold z-20">
-      ZenUI Library
-    </h3>
+<template>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+    <div
+        v-for="(img, index) in galleryImages"
+        :key="index"
+        class="relative"
+    >
+      <img :src="img.src" :alt="img.author" class="w-full h-full object-cover"/>
+
+      <div
+          class="w-full px-4 py-2 backdrop-blur-[2px] absolute bottom-0 left-0 flex justify-between"
+      >
+        <div>
+          <h3 class="text-[1rem] font-[600]">{{ img.title }}</h3>
+          <p class="text-[0.9rem]">{{ img.author }}</p>
+        </div>
+        <Icon
+            icon="rx:cross-1"
+            class="text-[1.4rem] cursor-pointer text-[#00000093]"
+        />
+      </div>
+    </div>
   </div>
 </template>

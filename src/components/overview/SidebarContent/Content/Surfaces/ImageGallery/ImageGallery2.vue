@@ -1,18 +1,18 @@
 <script setup>
-import { ref } from "vue";
+import {ref} from "vue";
 
-// Components
 import ContentHeader from "@/Shared/ContentHeader.vue";
 import ComponentDescription from "@/Shared/Component/ComponentDescription.vue";
 import ToggleTab from "@/Shared/Component/ToggleTab.vue";
 import ComponentWrapper from "@/Shared/Component/ComponentWrapper.vue";
 import Showcode from "@/Shared/Component/ShowCode.vue";
+import {
+  ImageGallery2Codes
+} from "@/components/overview/SidebarContent/Content/Surfaces/PreviewCodes/ImageGalleryPreviewCodes.js";
 
-// Reactive states
 const imageGallery2Preview = ref(true);
 const imageGallery2Code = ref(false);
 
-// Images with classes
 const images = [
   {
     src: "https://img.freepik.com/free-photo/cascade-boat-clean-china-natural-rural_1417-1356.jpg",
@@ -39,39 +39,38 @@ const images = [
 
 <template>
   <div class="mt-8">
-    <ContentHeader text="image Gallery 2" id="image_gallery_2" />
+    <ContentHeader text="image Gallery 2" id="image_gallery_2"/>
   </div>
 
   <ComponentDescription
-    text="This is an image gallery with a complex layout for detailed and organized viewing."
+      text="This is an image gallery with a complex layout for detailed and organized viewing."
   />
 
   <ToggleTab
-    :code="imageGallery2Code"
-    @update:code="(val) => (imageGallery2Code = val)"
-    :preview="imageGallery2Preview"
-    @update:preview="(val) => (imageGallery2Preview = val)"
+      :code="imageGallery2Code"
+      @update:code="(val) => (imageGallery2Code = val)"
+      :preview="imageGallery2Preview"
+      @update:preview="(val) => (imageGallery2Preview = val)"
   />
 
   <ComponentWrapper>
     <div
-      v-if="imageGallery2Preview"
-      class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+        v-if="imageGallery2Preview"
+        class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
     >
       <div class="grid grid-cols-4 gap-2">
         <img
-          v-for="(img, index) in images"
-          :key="index"
-          :src="img.src"
-          :class="img.class"
+            v-for="(img, index) in images"
+            :key="index"
+            :src="img.src"
+            :class="img.class"
         />
       </div>
     </div>
 
     <Showcode
-      v-if="imageGallery2Code"
-      code="
-"
+        v-if="imageGallery2Code"
+        :code="ImageGallery2Codes"
     />
   </ComponentWrapper>
 </template>
