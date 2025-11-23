@@ -1,4 +1,7 @@
 <script setup>
+import {ref} from "vue";
+import {Icon} from "@iconify/vue";
+
 import ContentHeader from "@/Shared/ContentHeader.vue";
 import ComponentDescription from "@/Shared/Component/ComponentDescription.vue";
 import ToggleTab from "@/Shared/Component/ToggleTab.vue";
@@ -8,13 +11,16 @@ import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import {paginationContents} from "@/Utils/ContentsConfig/NavigationContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
-import {ref} from "vue";
-import {Icon} from "@iconify/vue";
+import {
+  AnimatedPaginationCodes,
+  PaginationWithButtonCodes,
+  RoundedButtonPaginationCodes,
+  SmartPaginationCodes
+} from "@/components/overview/SidebarContent/Content/Navigation/PreviewCodes/PaginationPreviewCodes.js";
 
 const sectionIds = paginationContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// states start
 const animatedPaginationPreview = ref(true);
 const animatedPaginationCode = ref(false);
 
@@ -26,9 +32,7 @@ const roundedButtonPaginationCode = ref(false);
 
 const smartPaginationPreview = ref(true);
 const smartPaginationCode = ref(false);
-// states end
 
-// pagination logic
 const currentPage = ref(1);
 const totalPages = 5;
 
@@ -48,7 +52,6 @@ const handlePageClick = (pageNumber) => {
   currentPage.value = pageNumber;
 };
 
-// pagination 4 logic
 const currentPagePagination4 = ref(1);
 const FourPaginationTotalPages = 50;
 
@@ -123,7 +126,7 @@ const handlePageClick4 = (pageNumber) => {
             </button>
           </div>
         </div>
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="AnimatedPaginationCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -181,7 +184,7 @@ const handlePageClick4 = (pageNumber) => {
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="PaginationWithButtonCodes"
         />
       </ComponentWrapper>
 
@@ -246,7 +249,7 @@ const handlePageClick4 = (pageNumber) => {
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="RoundedButtonPaginationCodes"
         />
       </ComponentWrapper>
 
@@ -281,7 +284,6 @@ const handlePageClick4 = (pageNumber) => {
               <Icon icon="fa:chevron-left"/>
             </button>
 
-            <!-- First page button -->
             <button
                 @click="handlePageClick4(1)"
                 :class="`mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] rounded ${
@@ -293,14 +295,12 @@ const handlePageClick4 = (pageNumber) => {
               1
             </button>
 
-            <!-- Show dots if not close to beginning -->
             <span
                 v-if="currentPagePagination4 > 3"
                 class="mx-1 px-2 dark:text-[#abc2d3] text-gray-500"
             >...</span
             >
 
-            <!-- Show current page and surrounding pages -->
             <template v-for="i in FourPaginationTotalPages" :key="i">
               <button
                   v-if="
@@ -320,14 +320,12 @@ const handlePageClick4 = (pageNumber) => {
               </button>
             </template>
 
-            <!-- Show dots if not close to end -->
             <span
                 v-if="currentPagePagination4 < FourPaginationTotalPages - 2"
                 class="mx-1 px-2 dark:text-[#abc2d3] text-gray-500"
             >...</span
             >
 
-            <!-- Last page button -->
             <button
                 @click="handlePageClick4(FourPaginationTotalPages)"
                 :class="`mx-1 px-3 py-1 text-[0.9rem] 640px:text-[1rem] rounded ${
@@ -350,13 +348,13 @@ const handlePageClick4 = (pageNumber) => {
         </div>
         <ShowCode
             v-else
-            code=""
+            :code="SmartPaginationCodes"
         />
       </ComponentWrapper>
 
       <OverviewFooter
-          backName="all components"
-          backUrl="/components/all-components"
+          backName="image gallery"
+          backUrl="/components/image-gallery"
           forwardName="Progress Bar"
           forwardUrl="/components/progress-bar"
       />
@@ -368,60 +366,3 @@ const handlePageClick4 = (pageNumber) => {
     />
   </aside>
 </template>
-
-<!-- // preview  -->
-
-<!-- <template>
-  <div class="flex items-center flex-wrap justify-center mt-8 space-x-1 sm:space-x-2">
-    <button
-      @click="handlePrevious"
-      :disabled="currentPage === 1"
-      class="mx-1 px-3.5 py-3.5 rounded-full bg-white text-blue-600 hover:bg-blue-100 transition-all duration-300 dark:bg-slate-700 dark:disabled:bg-slate-800 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-    >
-      <Icon icon="fa:chevron-left" />
-    </button>
-    <button
-      v-for="i in totalPages"
-      :key="i"
-      @click="handlePageClick(i)"
-      :class="`mx-1 px-4 py-2 text-[0.9rem] sm:text-[1rem] rounded-full transform transition-all duration-300 ${
-        currentPage === i
-          ? 'bg-primary text-white scale-110 shadow-md'
-          : 'bg-transparent text-blue-600 hover:bg-blue-100'
-      }`"
-    >
-      {{ i }}
-    </button>
-    <button
-      @click="handleNext"
-      :disabled="currentPage === totalPages"
-      class="mx-1 px-3.5 py-3.5 rounded-full bg-white text-blue-600 hover:bg-blue-100 transition-all duration-300 dark:bg-slate-700 dark:disabled:bg-slate-800 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-    >
-      <Icon icon="fa:chevron-right" />
-    </button>
-  </div>
-</template>
-
-<script setup>
-import { ref } from 'vue';
-import { Icon } from '@iconify/vue';
-
-const currentPage = ref(1);
-const totalPages = 5;
-
-const handlePrevious = () => {
-  if (currentPage.value > 1) {
-    currentPage.value = currentPage.value - 1;
-  }
-};
-
-const handleNext = () => {
-  if (currentPage.value < totalPages) {
-    currentPage.value = currentPage.value + 1;
-  }
-};
-
-const handlePageClick = (pageNumber) => {
-  currentPage.value = pageNumber;
-};
-</script> -->

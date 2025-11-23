@@ -1,4 +1,7 @@
 <script setup>
+import {ref} from "vue";
+import {Icon} from "@iconify/vue";
+
 import ContentHeader from "@/Shared/ContentHeader.vue";
 import ComponentDescription from "@/Shared/Component/ComponentDescription.vue";
 import ToggleTab from "@/Shared/Component/ToggleTab.vue";
@@ -8,13 +11,17 @@ import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import {chipContents} from "@/Utils/ContentsConfig/NavigationContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
-import {ref} from "vue";
-import {Icon} from "@iconify/vue";
+import {
+  AvatarChipCodes,
+  IconChipCodes,
+  PrimaryChipCodes,
+  VariantsChipCodes,
+  VariantsChipWithIconCodes
+} from "@/components/overview/SidebarContent/Content/Navigation/PreviewCodes/ChipPreviewCodes.js";
 
 const sectionIds = chipContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// states start
 const primaryChipPreview = ref(true);
 const primaryChipCode = ref(false);
 
@@ -29,7 +36,6 @@ const avatarChipCode = ref(false);
 
 const variantChipPreview = ref(true);
 const variantChipCode = ref(false);
-// states end
 </script>
 
 <template>
@@ -75,7 +81,7 @@ const variantChipCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="PrimaryChipCodes"
         />
       </ComponentWrapper>
 
@@ -117,7 +123,7 @@ const variantChipCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="VariantsChipCodes"
         />
       </ComponentWrapper>
 
@@ -180,7 +186,7 @@ const variantChipCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="IconChipCodes"
         />
       </ComponentWrapper>
 
@@ -239,7 +245,7 @@ const variantChipCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="AvatarChipCodes"
         />
       </ComponentWrapper>
 
@@ -293,7 +299,7 @@ const variantChipCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="VariantsChipWithIconCodes"
         />
       </ComponentWrapper>
 

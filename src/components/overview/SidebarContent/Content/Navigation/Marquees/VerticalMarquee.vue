@@ -12,7 +12,7 @@ const doubledComponents = computed(() =>
     <div
         class="slider-container h-80 w-full relative overflow-hidden [mask-image:_linear-gradient(to_bottom,transparent_0,_black_60px,_black_calc(100%-60px),transparent_100%)]"
     >
-      <div class="allComponentSliderUp flex flex-col items-center gap-5">
+      <div class="verticalMarqueeUp flex flex-col items-center gap-5">
         <a
             v-for="(item, index) in doubledComponents"
             :key="index"
@@ -27,7 +27,7 @@ const doubledComponents = computed(() =>
     <div
         class="slider-container h-80 w-full relative overflow-hidden [mask-image:_linear-gradient(to_bottom,transparent_0,_black_60px,_black_calc(100%-60px),transparent_100%)]"
     >
-      <div class="allComponentSliderDown flex flex-col items-center gap-5">
+      <div class="verticalMarqueeDown flex flex-col items-center gap-5">
         <a
             v-for="(item, index) in doubledComponents"
             :key="index"
@@ -60,16 +60,16 @@ const doubledComponents = computed(() =>
   }
 }
 
-.allComponentSliderUp {
+.verticalMarqueeUp {
   animation: scrollUp 45s linear infinite;
 }
 
-.allComponentSliderDown {
+.verticalMarqueeDown {
   animation: scrollDown 45s linear infinite;
 }
 
-.slider-container:hover .allComponentSliderUp,
-.slider-container:hover .allComponentSliderDown {
+.slider-container:hover .verticalMarqueeUp,
+.slider-container:hover .verticalMarqueeDown {
   animation-play-state: paused;
 }
 </style>

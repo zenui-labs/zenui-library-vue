@@ -9,51 +9,48 @@ import OverviewFooter from '@/Shared/OverviewFooter.vue';
 import ContentNavbar from '@/Shared/Component/ContentNavbar.vue';
 import {tabsContents} from '@/Utils/ContentsConfig/NavigationContents.js';
 import {useScrollSpy} from '@/CustomHooks/useScrollSpy.js';
+import {
+  AnimatedTabCodes,
+  BottomBorderTabCodes,
+  BoxButtonTabCodes,
+  FullBorderTabCodes,
+  SquareBorderTabCodes,
+  ToggleButtonTabCodes,
+  TopBorderTabCodes
+} from "@/components/overview/SidebarContent/Content/Navigation/PreviewCodes/TabsPreviewCodes.js";
 
 const sectionIds = tabsContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// normal button
 const fullBorderTabPreview = ref(true);
 const fullBorderTabCode = ref(false);
 
-// background animated button
 const bottomBorderPreview = ref(true);
 const bottomBorderCode = ref(false);
 
-// top border button
 const topBorderButtonPreview = ref(true);
 const topBorderButtonCode = ref(false);
 
-// rounded border button
 const roundedBorderButtonPreview = ref(true);
 const roudnedBorderButtonCode = ref(false);
 
-// box button
 const boxButtonPreview = ref(true);
 const boxButtonCode = ref(false);
 
-// animated button
 const animatedTabPreview = ref(true);
 const animatedTabCode = ref(false);
 
-// toggle button
 const toggleButtonPreview = ref(true);
 const toggleButtonCode = ref(false);
 
-// state for full border tab
 const isActive = ref(1);
 
-// bottom border tab
 const bottomBorderActive = ref(1);
 
-// top border tab
 const topBorderButtonActive = ref(1);
 
-// rounded border tab
 const roundedBorderButtonAcitve = ref(1);
 
-// box tab
 const boxButtonActive = ref(1);
 </script>
 
@@ -77,7 +74,7 @@ const boxButtonActive = ref(1);
       <ComponentWrapper>
         <div
             v-if="animatedTabPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <ul class="flex items-center dark:bg-slate-800 bg-[#36af7b]/10 rounded-full p-1 relative">
             <div
@@ -128,7 +125,7 @@ const boxButtonActive = ref(1);
           </ul>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="AnimatedTabCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -152,7 +149,7 @@ const boxButtonActive = ref(1);
       <ComponentWrapper>
         <div
             v-if="fullBorderTabPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <ul class="flex items-center flex-wrap gap-5">
             <li
@@ -185,7 +182,7 @@ const boxButtonActive = ref(1);
           </ul>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="FullBorderTabCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -209,7 +206,7 @@ const boxButtonActive = ref(1);
       <ComponentWrapper>
         <div
             v-if="bottomBorderPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <ul class="flex flex-wrap items-center gap-5">
             <li
@@ -242,7 +239,7 @@ const boxButtonActive = ref(1);
           </ul>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="BottomBorderTabCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -266,7 +263,7 @@ const boxButtonActive = ref(1);
       <ComponentWrapper>
         <div
             v-if="topBorderButtonPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <ul class="flex flex-wrap items-center">
             <li
@@ -308,13 +305,13 @@ const boxButtonActive = ref(1);
           </ul>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="TopBorderTabCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
         <ContentHeader
-            id="Squre_border_navigation"
-            text="Squre border navigation tab"
+            id="Square_border_navigation"
+            text="Square border navigation tab"
         />
       </div>
 
@@ -332,7 +329,7 @@ const boxButtonActive = ref(1);
       <ComponentWrapper>
         <div
             v-if="roundedBorderButtonPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <ul class="flex flex-wrap items-center">
             <li
@@ -382,7 +379,7 @@ const boxButtonActive = ref(1);
           </ul>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="SquareBorderTabCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -403,7 +400,7 @@ const boxButtonActive = ref(1);
       <ComponentWrapper>
         <div
             v-if="boxButtonPreview"
-            class="p-4 640px:p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-4 640px:p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <ul class="flex flex-wrap items-center dark:bg-slate-800 bg-[#36af7b]/10 rounded-full p-1">
             <li
@@ -445,7 +442,7 @@ const boxButtonActive = ref(1);
           </ul>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="BoxButtonTabCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -471,7 +468,7 @@ const boxButtonActive = ref(1);
           <div class="flex flex-wrap flex-col items-center justify-center">
             <div class="z-10 w-full">
               <div class="mx-auto mt-6 flex items-center justify-center gap-4">
-                <label htmlFor="transactions">
+                <label for="transactions">
                   <div
                       class="flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 dark:bg-slate-800 dark:text-[#abc2d3] border-transparent bg-gray-200 py-2.5 pl-3 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-[#36af7b] has-[:checked]:text-white text-gray-500"
                   >
@@ -520,7 +517,7 @@ const boxButtonActive = ref(1);
                     </div>
                   </div>
                 </label>
-                <label htmlFor="updates">
+                <label for="updates">
                   <div
                       class="flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 dark:bg-slate-800 dark:text-[#abc2d3] border-transparent bg-gray-200 py-2 pl-3.5 pt-3.5 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-[#36af7b] has-[:checked]:text-white text-gray-500"
                   >
@@ -573,7 +570,7 @@ const boxButtonActive = ref(1);
                     </div>
                   </div>
                 </label>
-                <label htmlFor="promotions">
+                <label for="promotions">
                   <div
                       class="flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 border-transparent dark:bg-slate-800 dark:text-[#abc2d3] bg-gray-200 py-2.5 pl-3 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-[#36af7b] has-[:checked]:text-white text-gray-500"
                   >
@@ -627,17 +624,17 @@ const boxButtonActive = ref(1);
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="ToggleButtonTabCodes"/>
       </ComponentWrapper>
 
       <OverviewFooter
           backUrl="/components/modal"
           backName="modal"
-          forwardName="skeleton"
-          forwardUrl="/components/skeleton"
+          forwardName="context menu"
+          forwardUrl="/components/context-menu"
       />
     </div>
 
-    <ContentNavbar :activeSection="activeSection" :contents="tabsContents"/>
+    <ContentNavbar classs="w-[35%]" :activeSection="activeSection" :contents="tabsContents"/>
   </aside>
 </template>

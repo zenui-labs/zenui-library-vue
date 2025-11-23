@@ -17,8 +17,8 @@ export const paginationContents = [
     },
     {
         id: 4,
-        title: 'smarter pagination component',
-        href: '#smarter_pagination_component',
+        title: 'smart pagination',
+        href: '#smart_pagination',
     },
 ];
 

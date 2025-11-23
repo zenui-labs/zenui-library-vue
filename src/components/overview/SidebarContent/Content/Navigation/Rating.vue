@@ -1,4 +1,7 @@
 <script setup>
+import {ref} from "vue";
+import {Icon} from "@iconify/vue";
+
 import ContentHeader from "@/Shared/ContentHeader.vue";
 import ComponentDescription from "@/Shared/Component/ComponentDescription.vue";
 import ToggleTab from "@/Shared/Component/ToggleTab.vue";
@@ -8,13 +11,17 @@ import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import {ratingContents} from "@/Utils/ContentsConfig/NavigationContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
-import {ref} from "vue";
-import {Icon} from "@iconify/vue";
+import {
+  ClickNavigationCodes,
+  HoverNavigationCodes,
+  RateCountCodes,
+  RatingFeedbackModalCodes,
+  RatingModalCodes
+} from "@/components/overview/SidebarContent/Content/Navigation/PreviewCodes/RatingPreviewCodes.js";
 
 const sectionIds = ratingContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// states start
 const clickNavigationPreview = ref(true);
 const clickNavigationCode = ref(false);
 
@@ -29,7 +36,6 @@ const ratingFeedbackModalCode = ref(false);
 
 const rateCountPreview = ref(true);
 const rateCountCode = ref(false);
-// states end
 
 const rating = ref(0);
 const hover = ref(null);
@@ -75,7 +81,7 @@ const hover = ref(null);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="ClickNavigationCodes"
         />
       </ComponentWrapper>
 
@@ -118,7 +124,7 @@ const hover = ref(null);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="HoverNavigationCodes"
         />
       </ComponentWrapper>
 
@@ -183,7 +189,7 @@ const hover = ref(null);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="RatingModalCodes"
         />
       </ComponentWrapper>
 
@@ -282,7 +288,7 @@ const hover = ref(null);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="RatingFeedbackModalCodes"
         />
       </ComponentWrapper>
 
@@ -346,7 +352,7 @@ const hover = ref(null);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="RateCountCodes"
         />
       </ComponentWrapper>
 

@@ -1,4 +1,6 @@
 <script setup>
+import {ref, watch} from "vue";
+
 import ContentHeader from "@/Shared/ContentHeader.vue";
 import ComponentDescription from "@/Shared/Component/ComponentDescription.vue";
 import ToggleTab from "@/Shared/Component/ToggleTab.vue";
@@ -8,12 +10,16 @@ import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import {progressBarContents} from "@/Utils/ContentsConfig/NavigationContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
-import {ref, watch} from "vue";
+import {
+  BasicProgressBarCodes,
+  CircleProgressBarCodes,
+  ProgressBarWithLabelCodes,
+  ProgressBarWithTooltipCodes
+} from "@/components/overview/SidebarContent/Content/Navigation/PreviewCodes/ProgressBarPreviewCodes.js";
 
 const sectionIds = progressBarContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// states start
 const basicProgressBarPreview = ref(true);
 const basicProgressBarCode = ref(false);
 
@@ -25,9 +31,7 @@ const countingCode = ref(false);
 
 const circlePreview = ref(true);
 const circleCode = ref(false);
-// states end
 
-// progress logic
 const progress = ref(0);
 const isLoading = ref(false);
 let interval = null;
@@ -99,7 +103,7 @@ const handleStartLoading = () => {
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="BasicProgressBarCodes"
         />
       </ComponentWrapper>
 
@@ -149,7 +153,7 @@ const handleStartLoading = () => {
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="ProgressBarWithTooltipCodes"
         />
       </ComponentWrapper>
 
@@ -198,7 +202,7 @@ const handleStartLoading = () => {
         </div>
         <ShowCode
             v-else
-            code=''
+            :code='ProgressBarWithLabelCodes'
         />
       </ComponentWrapper>
 
@@ -284,7 +288,7 @@ const handleStartLoading = () => {
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="CircleProgressBarCodes"
         />
       </ComponentWrapper>
 

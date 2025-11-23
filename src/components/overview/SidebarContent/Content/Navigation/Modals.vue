@@ -11,35 +11,36 @@ import WarningMessageCard from '@/Shared/Component/WarningMessageCard.vue';
 import {modalContents} from '@/Utils/ContentsConfig/NavigationContents.js';
 import {useScrollSpy} from '@/CustomHooks/useScrollSpy.js';
 import {Icon} from '@iconify/vue';
+import {
+  AlertModalCodes,
+  DeleteModalCodes,
+  FormModalCodes,
+  InfoModalCodes,
+  PermissionModalCodes,
+  SuccessModalCodes
+} from "@/components/overview/SidebarContent/Content/Navigation/PreviewCodes/ModalPreviewCodes.js";
 
 const sectionIds = modalContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// alertModal
 const alertModalPreview = ref(true);
 const alertModalCode = ref(false);
 
-// successModal
 const successModalPreview = ref(true);
 const successModalCode = ref(false);
 
-// info modal
 const infoModalPreview = ref(true);
 const infoModalCode = ref(false);
 
-// permission modal
 const permissionModalPreview = ref(true);
 const permissionModalCode = ref(false);
 
-// form modal
 const formModalPreview = ref(true);
 const formModalCode = ref(false);
 
-// delete modal
 const deleteModalPreview = ref(true);
 const deleteModalCode = ref(false);
 
-// handling all of modal actions
 const modal1Open = ref(false);
 const modal2Open = ref(false);
 const modal3Open = ref(false);
@@ -78,7 +79,7 @@ const checkDeleteModalChange = (event) => {
       />
 
       <ComponentWrapper>
-        <div v-if="alertModalPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
+        <div v-if="alertModalPreview" class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center">
           <div class="w-full flex items-center justify-center">
             <button
                 class="px-4 py-2 bg-[#36af7b] text-secondary rounded-lg"
@@ -132,7 +133,7 @@ const checkDeleteModalChange = (event) => {
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="AlertModalCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -151,7 +152,7 @@ const checkDeleteModalChange = (event) => {
       />
 
       <ComponentWrapper>
-        <div v-if="successModalPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
+        <div v-if="successModalPreview" class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center">
           <div class="w-full flex items-center justify-center">
             <button
                 class="px-4 py-2 bg-[#36af7b] text-secondary rounded-lg"
@@ -198,7 +199,7 @@ const checkDeleteModalChange = (event) => {
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="SuccessModalCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -217,7 +218,7 @@ const checkDeleteModalChange = (event) => {
       />
 
       <ComponentWrapper>
-        <div v-if="infoModalPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
+        <div v-if="infoModalPreview" class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center">
           <div class="w-full flex items-center justify-center">
             <button
                 class="px-4 py-2 bg-[#36af7b] text-secondary rounded-lg"
@@ -273,7 +274,7 @@ const checkDeleteModalChange = (event) => {
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="InfoModalCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -292,7 +293,7 @@ const checkDeleteModalChange = (event) => {
       />
 
       <ComponentWrapper>
-        <div v-if="permissionModalPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
+        <div v-if="permissionModalPreview" class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center">
           <div class="w-full flex items-center justify-center">
             <button
                 class="px-4 py-2 bg-[#36af7b] text-secondary rounded-lg"
@@ -362,7 +363,7 @@ const checkDeleteModalChange = (event) => {
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="PermissionModalCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -381,7 +382,7 @@ const checkDeleteModalChange = (event) => {
       />
 
       <ComponentWrapper>
-        <div v-if="formModalPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
+        <div v-if="formModalPreview" class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center">
           <div class="w-full flex items-center justify-center">
             <button
                 class="px-4 py-2 bg-[#36af7b] text-secondary rounded-lg"
@@ -484,7 +485,7 @@ const checkDeleteModalChange = (event) => {
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="FormModalCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -503,7 +504,7 @@ const checkDeleteModalChange = (event) => {
       />
 
       <ComponentWrapper>
-        <div v-if="deleteModalPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
+        <div v-if="deleteModalPreview" class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center">
           <div class="w-full flex items-center justify-center">
             <button
                 class="px-4 py-2 bg-[#36af7b] text-secondary rounded-lg"
@@ -576,7 +577,7 @@ const checkDeleteModalChange = (event) => {
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="DeleteModalCodes"/>
       </ComponentWrapper>
 
       <OverviewFooter
@@ -587,6 +588,6 @@ const checkDeleteModalChange = (event) => {
       />
     </div>
 
-    <ContentNavbar :contents="modalContents" :activeSection="activeSection" width="70%"/>
+    <ContentNavbar classs="w-[70%]" :contents="modalContents" :activeSection="activeSection" width="70%"/>
   </aside>
 </template>

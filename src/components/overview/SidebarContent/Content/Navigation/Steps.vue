@@ -9,11 +9,15 @@ import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import {stepsContents} from "@/Utils/ContentsConfig/NavigationContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
 import {ref} from "vue";
+import {
+  NoTextStepCodes,
+  NumberStepCodes,
+  VerticalStepCodes
+} from "@/components/overview/SidebarContent/Content/Navigation/PreviewCodes/StepperPreviewCodes.js";
 
 const sectionIds = stepsContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// states start
 const numberStepPreview = ref(true);
 const numberStepCode = ref(false);
 
@@ -22,7 +26,6 @@ const noTextStepCode = ref(false);
 
 const varticalStepPreview = ref(true);
 const varticalStepCode = ref(false);
-// states end
 </script>
 
 <template>
@@ -46,7 +49,7 @@ const varticalStepCode = ref(false);
       <ComponentWrapper>
         <div
             v-if="numberStepPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <div
               class="flex flex-wrap items-center gap-[15px] justify-center w-full"
@@ -79,7 +82,7 @@ const varticalStepCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="NumberStepCodes"
         />
       </ComponentWrapper>
 
@@ -101,7 +104,7 @@ const varticalStepCode = ref(false);
       <ComponentWrapper>
         <div
             v-if="noTextStepPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <div class="flex items-center gap-[15px] justify-center w-full">
             <div class="flex items-center w-[35%]">
@@ -129,7 +132,7 @@ const varticalStepCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="NoTextStepCodes"
         />
       </ComponentWrapper>
 
@@ -151,7 +154,7 @@ const varticalStepCode = ref(false);
       <ComponentWrapper>
         <div
             v-if="varticalStepPreview"
-            class="p-8 mb-4 flex items-center gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center gap-5 justify-center"
         >
           <div
               class="flex flex-col items-center gap-[10px] justify-center w-full"
@@ -237,7 +240,7 @@ const varticalStepCode = ref(false);
         </div>
         <ShowCode
             v-else
-            code=''
+            :code="VerticalStepCodes"
         />
       </ComponentWrapper>
 

@@ -11,8 +11,15 @@ import ShowCode from "@/Shared/Component/ShowCode.vue";
 import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import CircleTimer from "@/components/overview/SidebarContent/Content/Navigation/Timer/CircleTimer.vue";
+import {
+  TimerStyle1Codes,
+  TimerStyle2Codes,
+  TimerStyle3Codes,
+  TimerStyle4Codes,
+  TimerStyle5Codes,
+  TimerStyle6Codes
+} from "@/components/overview/SidebarContent/Content/Navigation/PreviewCodes/TimerPreviewCodes.js";
 
-// toggle actions
 const timerStyle1Preview = ref(true);
 const timerStyle1Code = ref(false);
 
@@ -139,7 +146,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-if="timerStyle1Code" code=''/>
+        <ShowCode v-if="timerStyle1Code" :code="TimerStyle1Codes"/>
       </ComponentWrapper>
 
       <div class='mt-8'>
@@ -191,7 +198,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-if="timerStyle2Code" code=''/>
+        <ShowCode v-if="timerStyle2Code" :code="TimerStyle2Codes"/>
       </ComponentWrapper>
 
       <div class='mt-8'>
@@ -248,7 +255,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-if="timerStyle3Code" code=''/>
+        <ShowCode v-if="timerStyle3Code" :code="TimerStyle3Codes"/>
       </ComponentWrapper>
 
       <div class='mt-8'>
@@ -310,7 +317,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-if="timerStyle4Code" code=''/>
+        <ShowCode v-if="timerStyle4Code" :code="TimerStyle4Codes"/>
       </ComponentWrapper>
 
       <div class='mt-8'>
@@ -355,7 +362,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-if="timerStyle5Code" code=''/>
+        <ShowCode v-if="timerStyle5Code" :code="TimerStyle5Codes"/>
       </ComponentWrapper>
 
       <div class='mt-8'>
@@ -385,7 +392,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-if="timerStyle6Code" code=''/>
+        <ShowCode v-if="timerStyle6Code" :code="TimerStyle6Codes"/>
       </ComponentWrapper>
 
       <OverviewFooter

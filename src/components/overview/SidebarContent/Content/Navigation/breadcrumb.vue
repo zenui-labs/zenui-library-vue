@@ -1,7 +1,6 @@
 <script setup>
 import {onMounted, onUnmounted, ref} from 'vue';
 
-// contents for scrollspy
 import {useScrollSpy} from '@/CustomHooks/useScrollSpy';
 import ContentHeader from "@/Shared/ContentHeader.vue";
 import ComponentDescription from "@/Shared/Component/ComponentDescription.vue";
@@ -12,23 +11,25 @@ import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import {Icon} from "@iconify/vue";
 import {breadcrumbContents} from "@/Utils/ContentsConfig/NavigationContents.js";
+import {
+  ClickableBreadcrumbCodes,
+  CustomizableBreadcrumbCodes,
+  DropdownBreadcrumbCodes,
+  NonClickableBreadcrumbCodes
+} from "@/components/overview/SidebarContent/Content/Navigation/PreviewCodes/BreadcrumbPreviewCodes.js";
 
 const sectionIds = breadcrumbContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// non clickable
 const nonClickablePreview = ref(true);
 const nonClickableCode = ref(false);
 
-// clickable
 const clickablePreview = ref(true);
 const clickableCode = ref(false);
 
-// dropdown breadcrumb
 const dropdownBreadcrumbPreview = ref(true);
 const dropdownBreadcrumbCode = ref(false);
 
-// customizable breadcrumb
 const customizableBreadcrumbPreview = ref(true);
 const customizableBreadcrumbCode = ref(false);
 
@@ -118,7 +119,7 @@ onUnmounted(() => {
       />
 
       <ComponentWrapper>
-        <div v-if="nonClickablePreview" class='p-8 mb-4 flex flex-wrap items-center gap-5 justify-center'>
+        <div v-if="nonClickablePreview" class='p-8 pt-12 mb-4 flex flex-wrap items-center gap-5 justify-center'>
           <ol class='flex items-center flex-wrap gap-[5px]'>
             <template v-for="(item, index) in nonClickableItems" :key="index">
               <li
@@ -137,7 +138,7 @@ onUnmounted(() => {
           </ol>
         </div>
 
-        <ShowCode v-if="nonClickableCode" code=''/>
+        <ShowCode v-if="nonClickableCode" :code="NonClickableBreadcrumbCodes"/>
       </ComponentWrapper>
 
       <div class='mt-8'>
@@ -159,7 +160,7 @@ onUnmounted(() => {
       />
 
       <ComponentWrapper>
-        <div v-if="clickablePreview" class='p-8 mb-4 flex flex-wrap items-center gap-5 justify-center'>
+        <div v-if="clickablePreview" class='p-8 pt-12 mb-4 flex flex-wrap items-center gap-5 justify-center'>
           <div class='flex items-center flex-wrap gap-[5px]'>
             <template v-for="(item, index) in nonClickableItems" :key="index">
               <a
@@ -179,7 +180,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-if="clickableCode" code=''/>
+        <ShowCode v-if="clickableCode" :code="ClickableBreadcrumbCodes"/>
       </ComponentWrapper>
 
       <div class='mt-8'>
@@ -204,7 +205,7 @@ onUnmounted(() => {
         <div
             v-if="dropdownBreadcrumbPreview"
             :class="[
-            'p-8 flex flex-wrap items-center gap-5 justify-center transition-all duration-300',
+            'p-8 pt-12 flex flex-wrap items-center gap-5 justify-center transition-all duration-300',
             dropdownOpen ? 'mb-[8rem]' : 'mb-4'
           ]"
         >
@@ -254,7 +255,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-if="dropdownBreadcrumbCode" code=''/>
+        <ShowCode v-if="dropdownBreadcrumbCode" :code="DropdownBreadcrumbCodes"/>
       </ComponentWrapper>
 
       <div class='mt-8'>
@@ -279,7 +280,7 @@ onUnmounted(() => {
         <div
             v-if="customizableBreadcrumbPreview"
             :class="[
-            'p-8 flex flex-wrap items-center gap-5 justify-center transition-all duration-300',
+            'p-8 pt-12 flex flex-wrap items-center gap-5 justify-center transition-all duration-300',
             dropdownOpen ? 'mb-[8rem]' : 'mb-4'
           ]"
         >
@@ -337,17 +338,17 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-if="customizableBreadcrumbCode" code=''/>
+        <ShowCode v-if="customizableBreadcrumbCode" :code="CustomizableBreadcrumbCodes"/>
       </ComponentWrapper>
 
       <OverviewFooter
-          backUrl='/components/chip'
-          backName='chip'
+          backUrl='/components/timer'
+          backName='timer'
           forwardName='rating'
           forwardUrl='/components/rating'
       />
     </div>
 
-    <ContentNavbar :activeSection="activeSection" :contents="breadcrumbContents"/>
+    <ContentNavbar classs="w-[50%]" :activeSection="activeSection" :contents="breadcrumbContents"/>
   </aside>
 </template>
