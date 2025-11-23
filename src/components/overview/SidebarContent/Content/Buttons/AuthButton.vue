@@ -13,6 +13,10 @@ import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 // contents for scrollspy
 import { authButtonContents } from "@/Utils/ContentsConfig/ButtonsContents";
 import { useScrollSpy } from "@/CustomHooks/useScrollSpy";
+import { googleLoginButtonPreviewCode } from "./PreviewCodes/GoogleLoginPreviewCode";
+import { appleLoginButtonPreviewCode } from "./PreviewCodes/AppleLoginPreviewCode";
+import { socialLoginBgButtonPreviewCode } from "./PreviewCodes/SocialLoginBgPreviewCode";
+import { socialLoginBorderButtonPreviewCode } from "./PreviewCodes/SocialLoginBorderPreviewCode";
 
 const sectionIds = authButtonContents.map(item => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
@@ -52,7 +56,7 @@ const socialBorderButtonCode = ref(false);
 
 <!-- Background Google Login Button -->
 <button
-  class="bg-primary text-white rounded-md py-1 pl-1 pr-4 flex items-center gap-[10px] text-[1rem] hover:bg-blue-500 transition-all duration-200">
+  class="bg-brandColor text-white rounded-md py-1 pl-1 pr-4 flex items-center gap-[10px] text-[1rem] hover:bg-brandColor/80 transition-all duration-200">
   <div class="py-2 px-2.5 rounded-l-md bg-white">
     <img src="https://i.ibb.co/dQMmB8h/download-4-removebg-preview-1.png" alt="google logo" class="w-[23px]"/>
   </div>
@@ -61,7 +65,7 @@ const socialBorderButtonCode = ref(false);
 
 <!-- Logo Circle Background Google Button -->
 <button
-  class="bg-primary text-white rounded-md py-[5px] pl-[5px] pr-4 flex items-center gap-[10px] text-[1rem] hover:bg-blue-500 transition-all duration-200">
+  class="bg-brandColor text-white rounded-md py-[5px] pl-[5px] pr-4 flex items-center gap-[10px] text-[1rem] hover:bg-brandColor/80 transition-all duration-200">
   <div class="p-2 rounded-full bg-white">
     <img src="https://i.ibb.co/dQMmB8h/download-4-removebg-preview-1.png" alt="google logo" class="w-[23px]"/>
   </div>
@@ -69,7 +73,7 @@ const socialBorderButtonCode = ref(false);
 </button>
 
       </div>
-      <ShowCode v-if="googleLoginButtonCode" code="...google buttons code..." />
+      <ShowCode v-if="googleLoginButtonCode" :code="googleLoginButtonPreviewCode" />
     </ComponentWrapper>
 
     <div class="mt-8">
@@ -99,7 +103,7 @@ const socialBorderButtonCode = ref(false);
 </button>
 
       </div>
-      <ShowCode v-if="appleLoginButtonCode" code="...apple buttons code..." />
+      <ShowCode v-if="appleLoginButtonCode" :code="appleLoginButtonPreviewCode"/>
     </ComponentWrapper>
 
     <div class="mt-8">
@@ -160,7 +164,7 @@ const socialBorderButtonCode = ref(false);
 </button>
 
       </div>
-      <ShowCode v-if="socialBgButtonCode" code="...social bg buttons code..." />
+      <ShowCode v-if="socialBgButtonCode" :code="socialLoginBgButtonPreviewCode"/>
     </ComponentWrapper>
 
     <div class="mt-8">
@@ -218,7 +222,7 @@ const socialBorderButtonCode = ref(false);
 </button>
 
       </div>
-      <ShowCode v-if="socialBorderButtonCode" code="...social border buttons code..." />
+      <ShowCode v-if="socialBorderButtonCode" :code="socialLoginBorderButtonPreviewCode"/>
     </ComponentWrapper>
 
     <OverviewFooter backUrl="/components/normal-button" backName="normal button" forwardUrl="/components/dropdown-button" forwardName="dropdown button"/>

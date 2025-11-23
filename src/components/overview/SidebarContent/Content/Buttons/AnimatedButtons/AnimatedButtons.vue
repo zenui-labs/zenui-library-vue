@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 
 import ShowCode from "@/Shared/Component/ShowCode.vue";
-import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ContentHeader from '@/Shared/ContentHeader.vue';
 import { animatedButtonContents } from '@/Utils/ContentsConfig/ButtonsContents';
 import { useScrollSpy } from '@/CustomHooks/useScrollSpy';
@@ -10,8 +9,18 @@ import { useScrollSpy } from '@/CustomHooks/useScrollSpy';
 import ComponentDescription from '@/Shared/Component/ComponentDescription.vue';
 import ComponentWrapper from '@/Shared/Component/ComponentWrapper.vue';
 import ToggleTab from '@/Shared/Component/ToggleTab.vue';
-import ContentNavbar from '@/Shared/Component/ContentNavbar.vue';
 import CelebrationButton from './CelebrationButton.vue';
+import { clickAnimationPreviewCode } from '../PreviewCodes/ClickAnimationPreviewCode';
+import { borderAnimationPreviewCode } from '../PreviewCodes/BorderAnimationPreviewCode';
+import { bgHoverAnimationPreviewCode } from '../PreviewCodes/BgHoverAnimationPreviewCode';
+import { bgSlideUpAnimationPreviewCode } from '../PreviewCodes/BgSlideUpAnimationPreviewCode';
+import { bgSlideAnimationPreviewCode } from '../PreviewCodes/BgSlideAnimationPreviewCode';
+import { bgBounceUpAnimationPreviewCode } from '../PreviewCodes/BgBounceUpAnimationPreviewCode';
+import { bottomBorderAnimationPreviewCode } from '../PreviewCodes/BorderBottomAnimationPreviewCode';
+import { hoverBgFillAnimationPreviewCode } from '../PreviewCodes/HoverBgFillAnimationPreviewCode';
+import { twoPartMergeAnimationPreviewCode } from '../PreviewCodes/TwoPartMergeAnimationPreviewCode';
+import { themeToggleAnimationPreviewCode } from '../PreviewCodes/ThemeToggleAnimationPreviewCode';
+import { celebrationButtonPreviewCode } from '../PreviewCodes/CelebrationButtonPreviewCode';
 
 const sectionIds = animatedButtonContents.map(item => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
@@ -66,7 +75,7 @@ const animationSpeed = 0.6;
 </script>
 
 <template>
-  <aside class="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
+  <aside class="flex items-start justify-between gap-6 w-full">
     <div>
       <ContentHeader text="click animation" id="click_animation" />
 
@@ -81,24 +90,16 @@ const animationSpeed = 0.6;
 
       <ComponentWrapper>
         <div v-if="clickAnimatedButtonPreview" class="p-8 mb-4 flex flex-wrap items-center gap-5 justify-center">
-          <button class="px-6 py-3 bg-primary border-none outline-none text-secondary text-[1rem] rounded active:scale-[0.9] transition-all duration-300">
+          <button class="px-6 py-3 bg-brandColor border-none outline-none text-secondary text-[1rem] rounded active:scale-[0.9] transition-all duration-300">
             Click Me
           </button>
 
-          <button class="px-6 py-3 bg-primary border-none outline-none text-secondary text-[1rem] rounded transition-all duration-500 relative before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[#ffffffb4] before:translate-x-[-150px] before:rounded overflow-hidden active:before:animate-ping active:before:translate-x-[0px]">
+          <button class="px-6 py-3 bg-brandColor border-none outline-none text-secondary text-[1rem] rounded transition-all duration-500 relative before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[#ffffffb4] before:translate-x-[-150px] before:rounded overflow-hidden active:before:animate-ping active:before:translate-x-[0px]">
             Click Me
           </button>
         </div>
 
-        <ShowCode v-if="clickAnimatedButtonCode" code='
-<button class="px-6 py-3 bg-primary border-none outline-none text-secondary text-[1rem] rounded active:scale-[0.9] transition-all duration-300">
-  Click Me
-</button>
-
-<button class="px-6 py-3 bg-primary border-none outline-none text-secondary text-[1rem] rounded transition-all duration-500 relative before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[#ffffffb4] before:translate-x-[-150px] before:rounded overflow-hidden active:before:animate-ping active:before:translate-x-[0px]">
-  Click Me
-</button>
-        ' />
+        <ShowCode v-if="clickAnimatedButtonCode" :code="clickAnimationPreviewCode" />
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -116,30 +117,16 @@ const animationSpeed = 0.6;
 
       <ComponentWrapper>
         <div v-if="hoverAnimatedButtonPreview" class="p-8 mb-4 flex items-center gap-5 flex-wrap justify-center">
-          <button class="px-8 py-3 relative shadow-lg before:absolute before:top-0 before:left-0 before:w-0 before:h-0 before:border-l-[4px] before:border-t-[4px] before:border-transparent dark:bg-slate-800 dark:text-slate-300 hover:before:w-full hover:before:h-full hover:before:border-primary hover:before:transition-all hover:before:duration-500 after:border-r-[4px] after:border-b-[4px] after:border-transparent hover:after:border-primary after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0 hover:after:w-full hover:after:h-full hover:after:transition-all hover:after:duration-500">
+          <button class="px-8 py-3 relative shadow-lg before:absolute before:top-0 before:left-0 before:w-0 before:h-0 before:border-l-[4px] before:border-t-[4px] before:border-transparent dark:bg-slate-800 dark:text-slate-300 hover:before:w-full hover:before:h-full hover:before:border-brandColor hover:before:transition-all hover:before:duration-500 after:border-r-[4px] after:border-b-[4px] after:border-transparent hover:after:border-brandColor after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0 hover:after:w-full hover:after:h-full hover:after:transition-all hover:after:duration-500">
             Animate 1
           </button>
 
-          <button class="py-2 px-6 shadow-lg before:block before:-left-1 before:-top-1 before:border-t-[4px] before:invisible before:hover:visible before:border-l-[4px] before:border-primary before:absolute before:h-0 before:w-0 before:hover:w-[100%] before:hover:h-[100%] dark:bg-slate-800 dark:text-slate-200 before:duration-500 before:-z-40 after:block dark:z-0 after:-right-1 after:-bottom-1 after:border-r-[4px] after:border-b-[4px] after:border-primary after:invisible after:hover:visible after:absolute after:h-0 after:w-0 after:hover:w-[100%] after:hover:h-[100%] after:duration-500 after:-z-40 bg-secondary relative">
+          <button class="py-2 px-6 shadow-lg before:block before:-left-1 before:-top-1 before:border-t-[4px] before:invisible before:hover:visible before:border-l-[4px] before:border-brandColor before:absolute before:h-0 before:w-0 before:hover:w-[100%] before:hover:h-[100%] dark:bg-slate-800 dark:text-slate-200 before:duration-500 before:-z-40 after:block dark:z-0 after:-right-1 after:-bottom-1 after:border-r-[4px] after:border-b-[4px] after:border-brandColor after:invisible after:hover:visible after:absolute after:h-0 after:w-0 after:hover:w-[100%] after:hover:h-[100%] after:duration-500 after:-z-40 bg-secondary relative">
             Animate 2
           </button>
         </div>
 
-        <ShowCode v-if="hoverAnimatedButtonCode" code='
-<script setup>
-// Vue 3 Component
-</script>
-
-<template>
-  <button class="px-8 py-3 relative shadow-lg before:absolute before:top-0 before:left-0 before:w-0 before:h-0 before:border-l-[4px] before:border-t-[4px] before:border-transparent dark:bg-slate-800 dark:text-slate-300 hover:before:w-full hover:before:h-full hover:before:border-primary hover:before:transition-all hover:before:duration-500 after:border-r-[4px] after:border-b-[4px] after:border-transparent hover:after:border-primary after:absolute after:bottom-0 after:right-0 after:w-0 after:h-0 hover:after:w-full hover:after:h-full hover:after:transition-all hover:after:duration-500">
-    Animate 1
-  </button>
-
-  <button class="py-2 px-6 shadow-lg before:block before:-left-1 before:-top-1 before:border-t-[4px] before:invisible before:hover:visible before:border-l-[4px] before:border-primary before:absolute before:h-0 before:w-0 before:hover:w-[100%] before:hover:h-[100%] dark:bg-slate-800 dark:text-slate-200 before:duration-500 before:-z-40 after:block dark:z-0 after:-right-1 after:-bottom-1 after:border-r-[4px] after:border-b-[4px] after:border-primary after:invisible after:hover:visible after:absolute after:h-0 after:w-0 after:hover:w-[100%] after:hover:h-[100%] after:duration-500 after:-z-40 bg-secondary relative">
-    Animate 2
-  </button>
-</template>
-        ' />
+        <ShowCode v-if="hoverAnimatedButtonCode" :code="borderAnimationPreviewCode" />
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -157,64 +144,32 @@ const animationSpeed = 0.6;
 
       <ComponentWrapper>
         <div v-if="hoverBgAnimatedButtonPreview" class="p-8 mb-4 flex items-center gap-5 justify-center flex-wrap">
-          <button class="px-6 rounded-md py-2 border border-primary relative before:absolute overflow-hidden before:translate-x-[-200px] hover:before:translate-x-0 before:z-[-1] before:translate-y-12 dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:transition hover:before:translate-y-0 before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-primary before:top-0 before:left-0">
+          <button class="px-6 rounded-md py-2 border border-brandColor relative before:absolute overflow-hidden before:translate-x-[-200px] hover:before:translate-x-0 before:z-[-1] before:translate-y-12 dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:transition hover:before:translate-y-0 before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-brandColor before:top-0 before:left-0">
             Left Bottom
           </button>
 
-          <button class="px-6 py-2 rounded-md border border-primary relative before:absolute overflow-hidden before:translate-x-[200px] hover:before:translate-x-0 before:-translate-y-12 dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 hover:before:-translate-y-0 before:z-[-1] before:transition before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-primary before:top-0 before:left-0">
+          <button class="px-6 py-2 rounded-md border border-brandColor relative before:absolute overflow-hidden before:translate-x-[200px] hover:before:translate-x-0 before:-translate-y-12 dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 hover:before:-translate-y-0 before:z-[-1] before:transition before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-brandColor before:top-0 before:left-0">
             Right Top
           </button>
 
-          <button class="px-6 py-2 rounded-md border border-primary relative before:absolute overflow-hidden before:translate-x-[-200px] hover:before:translate-x-0 before:z-[-1] before:transition dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-primary before:top-0 before:left-0">
+          <button class="px-6 py-2 rounded-md border border-brandColor relative before:absolute overflow-hidden before:translate-x-[-200px] hover:before:translate-x-0 before:z-[-1] before:transition dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-brandColor before:top-0 before:left-0">
             Left
           </button>
 
-          <button class="px-6 py-2 rounded-md border border-primary relative before:absolute overflow-hidden dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:translate-x-[200px] hover:before:translate-x-0 before:z-[-1] before:transition before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-primary before:top-0 before:left-0">
+          <button class="px-6 py-2 rounded-md border border-brandColor relative before:absolute overflow-hidden dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:translate-x-[200px] hover:before:translate-x-0 before:z-[-1] before:transition before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-brandColor before:top-0 before:left-0">
             Right
           </button>
 
-          <button class="px-6 py-2 rounded-md border border-primary relative before:absolute overflow-hidden dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:translate-y-[-200px] hover:before:translate-y-0 before:z-[-1] before:transition before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-primary before:top-0 before:left-0">
+          <button class="px-6 py-2 rounded-md border border-brandColor relative before:absolute overflow-hidden dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:translate-y-[-200px] hover:before:translate-y-0 before:z-[-1] before:transition before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-brandColor before:top-0 before:left-0">
             Top
           </button>
 
-          <button class="px-6 py-2 rounded-md border border-primary relative before:absolute overflow-hidden dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:translate-y-[200px] hover:before:translate-y-0 before:z-[-1] before:transition before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-primary before:top-0 before:left-0">
+          <button class="px-6 py-2 rounded-md border border-brandColor relative before:absolute overflow-hidden dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:translate-y-[200px] hover:before:translate-y-0 before:z-[-1] before:transition before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-brandColor before:top-0 before:left-0">
             Bottom
           </button>
         </div>
 
-        <ShowCode v-if="hoverBgAnimatedButtonCode" code='
-<template>
-  <!-- left bottom animation -->
-  <button class="px-6 rounded-md py-2 border border-primary relative before:absolute overflow-hidden before:translate-x-[-200px] hover:before:translate-x-0 before:z-[-1] before:translate-y-12 dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:transition hover:before:translate-y-0 before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-primary before:top-0 before:left-0">
-    Left Bottom
-  </button>
-
-  <!-- right top animation -->
-  <button class="px-6 py-2 rounded-md border border-primary relative before:absolute overflow-hidden before:translate-x-[200px] hover:before:translate-x-0 before:-translate-y-12 dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 hover:before:-translate-y-0 before:z-[-1] before:transition before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-primary before:top-0 before:left-0">
-    Right Top
-  </button>
-
-  <!-- left animation -->
-  <button class="px-6 py-2 rounded-md border border-primary relative before:absolute overflow-hidden before:translate-x-[-200px] hover:before:translate-x-0 before:z-[-1] before:transition dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-primary before:top-0 before:left-0">
-    Left
-  </button>
-
-  <!-- right animation -->
-  <button class="px-6 py-2 rounded-md border border-primary relative before:absolute overflow-hidden dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:translate-x-[200px] hover:before:translate-x-0 before:z-[-1] before:transition before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-primary before:top-0 before:left-0">
-    Right
-  </button>
-
-  <!-- top animation -->
-  <button class="px-6 py-2 rounded-md border border-primary relative before:absolute overflow-hidden dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:translate-y-[-200px] hover:before:translate-y-0 before:z-[-1] before:transition before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-primary before:top-0 before:left-0">
-    Top
-  </button>
-
-  <!-- bottom animation -->
-  <button class="px-6 py-2 rounded-md border border-primary relative before:absolute overflow-hidden dark:text-slate-200 dark:border-slate-700 dark:z-0 dark:before:bg-slate-700 before:translate-y-[200px] hover:before:translate-y-0 before:z-[-1] before:transition before:duration-300 hover:text-secondary before:w-full before:h-full before:bg-primary before:top-0 before:left-0">
-    Bottom
-  </button>
-</template>
-        ' />
+        <ShowCode v-if="hoverBgAnimatedButtonCode" :code="bgHoverAnimationPreviewCode"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -232,10 +187,10 @@ const animationSpeed = 0.6;
 
       <ComponentWrapper>
         <div v-if="slideUpAnimationButtonPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
-          <button class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-primary transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dark:bg-slate-800 group">
-            <span class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-primary group-hover:h-full"></span>
+          <button class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-brandColor transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dark:bg-slate-800 group">
+            <span class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-brandColor group-hover:h-full"></span>
             <span class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-              <svg class="w-5 h-5 text-green-400" fill="none" stroke="#3B9DF8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-5 h-5 text-green-400" fill="none" stroke="#36af7b" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
             </span>
@@ -248,24 +203,7 @@ const animationSpeed = 0.6;
           </button>
         </div>
 
-        <ShowCode v-if="slideUpAnimationButtonCode" code='
-<template>
-  <button class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-primary transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 dark:bg-slate-800 group">
-    <span class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-primary group-hover:h-full"></span>
-    <span class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-      <svg class="w-5 h-5 text-green-400" fill="none" stroke="#3B9DF8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-      </svg>
-    </span>
-    <span class="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
-      <svg class="w-5 h-5 text-green-400" fill="none" stroke="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-      </svg>
-    </span>
-    <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">ZenUI Library</span>
-  </button>
-</template>
-        ' />
+        <ShowCode v-if="slideUpAnimationButtonCode" :code="bgSlideUpAnimationPreviewCode" />
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -283,30 +221,18 @@ const animationSpeed = 0.6;
 
       <ComponentWrapper>
         <div v-if="slideAnimationButtonPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
-          <button class="relative inline-flex items-center justify-center px-6 py-2.5 overflow-hidden font-medium text-primary transition duration-300 ease-out border-2 border-primary rounded-full shadow-md group">
-            <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-primary group-hover:translate-x-0 ease">
+          <button class="relative inline-flex items-center justify-center px-6 py-2.5 overflow-hidden font-medium text-brandColor transition duration-300 ease-out border-2 border-brandColor rounded-full shadow-md group">
+            <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-brandColor group-hover:translate-x-0 ease">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
             </span>
-            <span class="absolute flex items-center justify-center w-full h-full text-primary transition-all duration-300 transform group-hover:translate-x-full ease">ZenUI Library</span>
+            <span class="absolute flex items-center justify-center w-full h-full text-brandColor transition-all duration-300 transform group-hover:translate-x-full ease">ZenUI Library</span>
             <span class="relative invisible">ZenUI Library</span>
           </button>
         </div>
 
-        <ShowCode v-if="slideAnimationButtonCode" code='
-<template>
-  <button class="relative inline-flex items-center justify-center px-6 py-2.5 overflow-hidden font-medium text-primary transition duration-300 ease-out border-2 border-primary rounded-full shadow-md group">
-    <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-primary group-hover:translate-x-0 ease">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-      </svg>
-    </span>
-    <span class="absolute flex items-center justify-center w-full h-full text-primary transition-all duration-300 transform group-hover:translate-x-full ease">ZenUI Library</span>
-    <span class="relative invisible">ZenUI Library</span>
-  </button>
-</template>
-        ' />
+        <ShowCode v-if="slideAnimationButtonCode" :code="bgSlideAnimationPreviewCode" />
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -324,8 +250,8 @@ const animationSpeed = 0.6;
 
       <ComponentWrapper>
         <div v-if="bounceUpAnimationButtonPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
-          <button class="relative inline-flex items-center px-8 py-2.5 overflow-hidden text-lg font-medium text-primary border-2 border-primary rounded-full hover:text-white group hover:bg-gray-50">
-            <span class="absolute left-0 block w-full h-0 transition-all bg-primary opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+          <button class="relative inline-flex items-center px-8 py-2.5 overflow-hidden text-lg font-medium text-brandColor border-2 border-brandColor rounded-full hover:text-white group hover:bg-gray-50">
+            <span class="absolute left-0 block w-full h-0 transition-all bg-brandColor opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
             <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -335,19 +261,7 @@ const animationSpeed = 0.6;
           </button>
         </div>
 
-        <ShowCode v-if="bounceUpAnimationButtonCode" code='
-<template>
-  <button class="relative inline-flex items-center px-8 py-2.5 overflow-hidden text-lg font-medium text-primary border-2 border-primary rounded-full hover:text-white group hover:bg-gray-50">
-    <span class="absolute left-0 block w-full h-0 transition-all bg-primary opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
-    <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-      </svg>
-    </span>
-    <span class="relative text-[1rem] group-hover:pr-4 transition-all duration-400">ZenUI Library</span>
-  </button>
-</template>
-        ' />
+        <ShowCode v-if="bounceUpAnimationButtonCode" :code="bgBounceUpAnimationPreviewCode" />
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -366,23 +280,14 @@ const animationSpeed = 0.6;
       <ComponentWrapper>
         <div v-if="bottomBorderAnimationButtonPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
           <button class="relative inline-flex items-center justify-center px-6 py-3 text-lg font-medium tracking-tighter text-white bg-gray-800 rounded-md group">
-            <span class="absolute inset-0 w-full h-full mt-1 ml-1 transition-all duration-300 ease-in-out bg-primary rounded-md group-hover:mt-0 group-hover:ml-0"></span>
+            <span class="absolute inset-0 w-full h-full mt-1 ml-1 transition-all duration-300 ease-in-out bg-brandColor rounded-md group-hover:mt-0 group-hover:ml-0"></span>
             <span class="absolute inset-0 w-full h-full dark:bg-slate-800 bg-white rounded-md"></span>
-            <span class="absolute inset-0 w-full h-full transition-all duration-200 ease-in-out delay-100 bg-primary rounded-md opacity-0 group-hover:opacity-100"></span>
-            <span class="relative text-primary transition-colors duration-200 ease-in-out delay-100 group-hover:text-white">ZenUI Library</span>
+            <span class="absolute inset-0 w-full h-full transition-all duration-200 ease-in-out delay-100 bg-brandColor rounded-md opacity-0 group-hover:opacity-100"></span>
+            <span class="relative text-brandColor transition-colors duration-200 ease-in-out delay-100 group-hover:text-white">ZenUI Library</span>
           </button>
         </div>
 
-        <ShowCode v-if="bottomBorderAnimationButtonCode" code='
-<template>
-  <button class="relative inline-flex items-center justify-center px-6 py-3 text-lg font-medium tracking-tighter text-white bg-gray-800 rounded-md group">
-    <span class="absolute inset-0 w-full h-full mt-1 ml-1 transition-all duration-300 ease-in-out bg-primary rounded-md group-hover:mt-0 group-hover:ml-0"></span>
-    <span class="absolute inset-0 w-full h-full dark:bg-slate-800 bg-white rounded-md"></span>
-    <span class="absolute inset-0 w-full h-full transition-all duration-200 ease-in-out delay-100 bg-primary rounded-md opacity-0 group-hover:opacity-100"></span>
-    <span class="relative text-primary transition-colors duration-200 ease-in-out delay-100 group-hover:text-white">ZenUI Library</span>
-  </button>
-</template>
-        ' />
+        <ShowCode v-if="bottomBorderAnimationButtonCode" :code="bottomBorderAnimationPreviewCode" />
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -401,21 +306,13 @@ const animationSpeed = 0.6;
       <ComponentWrapper>
         <div v-if="bgFillAnimationPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
           <button class="relative inline-flex items-center justify-center px-8 py-3.5 overflow-hidden font-mono dark:bg-slate-800 tracking-tighter text-white bg-gray-300 rounded-lg group">
-            <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-primary rounded-full group-hover:w-56 group-hover:h-56"></span>
+            <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-brandColor rounded-full group-hover:w-56 group-hover:h-56"></span>
             <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-300"></span>
             <span class="relative text-text dark:text-slate-200 group-hover:text-white">ZenUI Library</span>
           </button>
         </div>
 
-        <ShowCode v-if="bgFillAnimationCode" code='
-<template>
-  <button class="relative inline-flex items-center justify-center px-8 py-3.5 overflow-hidden font-mono dark:bg-slate-800 tracking-tighter text-white bg-gray-300 rounded-lg group">
-    <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-primary rounded-full group-hover:w-56 group-hover:h-56"></span>
-    <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-300"></span>
-    <span class="relative text-text dark:text-slate-200 group-hover:text-white">ZenUI Library</span>
-  </button>
-</template>
-        ' />
+        <ShowCode v-if="bgFillAnimationCode" :code="hoverBgFillAnimationPreviewCode" />
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -440,15 +337,7 @@ const animationSpeed = 0.6;
           </button>
         </div>
 
-        <ShowCode v-if="margeAnimationCode" code='
-<template>
-  <button class="relative px-6 py-3 font-bold text-white rounded-lg group">
-    <span class="absolute inset-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 bg-primary ease opacity-80 group-hover:translate-x-0 group-hover:translate-y-0"></span>
-    <span class="absolute inset-0 w-full h-full transition duration-300 transform translate-x-1 translate-y-1 bg-purple-600 ease opacity-80 group-hover:translate-x-0 group-hover:translate-y-0 mix-blend-screen"></span>
-    <span class="relative">ZenUI Library</span>
-  </button>
-</template>
-        ' />
+        <ShowCode v-if="margeAnimationCode" :code="twoPartMergeAnimationPreviewCode" />
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -514,49 +403,7 @@ const animationSpeed = 0.6;
           </div>
         </div>
 
-        <ShowCode v-if="dayNightToggleCode" :code="`
-<script setup>
-import { ref } from 'vue';
-
-const size = 60;
-const animationSpeed = 0.6;
-</script>
-
-<template>
-  <div>
-    <style>
-      /* All the CSS styles from above */
-    </style>
-    <input id='checkbox' type='checkbox' />
-    <label for='checkbox' class='sky'>
-      <div id='sun_wrapper'>
-        <div class='ray'></div>
-        <div class='ray'></div>
-        <div class='ray'></div>
-        <div id='sun'>
-          <div id='moon'>
-            <div class='spot'></div>
-            <div class='spot'></div>
-            <div class='spot'></div>
-          </div>
-        </div>
-      </div>
-      <div class='cloud_wrapper'>
-        <div class='cloud' v-for='n in 8' :key='n'></div>
-      </div>
-      <div class='cloud_wrapper'>
-        <div class='cloud' v-for='n in 8' :key='n'></div>
-      </div>
-      <div id='stars'>
-        <div class='star' v-for='n in 9' :key='n'>
-          <div class='base'></div>
-          <div class='ray' v-for='r in 4' :key='r'></div>
-        </div>
-      </div>
-    </label>
-  </div>
-</template>
-        `" />
+        <ShowCode v-if="dayNightToggleCode" :code="themeToggleAnimationPreviewCode" />
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -577,13 +424,13 @@ const animationSpeed = 0.6;
           <CelebrationButton />
         </div>
 
-        <ShowCode v-if="celebrationButtonCode" code="" />
+        <ShowCode v-if="celebrationButtonCode" :code="celebrationButtonPreviewCode" />
       </ComponentWrapper>
 
       <!-- <OverviewFooter backUrl="/components/dropdown-button" backName="dropdown button" forwardName="cards" forwardUrl="/components/cards" /> -->
     </div>
 
-    <!-- <ContentNavbar :activeSection="activeSection" :contents="animatedButtonContents" /> -->
+    <ContentNavbar :activeSection="activeSection" />
   </aside>
 </template>
 
