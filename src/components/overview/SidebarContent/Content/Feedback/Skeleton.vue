@@ -9,93 +9,39 @@ import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import {skeletonContents} from "@/Utils/ContentsConfig/FeedbackContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
 import {ref} from "vue";
+import {
+  BlogSkeletonCodes,
+  CardSkeletonCodes,
+  ImageGallerySkeletonCodes,
+  PostListSkeletonCodes,
+  ProductDetailsPageSkeletonCodes,
+  ShineSkeletonCodes,
+  SocialPostSkeletonCodes
+} from "@/components/overview/SidebarContent/Content/Feedback/PreviewCodes/SkeletonPreviewCodes.js";
 
 const sectionIds = skeletonContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// cardSkeletonPreview
 const cardSkeletonPreview = ref(true);
 const cardSkeletonCode = ref(false);
 
-// imageGellaryPreview
 const imageGellaryPreview = ref(true);
 const imageGellaryCode = ref(false);
 
-// socialPostPreview
 const socialPostPreview = ref(true);
 const socialPostCode = ref(false);
 
-// product details skeleton
 const productDetailsPreview = ref(true);
 const productDetailsCode = ref(false);
 
-// blog skeleton
+const postListSkeletonPreview = ref(true);
+const postListSkeletonCode = ref(false);
+
 const blogSkeletonPreview = ref(true);
 const blogSkeletonCode = ref(false);
 
-// shine skeleton
 const shineSkeletonPreview = ref(true);
 const shineSkeletonCode = ref(false);
-
-const shimmerSkeletonCodes = [
-  {
-    id: 'skeleton_component',
-    displayText: 'Skeleton Component',
-    language: 'jsx',
-    code: 'import React from "react";\n' +
-        '\n' +
-        'const Skeleton = () => {\n' +
-        '\n' +
-        '    return (\n' +
-        '        <div className="grid w-full px-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">\n' +
-        '\n' +
-        '            <div\n' +
-        '                className="relative space-y-5 border border-slate-100 dark:border-slate-700 overflow-hidden rounded-2xl bg-white/5 p-4 shadow-xl shadow-black/5 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-slate-100/10 before:bg-gradient-to-r before:from-transparent before:via-slate-100/70 dark:before:via-slate-100/10 before:to-transparent">\n' +
-        '                <div className="h-24 rounded-lg dark:bg-slate-700 bg-slate-100/80"></div>\n' +
-        '                <div className="space-y-3">\n' +
-        '                    <div className="h-3 w-3/5 rounded-lg dark:bg-slate-700 bg-slate-100/50"></div>\n' +
-        '                    <div className="h-3 w-4/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>\n' +
-        '                    <div className="h-3 w-2/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>\n' +
-        '                </div>\n' +
-        '            </div>\n' +
-        '\n' +
-        '            <div\n' +
-        '                className="relative space-y-5 border border-slate-100 dark:border-slate-700 overflow-hidden rounded-2xl bg-white/5 p-4 shadow-xl shadow-black/5 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-slate-100/10 before:bg-gradient-to-r before:from-transparent before:via-slate-100/70 dark:before:via-slate-100/10 before:to-transparent">\n' +
-        '                <div className="h-24 rounded-lg dark:bg-slate-700 bg-slate-100/80"></div>\n' +
-        '                <div className="space-y-3">\n' +
-        '                    <div className="h-3 w-3/5 rounded-lg dark:bg-slate-700 bg-slate-100/50"></div>\n' +
-        '                    <div className="h-3 w-4/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>\n' +
-        '                    <div className="h-3 w-2/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>\n' +
-        '                </div>\n' +
-        '            </div>\n' +
-        '\n' +
-        '            <div\n' +
-        '                className="relative space-y-5 border border-slate-100 dark:border-slate-700 overflow-hidden rounded-2xl bg-white/5 p-4 shadow-xl shadow-black/5 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-slate-100/10 before:bg-gradient-to-r before:from-transparent before:via-slate-100/70 dark:before:via-slate-100/10 before:to-transparent">\n' +
-        '                <div className="h-24 rounded-lg dark:bg-slate-700 bg-slate-100/80"></div>\n' +
-        '                <div className="space-y-3">\n' +
-        '                    <div className="h-3 w-3/5 rounded-lg dark:bg-slate-700 bg-slate-100/50"></div>\n' +
-        '                    <div className="h-3 w-4/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>\n' +
-        '                    <div className="h-3 w-2/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>\n' +
-        '                </div>\n' +
-        '            </div>\n' +
-        '\n' +
-        '        </div>\n' +
-        '    );\n' +
-        '};\n' +
-        '\n' +
-        'export default Skeleton;'
-  },
-  {
-    id: 'css',
-    displayText: 'CSS',
-    language: 'css',
-    code: '@keyframes shimmer {\n' +
-        '  100% {\n' +
-        '        transform: translateX(100%)\n' +
-        '      }\n' +
-        '}'
-  }
-]
 </script>
 
 <template>
@@ -148,7 +94,7 @@ const shimmerSkeletonCodes = [
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="CardSkeletonCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -186,7 +132,7 @@ const shimmerSkeletonCodes = [
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="ImageGallerySkeletonCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -229,7 +175,7 @@ const shimmerSkeletonCodes = [
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="SocialPostSkeletonCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -275,7 +221,7 @@ const shimmerSkeletonCodes = [
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="ProductDetailsPageSkeletonCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -290,14 +236,14 @@ const shimmerSkeletonCodes = [
       />
 
       <ToggleTab
-          :code="socialPostPreview"
-          @update:preview="(val) => (socialPostPreview = val)"
-          :preview="socialPostPreview"
-          @update:code="(val) => (socialPostCode = val)"
+          :code="postListSkeletonCode"
+          @update:preview="(val) => (postListSkeletonPreview = val)"
+          :preview="postListSkeletonPreview"
+          @update:code="(val) => (postListSkeletonCode = val)"
       />
 
       <ComponentWrapper>
-        <div v-if="socialPostPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
+        <div v-if="postListSkeletonPreview" class="p-8 mb-4 flex items-center gap-5 justify-center">
           <div class="w-full flex flex-col gap-[20px]">
             <div
                 class="w-full mx-auto dark:bg-slate-900 dark:border-slate-700 bg-secondary p-3 rounded-md border border-border boxShadow animate-pulse">
@@ -356,7 +302,7 @@ const shimmerSkeletonCodes = [
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="PostListSkeletonCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -408,7 +354,7 @@ const shimmerSkeletonCodes = [
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="BlogSkeletonCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -464,12 +410,12 @@ const shimmerSkeletonCodes = [
           </div>
         </div>
 
-        <ShowCode v-else :code="shimmerSkeletonCodes"/>
+        <ShowCode v-else :code="ShineSkeletonCodes"/>
       </ComponentWrapper>
 
       <OverviewFooter
-          backUrl="/components/tabs"
-          backName="tabs"
+          backUrl="/components/context-menu"
+          backName="context menu"
           forwardName="alert message"
           forwardUrl="/components/alert-message"
       />

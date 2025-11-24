@@ -6,6 +6,7 @@ import {Icon} from "@iconify/vue"
 import UpdateBadge from "@/Shared/UpdateBadge.vue";
 import {useZenuiStore} from "@/Store/Index.js";
 import Search from "@/Shared/Search.vue";
+import {ZENUI_REACT_DOMAIN} from "@/Constant/Index.js";
 
 const props = defineProps({
   className: {type: String, default: ''}
@@ -145,7 +146,7 @@ const onLeave = (el, done) => {
               >
                 <div class="flex flex-col gap-3">
                   <a
-                      href="https://react.zenui.net/shortcut-generator"
+                      :href="`${ZENUI_REACT_DOMAIN}/shortcut-generator`"
                       target="_blank"
                       class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
                   >
@@ -164,7 +165,7 @@ const onLeave = (el, done) => {
                   </a>
 
                   <a
-                      href="https://react.zenui.net/color-palette"
+                      :href="`${ZENUI_REACT_DOMAIN}/color-palette`"
                       target="_blank"
                       class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
                   >
@@ -185,7 +186,7 @@ const onLeave = (el, done) => {
 
                 <div class="flex flex-col gap-3">
                   <a
-                      href="https://react.zenui.net/icons"
+                      :href="`${ZENUI_REACT_DOMAIN}/icons`"
                       target="_blank"
                       class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
                   >
@@ -204,7 +205,7 @@ const onLeave = (el, done) => {
                   </a>
 
                   <a
-                      href="https://react.zenui.net/config-generator"
+                      :href="`${ZENUI_REACT_DOMAIN}/config-generator`"
                       target="_blank"
                       class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
                   >
@@ -228,7 +229,7 @@ const onLeave = (el, done) => {
 
                 <div class="flex flex-col">
                   <a
-                      href="https://react.zenui.net/semantic-tag-master"
+                      :href="`${ZENUI_REACT_DOMAIN}/semantic-tag-master`"
                       target="_blank"
                       class="p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]"
                   >

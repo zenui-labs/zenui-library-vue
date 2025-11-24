@@ -115,7 +115,6 @@ const componentsItems = [
     url: "/components/alert-message",
     parent: "FEEDBACK",
   },
-  {title: "Dialog", url: "/components/dialog-message", parent: "FEEDBACK"},
   {title: "Testimonial", url: "/components/testimonials", parent: "FEEDBACK"},
   {title: "Loader", url: "/components/loader", parent: "FEEDBACK"},
   // {title: "Notification", url: "/components/notification", parent: "FEEDBACK"},

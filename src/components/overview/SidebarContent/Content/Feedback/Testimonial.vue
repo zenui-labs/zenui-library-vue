@@ -10,35 +10,37 @@ import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import {testimonialContents} from "@/Utils/ContentsConfig/FeedbackContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
+import {
+  Testimonial1Codes,
+  Testimonial2Codes,
+  Testimonial3Codes,
+  Testimonial4Codes,
+  Testimonial5Codes,
+  Testimonial6Codes,
+  Testimonial7Codes
+} from "@/components/overview/SidebarContent/Content/Feedback/PreviewCodes/TestimonialsPreviewCodes.js";
 
 const sectionIds = testimonialContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// testimonial 1
 const testimonial1Preview = ref(true);
 const testimonial1Code = ref(false);
 
-// testimonial 2
 const testimonial2Preview = ref(true);
 const testimonial2Code = ref(false);
 
-// testimonial 3
 const testimonial3Preview = ref(true);
 const testimonial3Code = ref(false);
 
-// testimonial 4
 const testimonial4Preview = ref(true);
 const testimonial4Code = ref(false);
 
-// testimonial 5
 const testimonial5Preview = ref(true);
 const testimonial5Code = ref(false);
 
-// testimonial 6
 const testimonial6Preview = ref(true);
 const testimonial6Code = ref(false);
 
-// testimonial 7
 const testimonial7Preview = ref(true);
 const testimonial7Code = ref(false);
 </script>
@@ -109,7 +111,7 @@ const testimonial7Code = ref(false);
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="Testimonial1Codes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -166,7 +168,7 @@ const testimonial7Code = ref(false);
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="Testimonial2Codes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -216,7 +218,7 @@ const testimonial7Code = ref(false);
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="Testimonial3Codes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -279,7 +281,7 @@ const testimonial7Code = ref(false);
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="Testimonial4Codes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -334,7 +336,7 @@ const testimonial7Code = ref(false);
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="Testimonial5Codes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -387,7 +389,7 @@ const testimonial7Code = ref(false);
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="Testimonial6Codes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -460,12 +462,12 @@ const testimonial7Code = ref(false);
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="Testimonial7Codes"/>
       </ComponentWrapper>
 
       <OverviewFooter
-          backUrl="/components/dialog-message"
-          backName="dialog"
+          backUrl="/components/alert-message"
+          backName="alert message"
           forwardName="loader"
           forwardUrl="/components/loader"
       />

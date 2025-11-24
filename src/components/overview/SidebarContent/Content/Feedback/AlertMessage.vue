@@ -10,23 +10,25 @@ import {alertMessageContents} from "@/Utils/ContentsConfig/FeedbackContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
 import {ref} from "vue";
 import {Icon} from "@iconify/vue";
+import {
+  AlertWithActionCodes,
+  AlertWithTitleCodes,
+  BackgroundAlertMessageCodes,
+  BorderedAlertMessageCodes
+} from "@/components/overview/SidebarContent/Content/Feedback/PreviewCodes/AlertMessagePreviewCodes.js";
 
 const sectionIds = alertMessageContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// backgroundPreview
 const backgroundPreview = ref(true);
 const backgroundCode = ref(false);
 
-// alertWithTitlePreview
 const alertWithTitlePreview = ref(true);
 const alertWithTitleCode = ref(false);
 
-// borderPreview
 const borderPreview = ref(true);
 const borderCode = ref(false);
 
-// product details skeleton
 const alertActionPreview = ref(true);
 const alertActionCode = ref(false);
 </script>
@@ -89,7 +91,7 @@ const alertActionCode = ref(false);
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="BackgroundAlertMessageCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -169,7 +171,7 @@ const alertActionCode = ref(false);
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="AlertWithTitleCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -223,7 +225,7 @@ const alertActionCode = ref(false);
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="BorderedAlertMessageCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -307,14 +309,14 @@ const alertActionCode = ref(false);
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="AlertWithActionCodes"/>
       </ComponentWrapper>
 
       <OverviewFooter
-          backUrl="/components/tree-dropdown"
-          backName="tree dropdown"
-          forwardName="dialog"
-          forwardUrl="/components/dialog-message"
+          backUrl="/components/skeleton"
+          backName="skeleton"
+          forwardName="testimonials"
+          forwardUrl="/components/testimonials"
       />
     </div>
 

@@ -10,6 +10,10 @@ import ContentNavbar from '@/Shared/Component/ContentNavbar.vue';
 import {contextMenuContents} from '@/Utils/ContentsConfig/FeedbackContents.js';
 import {useScrollSpy} from '@/CustomHooks/useScrollSpy.js';
 import {Icon} from '@iconify/vue';
+import {
+  ContextMenuCodes,
+  DropdownContextMenuCodes
+} from "@/components/overview/SidebarContent/Content/Feedback/PreviewCodes/ContextMenuPreviewCodes.js";
 
 const sectionIds = contextMenuContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
@@ -202,11 +206,11 @@ const handleItemClick = (item) => {
       <ComponentWrapper>
         <div
             v-if="contextMenuPreview"
-            class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center flex-col gap-5 justify-center"
         >
           <p
               @contextmenu="handleContextMenu"
-              class="w-full cursor-pointer dark:bg-slate-800 dark:border-slate-700 dark:text-[#abc2d3] bg-gray-50 border-gray-300 rounded-md border p-4 text-[1rem]"
+              class="w-full 1024px:w-[80%] cursor-pointer dark:bg-slate-800 dark:border-slate-700 dark:text-[#abc2d3] bg-gray-50 border-gray-300 rounded-md border p-4 text-[1rem]"
           >
             ZENUI LIBRARY - Free Templates & Components Library. Elevate your
             project with free UI components, customizable icons, and a color
@@ -246,16 +250,16 @@ const handleItemClick = (item) => {
                   'text-[1.2rem] dark:text-[#abc2d3] text-gray-600',
                 ]"
               />
-              <p
+              <span
                   :class="[item.label === 'Delete' && 'text-red-500']"
               >
                 {{ item.label }}
-              </p>
+              </span>
             </button>
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="ContextMenuCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -279,11 +283,11 @@ const handleItemClick = (item) => {
       <ComponentWrapper>
         <div
             v-if="dropdownContextMenuPreview"
-            class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+            class="p-8 pt-12 mb-4 flex items-center flex-col gap-5 justify-center"
         >
           <p
               @contextmenu="handleContextMenu2"
-              class="w-full cursor-pointer dark:bg-slate-800 dark:border-slate-700 dark:text-[#abc2d3] bg-[#36af7b]/10 border-[#36af7b] rounded-md border p-4 text-[1rem]"
+              class="w-full 1024px:w-[80%] cursor-pointer dark:bg-slate-800 dark:border-slate-700 dark:text-[#abc2d3] bg-[#36af7b]/10 border-[#36af7b] rounded-md border p-4 text-[1rem]"
           >
             ZENUI LIBRARY - Free Templates & Components Library. Elevate your
             project with free UI components, customizable icons, and a color
@@ -375,18 +379,18 @@ const handleItemClick = (item) => {
                       'text-[1.2rem] dark:text-[#abc2d3] text-gray-600',
                     ]"
                   />
-                  <p
+                  <span
                       :class="[subItem.label === 'Delete' && 'text-red-500']"
                   >
                     {{ subItem.label }}
-                  </p>
+                  </span>
                 </button>
               </div>
             </div>
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="DropdownContextMenuCodes"/>
       </ComponentWrapper>
 
       <OverviewFooter

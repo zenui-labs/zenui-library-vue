@@ -6,6 +6,7 @@ import {Icon} from "@iconify/vue";
 import {useZenuiStore} from "@/Store/Index.js";
 import Search from "@/Shared/Search.vue";
 import CommandIcon from "@/SvgIcons/CommandIcon.vue";
+import {ZENUI_REACT_DOMAIN} from "@/Constant/Index.js";
 
 
 const isSearchOpen = ref(false);
@@ -172,7 +173,10 @@ onMounted(() => {
             key="tools-dropdown"
         >
           <div class="flex flex-col gap-[20px] text-[1rem]">
-            <RouterLink to="/shortcut-generator" class="!p-0 hover:!border-none hover:!bg-transparent">
+            <a
+                :href="`${ZENUI_REACT_DOMAIN}/shortcut-generator`"
+                target="_blank"
+                class="!p-0 hover:!border-none hover:!bg-transparent">
               <div class="flex items-center gap-[10px]">
                 <p class="cursor-pointer dark:text-darkSubTextColor leading-[20px] text-gray-600 transition-all duration-200">
                   ShotKey
@@ -181,25 +185,29 @@ onMounted(() => {
               <span class="text-[0.8rem] dark:text-slate-400 font-[300] text-gray-500"
               >generate keyboard shortcuts easily.</span
               >
-            </RouterLink>
-            <RouterLink to="/icons" class="!p-0 hover:!border-none hover:!bg-transparent">
+            </a>
+            <a :href="`${ZENUI_REACT_DOMAIN}/icons`"
+               target="_blank"
+               class="!p-0 hover:!border-none hover:!bg-transparent">
               <p class="cursor-pointer dark:text-darkSubTextColor leading-[20px] text-gray-600 transition-all duration-200">
                 Icons
               </p>
               <span
                   class="text-[0.8rem] dark:text-slate-400 font-[300] text-gray-500">Scalable icons for clear visuals.</span>
-            </RouterLink>
+            </a>
           </div>
 
           <div class="flex flex-col gap-[20px] text-[1rem]">
-            <RouterLink to="/color-palette" class="!p-0 hover:!border-none hover:!bg-transparent">
+            <a :href="`${ZENUI_REACT_DOMAIN}/color-palette`"
+               target="_blank" class="!p-0 hover:!border-none hover:!bg-transparent">
               <p class="cursor-pointer dark:text-darkSubTextColor leading-[20px] text-gray-600 transition-all duration-200">
                 Color Palettes
               </p>
               <span class="text-[0.8rem] dark:text-slate-400 font-[300] text-gray-500">Harmonized color sets.</span>
-            </RouterLink>
+            </a>
 
-            <RouterLink to="/config-generator" class="!p-0 hover:!border-none hover:!bg-transparent">
+            <a :href="`${ZENUI_REACT_DOMAIN}/config-generator`"
+               target="_blank" class="!p-0 hover:!border-none hover:!bg-transparent">
               <div class="flex items-center gap-[10px]">
                 <p class="cursor-pointer dark:text-darkSubTextColor leading-[20px] text-gray-600 transition-all duration-200">
                   Config AI
@@ -207,16 +215,17 @@ onMounted(() => {
                 <UpdateBadge/>
               </div>
               <span class="text-[0.8rem] dark:text-slate-400 font-[300] text-gray-500">Generate tailwind config file by AI.</span>
-            </RouterLink>
+            </a>
 
-            <RouterLink to="/semantic-tag-master" class="!p-0 hover:!border-none hover:!bg-transparent">
+            <a :href="`${ZENUI_REACT_DOMAIN}/semantic-tag-master`"
+               target="_blank" class="!p-0 hover:!border-none hover:!bg-transparent">
               <div class="flex items-center gap-[10px]">
                 <p class="cursor-pointer dark:text-darkSubTextColor leading-[20px] text-gray-600 transition-all duration-200">
                   Semantic TagMaster
                 </p>
               </div>
               <span class="text-[0.8rem] dark:text-slate-400 font-[300] text-gray-500">A comprehensive guide about HTML semantic tags</span>
-            </RouterLink>
+            </a>
           </div>
         </div>
       </transition>

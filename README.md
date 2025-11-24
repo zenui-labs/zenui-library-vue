@@ -1,5 +1,156 @@
-# Vue 3 + Vite
+<br />
+<p align="center">
+  <a href="https://github.com/Asfak00/zenui-library-vue">
+    <img src="https://i.ibb.co.com/ycZFk66Q/logo.png" alt="ZenUI Library" width="150" />
+  </a>
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<h1 align="center">
+ZenUI Library Vue
+</h1>
+<p align="center">
+<a href="https://github.com/Asfak00/zenui-library-vue" target="__blank"><img alt="release date" src="https://img.shields.io/github/release-date/asfak00/zenui-library-vue"></a>
+<a href="https://github.com/Asfak00/zenui-library-vue" target="__blank"><img alt="commits" src="https://img.shields.io/github/commit-activity/w/asfak00/zenui-library-vue"></a>
+<a href="https://github.com/Asfak00/zenui-library-vue" target="__blank"><img alt="Contributors" src="https://img.shields.io/github/contributors/asfak00/zenui-library-vue"></a>
+  <a href="https://github.com/Asfak00/zenui-library-vue" target="__blank"><img alt="stars" src="https://img.shields.io/github/stars/asfak00/zenui-library-vue"></a>
+</p>
+<p align="center">
+Open-Source UI Component Library<br>
+Elevate your projects with ZenUI, a free, lightweight, customizable UI component library built with Vue3 and Tailwind CSS.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+![cover](https://i.ibb.co.com/CWtdR19/post.png)
+
+## Your Support = More UI Magic 😍
+
+<p><a href="https://ko-fi.com/zenuilabs"> <img align="left" src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a0172b90570b1c21dab_kofi_logo.png" height="42" width="150" alt="asfak00" /></a></p>
+
+<br/>
+<br/>
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/zenui-labs/zenui-library-vue.git
+```
+
+Go to the project directory:
+
+```bash
+cd zenui-library
+```
+
+Install the all dependencies:
+
+```bash
+npm install
+```
+
+Run the project:
+
+```bash
+npm run dev
+```
+
+<br/>
+
+## Documentation
+
+ZenUI is a plug-and-play component library using by **Tailwind CSS** styling. Just **copy** the code and **paste** it
+into your project, no installation or configuration needed!
+
+### Getting Started
+
+ZenUI components are designed for quick and easy use. To get started, simply:
+
+1. Find the component you want in the [ZenUI library Vue](https://vue-ui.zenui.net).
+2. Copy the code snippet.
+3. Paste it into your project, anywhere HTML is supported.
+
+### Using ZenUI Components
+
+#### Copy and Paste Usage
+
+Each component in ZenUI is built with Tailwind CSS classes. For example:
+
+```html
+
+<button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+    Click Me
+</button>
+```
+
+This button is ready to go. No props or extra configuration required.
+
+### Customizing Components
+
+Since ZenUI components use Tailwind CSS, you can easily customize them by modifying or adding classes. Here’s how:
+
+### Changing Colors and Sizes
+
+To adjust colors, sizes, or other styling attributes, modify the Tailwind classes:
+
+```html
+<!-- Original Button -->
+<button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+    Click Me
+</button>
+
+<!-- Customized Button -->
+<button class="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600">
+    Customized Button
+</button>
+```
+
+#### Changes:
+
+- `bg-green-500` changes the background color.
+- `px-6 py-3` adjusts padding for larger button size.
+- `rounded-lg` increases the border radius for a more rounded button.
+
+### Adding or Modifying Classes
+
+Feel free to add any Tailwind CSS class to further style components, for example, adding shadow effects or animations.
+
+```html
+
+<div class="p-4 bg-white shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+    <h2 class="text-lg font-semibold">ZenUI Card</h2>
+    <p class="text-gray-700">This is a customizable card component.</p>
+</div>
+```
+
+#### Changes:
+
+- `shadow-lg` adds a shadow for depth.
+- `hover:shadow-xl` increases the shadow on hover.
+- `transition-shadow` adds smooth transitions for better UX.
+
+### Best Practices
+
+1. **Start with Defaults**: Use ZenUI components as provided before customizing, so you know how they behave.
+2. **Use Tailwind’s Utility-First Approach**: Tailwind CSS is optimized for utility classes, so apply additional classes
+   as needed instead of rewriting CSS.
+3. **Document Customizations**: Keep notes on any modifications to standard ZenUI components for easy maintenance.
+   <br/>
+
+## Contribution
+
+We welcome contributions from the community! Please refer to
+the [CONTRIBUTING.md](https://github.com/Asfak00/zenui-library-vue/blob/production/CONTRIBUTING.md) file for more
+details on
+how to contribute.
+
+## License
+
+This project is licensed under the MIT License - see
+the [LICENSE](https://github.com/Asfak00/zenui-library-vue/blob/production/LICENSE.md) file for details.
+
+## Connect With ZenUI
+
+<p align="left">
+<a href="https://x.com/zenuilabs" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="zenuilibrary" height="30" width="40" /></a>
+<a href="https://www.linkedin.com/company/zenui-labs/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="zenui" height="30" width="40" /></a>
+<a href="https://web.facebook.com/zenuilabs" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="zenuilibrary" height="30" width="40" /></a>
+<a href="https://discord.gg/qbwytm4WUG" target="blank"><img align="center" src="https://static.vecteezy.com/system/resources/previews/023/986/612/non_2x/discord-logo-discord-logo-transparent-discord-icon-transparent-free-free-png.png" alt="zenui" height="45" width="45" /></a>
+</p>

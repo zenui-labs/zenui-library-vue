@@ -3,6 +3,7 @@ import {computed, ref} from 'vue';
 import {useZenuiStore} from '@/Store/Index.js';
 import SectionWrapper from "@/components/Home/SectionWrapper.vue";
 import {Icon} from '@iconify/vue';
+import {ZENUI_REACT_DOMAIN} from "@/Constant/Index.js";
 
 const props = defineProps({
   needMuchMargin: {
@@ -92,20 +93,30 @@ const onSubmitSubscribe = async (event) => {
           <h3 class="font-[600] dark:text-darkTextColor text-[20px] capitalize">tools</h3>
           <ul class="footer font-[400] text-black/70 dark:text-darkSubTextColor mt-2 text-[1rem] flex flex-col gap-2">
             <li>
-              <p><a href="https://react-ui.zenui.net/shortcut-generator">ShortKey</a></p>
-              <span><a href="https://react-ui.zenui.net/shortcut-generator">ShortKey</a></span>
+              <p><a :href="`${ZENUI_REACT_DOMAIN}/shortcut-generator`"
+                    target="_blank">ShortKey</a>
+              </p>
+              <span><a :href="`${ZENUI_REACT_DOMAIN}/shortcut-generator`"
+                       target="_blank">ShortKey</a>
+              </span>
             </li>
             <li>
-              <p><a href="https://react-ui.zenui.net/color-palette">Colors Palette</a></p>
-              <span><a href="https://react-ui.zenui.net/color-palette">Colors Palette</a></span>
+              <p><a :href="`${ZENUI_REACT_DOMAIN}/color-palette`"
+                    target="_blank">Colors Palette</a></p>
+              <span><a :href="`${ZENUI_REACT_DOMAIN}/color-palette`"
+                       target="_blank">Colors Palette</a></span>
             </li>
             <li>
-              <p><a href="https://react-ui.zenui.net/icons">Icons</a></p>
-              <span><a href="https://react-ui.zenui.net/icons">Icons</a></span>
+              <p><a :href="`${ZENUI_REACT_DOMAIN}/icons`"
+                    target="_blank">Icons</a></p>
+              <span><a :href="`${ZENUI_REACT_DOMAIN}/icons`"
+                       target="_blank">Icons</a></span>
             </li>
             <li>
-              <p><a href="https://react-ui.zenui.net/config-generator">Config AI</a></p>
-              <span><a href="https://react-ui.zenui.net/config-generator">Config AI</a></span>
+              <p><a :href="`${ZENUI_REACT_DOMAIN}/config-generator`"
+                    target="_blank">Config AI</a></p>
+              <span><a :href="`${ZENUI_REACT_DOMAIN}/config-generator`"
+                       target="_blank">Config AI</a></span>
             </li>
           </ul>
         </div>
@@ -203,7 +214,7 @@ const onSubmitSubscribe = async (event) => {
       </div>
 
       <div
-          class="mt-14 1024px:mx-auto flex w-[250px] flex-wrap 1024px:flex-nowrap 1024px:items-center 1024px:justify-center 1024px:w-[760px] gap-4 1024px:gap-5"
+          class="mt-14 1024px:mx-auto flex w-[250px] flex-wrap 1024px:flex-nowrap 1024px:items-center 1024px:justify-center 1024px:w-[500px] gap-4 1024px:gap-5"
       >
         <a
             href="https://web.facebook.com/share/g/D8DbMaprfWPksSGF/"
@@ -225,30 +236,30 @@ const onSubmitSubscribe = async (event) => {
           </div>
         </a>
 
-        <a
-            v-if="theme === 'dark'"
-            href="https://www.producthunt.com/posts/zenui-library-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-zenui&#0045;library&#0045;2"
-            class="cursor-pointer w-full rounded-md flex items-center gap-[14px]"
-            target="_blank"
-            rel="noreferrer"
-        >
-          <img
-              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=490875&theme=dark&t=1746465887663"
-              alt="ZENUI&#0032;LIBRARY - Free&#0032;Templates&#0044;&#0032;Components&#0032;&#0038;&#0032;Icons&#0032;for&#0032;Developers | Product Hunt"
-          />
-        </a>
-        <a
-            v-else
-            href="https://www.producthunt.com/posts/zenui-library-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-zenui&#0045;library&#0045;2"
-            class="cursor-pointer w-full rounded-md flex items-center gap-[14px]"
-            target="_blank"
-            rel="noreferrer"
-        >
-          <img
-              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=490875&theme=light&t=1746458743385"
-              alt="ZENUI&#0032;LIBRARY - Free&#0032;Templates&#0044;&#0032;Components&#0032;&#0038;&#0032;Icons&#0032;for&#0032;Developers | Product Hunt"
-          />
-        </a>
+        <!--        <a-->
+        <!--            v-if="theme === 'dark'"-->
+        <!--            href="https://www.producthunt.com/posts/zenui-library-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-zenui&#0045;library&#0045;2"-->
+        <!--            class="cursor-pointer w-full rounded-md flex items-center gap-[14px]"-->
+        <!--            target="_blank"-->
+        <!--            rel="noreferrer"-->
+        <!--        >-->
+        <!--          <img-->
+        <!--              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=490875&theme=dark&t=1746465887663"-->
+        <!--              alt="ZENUI&#0032;LIBRARY - Free&#0032;Templates&#0044;&#0032;Components&#0032;&#0038;&#0032;Icons&#0032;for&#0032;Developers | Product Hunt"-->
+        <!--          />-->
+        <!--        </a>-->
+        <!--        <a-->
+        <!--            v-else-->
+        <!--            href="https://www.producthunt.com/posts/zenui-library-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-zenui&#0045;library&#0045;2"-->
+        <!--            class="cursor-pointer w-full rounded-md flex items-center gap-[14px]"-->
+        <!--            target="_blank"-->
+        <!--            rel="noreferrer"-->
+        <!--        >-->
+        <!--          <img-->
+        <!--              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=490875&theme=light&t=1746458743385"-->
+        <!--              alt="ZENUI&#0032;LIBRARY - Free&#0032;Templates&#0044;&#0032;Components&#0032;&#0038;&#0032;Icons&#0032;for&#0032;Developers | Product Hunt"-->
+        <!--          />-->
+        <!--        </a>-->
 
         <a
             href="https://discord.gg/ysqmqNapZW"

@@ -49,7 +49,9 @@ useHead({
         class="mt-6 w-full 1024px:w-[80%] text-[1rem] text-gray-900 bg-orange-50 p-[15px] rounded-[8px] border-l-[5px] border-orange-400 dark:bg-slate-800 dark:text-darkSubTextColor dark:border-slate-600"
     >
       Some ZenUI components may include icons. To ensure these components
-      display correctly, you will need to install the <b>@iconify/vue</b> package
+      display correctly, you will need to install the <a href="https://icon-sets.iconify.design/" target="_blank"
+                                                         class="font-bold hover:underline">@iconify/vue</a>
+      package
       if you're using Vue. This package provides a wide range of icons that
       can be easily integrated into your components. You can install it via npm
       <span
@@ -74,7 +76,9 @@ useHead({
             ensure that you have Tailwind CSS installed for styling. ZenUI
             components are styled using Tailwind CSS, so having it set up is
             essential.
-          </span>
+          </span> <br/>
+          <a href='https://tailwindcss.com/docs/installation/tailwind-cli' class='text-brandColor hover:underline'>Tailwind
+            CSS Installation Guide</a>
         </li>
         <li>
           <b>Vue Project with Tailwind CSS:</b>
@@ -83,6 +87,10 @@ useHead({
             configured in your Vue project. ZenUI components can be used
             directly in your Template files once Tailwind is set up.
           </span>
+          <br/>
+          <a href='https://tailwindcss.com/docs/installation/using-vite'
+             class='text-brandColor hover:underline'>React + Tailwind CSS Setup
+            Guide</a>
         </li>
       </ul>
     </div>

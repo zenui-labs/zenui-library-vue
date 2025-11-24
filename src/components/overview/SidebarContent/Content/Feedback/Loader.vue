@@ -10,39 +10,41 @@ import OverviewFooter from "@/Shared/OverviewFooter.vue";
 import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import {loaderContents} from "@/Utils/ContentsConfig/FeedbackContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
+import {
+  ChaseLoaderCodes,
+  CircleLoaderCodes,
+  DashedLoaderCodes,
+  DotLoaderCodes,
+  FlipLoaderCodes,
+  OpacityLoaderCodes,
+  ShapeLoaderCodes,
+  WaveLoaderCodes
+} from "@/components/overview/SidebarContent/Content/Feedback/PreviewCodes/LoaderPreviewCodes.js";
 
 const sectionIds = loaderContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// circle loader
 const circleLoaderPreview = ref(true);
 const circleLoaderCode = ref(false);
 
-// dashed Loader
 const dashedLoaderPreview = ref(true);
 const dashedLoaderCode = ref(false);
 
-// opacity Loader
 const opacityLoaderPreview = ref(true);
 const opacityLoaderCode = ref(false);
 
-// wave Loader
 const waveLoaderPreview = ref(true);
 const waveLoaderCode = ref(false);
 
-// chase Loader
 const chaseLoaderPreview = ref(true);
 const chaseLoaderCode = ref(false);
 
-// dot Loader
 const dotLoaderPreview = ref(true);
 const dotLoaderCode = ref(false);
 
-// shape Loader
 const shapeLoaderPreview = ref(true);
 const shapeLoaderCode = ref(false);
 
-// flip Loader
 const flipLoaderPreview = ref(true);
 const flipLoaderCode = ref(false);
 
@@ -110,7 +112,7 @@ const items = Array.from({length: 9});
           <Icon icon="tabler:loader-3" class="text-[2.8rem] animate-spin text-[#36af7b]"/>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="CircleLoaderCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -138,7 +140,7 @@ const items = Array.from({length: 9});
           ></div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="DashedLoaderCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -170,7 +172,7 @@ const items = Array.from({length: 9});
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="OpacityLoaderCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -205,7 +207,7 @@ const items = Array.from({length: 9});
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="WaveLoaderCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -246,7 +248,7 @@ const items = Array.from({length: 9});
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="ChaseLoaderCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -289,7 +291,7 @@ const items = Array.from({length: 9});
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="DotLoaderCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -332,7 +334,7 @@ const items = Array.from({length: 9});
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="ShapeLoaderCodes"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -369,14 +371,14 @@ const items = Array.from({length: 9});
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="FlipLoaderCodes"/>
       </ComponentWrapper>
 
       <OverviewFooter
           backUrl="/components/testimonials"
           backName="testimonial"
-          forwardName="notification"
-          forwardUrl="/components/notification"
+          forwardName="badge"
+          forwardUrl="/components/badge"
       />
     </div>
 

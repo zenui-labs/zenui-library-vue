@@ -17,7 +17,8 @@
         visually appealing web interfaces with ease.
       </p>
       <p class="mt-4 dark:text-darkSubTextColor">
-        Our ecosystem includes ZenUI for <a href="#" class="text-brandColor hover:underline">React/Next.js</a> and ZenUI
+        Our ecosystem includes ZenUI for <a :href="ZENUI_REACT_DOMAIN" target="_blank"
+                                            class="text-brandColor hover:underline">React/Next.js</a> and ZenUI
         for Vue,
         providing robust, framework-specific libraries
         that integrate seamlessly into your projects. Every component is reusable, customizable, and built following
@@ -97,6 +98,7 @@
 import ContentHeader from '@/Shared/ContentHeader.vue'
 import BlocksFooter from '@/Shared/Block/BlocksFooter.vue'
 import {useHead} from "@vueuse/head";
+import {ZENUI_REACT_DOMAIN} from "@/Constant/Index.js";
 
 useHead({
   title: 'Get-Started - Overview',

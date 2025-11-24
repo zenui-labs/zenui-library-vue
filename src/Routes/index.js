@@ -182,11 +182,6 @@ const componentsRoutes = [
         component: () => import("@/Pages/Components/Feedback/AlertMessagePage.vue"),
     },
     {
-        path: "/components/dialog-message",
-        name: "Dialog Message",
-        component: () => import("@/Pages/Components/Feedback/DialogPage.vue"),
-    },
-    {
         path: "/components/testimonials",
         name: "Testimonials",
         component: () => import("@/Pages/Components/Feedback/TestimonialPage.vue"),
