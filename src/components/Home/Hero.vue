@@ -7,10 +7,9 @@ const router = useRouter();
 
 <template>
   <main
-      :class="['py-16 640px:py-0 w-full min-h-screen 1024px:min-h-[calc(100vh-50px)] flex items-center justify-center bg-[size:30px_30px] relative'
+      :class="['py-16 640px:py-0 w-full min-h-[85dvh] 1024px:min-h-[calc(100dvh-50px)] flex items-center justify-center bg-[size:30px_30px] relative'
     ]"
   >
-    <!-- Decorative gradient blobs -->
     <div
         class="absolute rotate-[-45deg] 640px:rotate-[-60deg] -top-16 640px:-top-[220px] left-0 blur-[43px] 640px:blur-[45px] w-[60px] h-[200px] 640px:h-[500px] rounded-full bg-gradient-to-b from-brandColor/60 to-brandColor/20 dark:from-white/90 dark:to-white/10"
     ></div>
@@ -61,26 +60,6 @@ const router = useRouter();
         </div>
 
         <div class="flex items-center gap-5 justify-center mt-6">
-          <!--          <a href="https://react.dev/learn" target="_blank" rel="noreferrer">-->
-          <!--            <FaReact-->
-          <!--                class="text-[1.8rem] hover:scale-[1.2] transition-all duration-300 dark:text-darkSubTextColor text-gray-500"-->
-          <!--            />-->
-          <!--          </a>-->
-          <!--          <a href="https://v3.tailwindcss.com/docs/installation" target="_blank" rel="noreferrer">-->
-          <!--            <BiLogoTailwindCss-->
-          <!--                class="text-[2.2rem] hover:scale-[1.2] transition-all duration-300 dark:text-darkSubTextColor text-gray-500"-->
-          <!--            />-->
-          <!--          </a>-->
-          <!--          <a href="https://motion.dev/docs" target="_blank" rel="noreferrer">-->
-          <!--            <TbBrandFramerMotion-->
-          <!--                class="text-[1.8rem] hover:scale-[1.2] transition-all duration-300 dark:text-darkSubTextColor text-gray-500"-->
-          <!--            />-->
-          <!--          </a>-->
-          <!--          <a href="https://nextjs.org/docs" target="_blank" rel="noreferrer">-->
-          <!--            <TbBrandNextjs-->
-          <!--                class="text-[1.8rem] hover:scale-[1.2] transition-all duration-300 dark:text-darkSubTextColor text-gray-500"-->
-          <!--            />-->
-          <!--          </a>-->
         </div>
       </div>
     </div>

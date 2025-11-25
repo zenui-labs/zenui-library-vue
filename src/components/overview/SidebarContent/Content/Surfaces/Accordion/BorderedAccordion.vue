@@ -78,12 +78,12 @@ const handleBorderClick = (index) => {
                 class="flex gap-2 cursor-pointer items-center justify-between w-full"
                 @click="handleBorderClick(index)"
             >
-              <h2 :class="['font-[600] text-[1.2rem]'], isPlusAccordion === index && 'text-[#36af7b]'">
+              <h2 :class="['font-[600] text-[1.2rem]', isPlusAccordion === index ? 'text-[#36af7b]' : 'dark:text-darkSubTextColor']">
                 {{ accordion.title }}
               </h2>
               <Icon
                   icon="mdi:plus"
-                  class="text-[1.6rem] dark:text-slate-600 text-text transition-all duration-300"
+                  class="text-[1.6rem] dark:text-darkSubTextColor text-text transition-all duration-300"
                   :class="{
                   'rotate-45 !text-[#36af7b]': isPlusAccordion === index,
                 }"

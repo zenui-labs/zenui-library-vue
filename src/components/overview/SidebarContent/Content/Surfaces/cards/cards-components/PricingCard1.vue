@@ -41,7 +41,7 @@ import {Icon} from "@iconify/vue";
 
       <div class="px-8 my-5">
         <button
-            class="px-4 py-2.5 border bg-[#36af7b] rounded-lg text-secondary text-[0.95rem] flex items-center gap-2 group"
+            class="px-4 py-2.5 bg-[#36af7b] rounded-lg text-secondary text-[0.95rem] flex items-center gap-2 group"
         >
           GET STARTED
           <Icon

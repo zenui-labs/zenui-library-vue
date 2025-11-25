@@ -201,8 +201,8 @@ useHead({
 
   <div class="px-6 425px:px-10">
     <BlocksFooter
-        backUrl="/getting-started/templates"
-        backName="templates"
+        backUrl="/docs/installation"
+        backName="installation"
         forwardName="input"
         forwardUrl="/components/input-text"
     />

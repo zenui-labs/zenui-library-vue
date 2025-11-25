@@ -79,12 +79,12 @@ const handleClick = (index) => {
                 class="flex gap-2 cursor-pointer items-center justify-between w-full"
                 @click="handleClick(index)"
             >
-              <h2 :class="['font-[600] transition-colors duration-200 text-[1.2rem]', isAccordionOpen === index && 'text-[#36af7b]']">
+              <h2 :class="['font-[600] transition-colors duration-200 text-[1.2rem]', isAccordionOpen === index ? 'text-[#36af7b]' : 'dark:text-darkSubTextColor']">
                 {{ accordion.title }}
               </h2>
               <Icon
                   icon="mdi:chevron-down"
-                  class="text-[1.8rem] dark:text-slate-600 text-text transition-all duration-300"
+                  class="text-[1.8rem] dark:text-darkSubTextColor text-text transition-all duration-300"
                   :class="{
                   'rotate-180 !text-[#36af7b]': isAccordionOpen === index,
                 }"

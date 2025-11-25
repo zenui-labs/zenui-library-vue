@@ -60,9 +60,9 @@ export const allComponents = [
         groupName: "input",
     },
     {
-        title: "primary button",
+        title: "button",
         image: "https://i.ibb.co.com/FLH85qfW/auth-button.png",
-        url: "/components/normal-button",
+        url: "/components/button",
         groupName: "button",
     },
     {
@@ -75,12 +75,6 @@ export const allComponents = [
         title: "Dropdown Button",
         image: "https://i.ibb.co.com/F4SB7GgH/dropdown-button.png",
         url: "/components/dropdown-button",
-        groupName: "button",
-    },
-    {
-        title: "animated button",
-        image: "https://i.ibb.co.com/FLH85qfW/auth-button.png",
-        url: "/components/animated-button",
         groupName: "button",
     },
     {
@@ -149,12 +143,12 @@ export const allComponents = [
         url: "/components/badge",
         groupName: "data_display",
     },
-    {
-        title: "Table",
-        image: "https://i.ibb.co.com/fGvGZN0s/table.png",
-        url: "/components/table",
-        groupName: "data_display",
-    },
+    // {
+    //     title: "Table",
+    //     image: "https://i.ibb.co.com/fGvGZN0s/table.png",
+    //     url: "/components/table",
+    //     groupName: "data_display",
+    // },
     {
         title: "Timeline",
         image: "https://i.ibb.co.com/cKhF8hcZ/timeline.png",
@@ -173,12 +167,12 @@ export const allComponents = [
         url: "/components/skeleton",
         groupName: "feedback",
     },
-    {
-        title: "Tree Dropdown",
-        image: "https://i.ibb.co.com/NgytjVwP/tree-dropdown.png",
-        url: "/components/tree-dropdown",
-        groupName: "feedback",
-    },
+    // {
+    //     title: "Tree Dropdown",
+    //     image: "https://i.ibb.co.com/NgytjVwP/tree-dropdown.png",
+    //     url: "/components/tree-dropdown",
+    //     groupName: "feedback",
+    // },
     {
         title: "loader",
         image: "https://i.ibb.co.com/0RWpT608/loading.png",
@@ -203,12 +197,12 @@ export const allComponents = [
         url: "/components/drag-and-drop",
         groupName: "surface",
     },
-    {
-        title: "appbar",
-        image: "https://i.ibb.co.com/hxL8b1V5/app-bar.png",
-        url: "/components/appbar",
-        groupName: "surface",
-    },
+    // {
+    //     title: "appbar",
+    //     image: "https://i.ibb.co.com/hxL8b1V5/app-bar.png",
+    //     url: "/components/appbar",
+    //     groupName: "surface",
+    // },
     {
         title: "image gallery",
         image: "https://i.ibb.co.com/YBhbHx8R/image-gellery.png",

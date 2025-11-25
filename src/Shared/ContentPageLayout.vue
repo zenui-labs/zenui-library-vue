@@ -5,12 +5,14 @@ import Footer from "@/components/Home/Footer.vue";
 import {useZenuiStore} from "@/Store/Index.js";
 import MobileSidebar from "@/components/overview/Sidebar/MobileSidebar.vue";
 import MobileNavbar from "@/components/Home/MobileNavbar.vue";
+import NewsBoard from "@/components/Home/NewsBoard.vue";
 
 const store = useZenuiStore()
 
 </script>
 
 <template>
+  <NewsBoard/>
   <Navbar/>
   <MobileNavbar/>
 

@@ -11,7 +11,7 @@ export const NumberStepCodes = '<template>\n' +
     '      <span class="text-[0.9rem] text-[#36af7b]">Cart items</span>\n' +
     '    </div>\n' +
     '    <p\n' +
-    '        class="w-[35px] h-[35px] flex items-center justify-center border border-gray-500 rounded-full text-[1rem]"\n' +
+    '        class="w-[35px] h-[35px] flex items-center dark:text-[#abc2d3] justify-center border border-gray-500 rounded-full text-[1rem]"\n' +
     '    >\n' +
     '      2\n' +
     '    </p>\n' +
@@ -19,7 +19,7 @@ export const NumberStepCodes = '<template>\n' +
     '      <span class="text-[0.9rem] dark:text-[#abc2d3]">Payment process</span>\n' +
     '    </div>\n' +
     '    <p\n' +
-    '        class="w-[35px] h-[35px] flex items-center justify-center border border-gray-500 rounded-full text-[1rem]"\n' +
+    '        class="w-[35px] h-[35px] flex items-center justify-center dark:text-[#abc2d3] border border-gray-500 rounded-full text-[1rem]"\n' +
     '    >\n' +
     '      3\n' +
     '    </p>\n' +
@@ -48,7 +48,7 @@ export const NoTextStepCodes = '<template>\n' +
     '      <hr class="w-[80%] dark:border-slate-600"/>\n' +
     '    </div>\n' +
     '    <p\n' +
-    '        class="w-[35px] h-[35px] flex items-center justify-center border border-gray-300 rounded-full text-[1rem]"\n' +
+    '        class="w-[35px] h-[35px] flex items-center justify-center dark:text-[#abc2d3] border border-gray-300 rounded-full text-[1rem]"\n' +
     '    >\n' +
     '      3\n' +
     '    </p>\n' +

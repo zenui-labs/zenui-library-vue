@@ -154,7 +154,7 @@ export const ProgressBarWithLabelCodes = '<script setup>\n' +
     '      ></div>\n' +
     '    </div>\n' +
     '\n' +
-    '    <p>\n' +
+    '    <p class="dark:text-[#abc2d3]">\n' +
     '      Loading: <b>{{ progress }}%</b>\n' +
     '    </p>\n' +
     '  </div>\n' +
@@ -252,7 +252,7 @@ export const CircleProgressBarCodes = '<script setup>\n' +
     '      />\n' +
     '    </svg>\n' +
     '\n' +
-    '    <p class="absolute top-[35%] left-[30%] translate-x-1/2 transform translate-y-1/2">\n' +
+    '    <p class="absolute top-[35%] dark:text-[#abc2d3] left-[30%] translate-x-1/2 transform translate-y-1/2">\n' +
     '      {{ progress }}%\n' +
     '    </p>\n' +
     '  </div>\n' +

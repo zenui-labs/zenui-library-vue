@@ -236,7 +236,7 @@ export const AnimatedCard7Codes = '<script setup>\n' +
     '\n' +
     '<template>\n' +
     '  <div\n' +
-    '      class="w-full md:w-[80%] lg:w-[50%] shadow-md h-[350px] hover:scale-[1.05] transition-all duration-300 overflow-hidden rounded-md relative cursor-pointer group"\n' +
+    '      class="w-full md:w-[80%] lg:w-[50%] dark:bg-slate-800 shadow-md h-[350px] hover:scale-[1.05] transition-all duration-300 overflow-hidden rounded-md relative cursor-pointer group"\n' +
     '  >\n' +
     '    <div\n' +
     '        class="absolute top-0 left-0 opacity-100 z-[-1] group-hover:opacity-100 group-hover:z-[1] ease-out transition-all duration-300 flex items-center justify-between w-full p-[15px]"\n' +

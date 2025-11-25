@@ -26,8 +26,7 @@ const activeSection = useScrollSpy(sectionIds);
       <OverviewFooter
           backUrl="/components/tooltip"
           backName="tooltip"
-          forwardName="product card"
-          forwardUrl="/components/product-card"
+          :is-forward-button="false"
       />
     </div>
 

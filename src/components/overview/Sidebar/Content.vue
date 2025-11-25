@@ -42,8 +42,8 @@ const componentsItems = [
   {label: "BUTTONS"},
   {title: "Button", url: "/components/button", parent: "BUTTONS"},
   {
-    title: "Login Button",
-    url: "/components/login-buttons",
+    title: "Auth Button",
+    url: "/components/auth-buttons",
     parent: "BUTTONS",
   },
   {

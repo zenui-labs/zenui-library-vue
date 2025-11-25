@@ -4,7 +4,7 @@ import {Icon} from "@iconify/vue";
 
 <template>
   <div
-      class="w-full 640px:w-[80%] 1024px:w-[50%] shadow-md h-[350px] hover:scale-[1.05] transition-all duration-300 overflow-hidden rounded-md relative cursor-pointer group"
+      class="w-full 640px:w-[80%] 1024px:w-[50%] shadow-md h-[350px] hover:scale-[1.05] transition-all duration-300 overflow-hidden rounded-md relative cursor-pointer dark:bg-slate-800 group"
   >
     <div
         class="absolute top-0 left-0 opacity-100 z-[-1] group-hover:opacity-100 group-hover:z-[1] ease-out transition-all duration-300 flex items-center justify-between w-full p-[15px]"

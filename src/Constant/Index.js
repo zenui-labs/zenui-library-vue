@@ -1,1 +1,1 @@
-export const ZENUI_REACT_DOMAIN = 'https://react-ui.zenui.net';
+export const ZENUI_REACT_DOMAIN = 'https://reactui.zenui.net';

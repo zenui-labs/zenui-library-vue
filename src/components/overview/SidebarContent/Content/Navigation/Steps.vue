@@ -63,7 +63,7 @@ const varticalStepCode = ref(false);
               <span class="text-[0.9rem] text-[#36af7b]">Cart items</span>
             </div>
             <p
-                class="w-[35px] h-[35px] flex items-center justify-center border border-gray-500 rounded-full text-[1rem]"
+                class="w-[35px] h-[35px] flex items-center justify-center border dark:text-darkSubTextColor border-gray-500 rounded-full text-[1rem]"
             >
               2
             </p>
@@ -71,7 +71,7 @@ const varticalStepCode = ref(false);
               <span class="text-[0.9rem] dark:text-[#abc2d3]">Payment process</span>
             </div>
             <p
-                class="w-[35px] h-[35px] flex items-center justify-center border border-gray-500 rounded-full text-[1rem]"
+                class="w-[35px] h-[35px] flex items-center justify-center border dark:text-darkSubTextColor border-gray-500 rounded-full text-[1rem]"
             >
               3
             </p>
@@ -124,7 +124,7 @@ const varticalStepCode = ref(false);
               <hr class="w-[80%] dark:border-slate-600"/>
             </div>
             <p
-                class="w-[35px] h-[35px] flex items-center justify-center border border-gray-300 rounded-full text-[1rem]"
+                class="w-[35px] h-[35px] flex items-center justify-center dark:text-darkSubTextColor border border-gray-300 rounded-full text-[1rem]"
             >
               3
             </p>

@@ -26,12 +26,12 @@ export const DefaultOpenAccordionCodes = [
             '          class="flex gap-2 cursor-pointer items-center justify-between w-full"\n' +
             '          @click="handleClick(index)"\n' +
             '      >\n' +
-            '        <h2 :class="[\'font-[600] transition-colors duration-200 text-[1.2rem]\', isAccordionOpen === index && \'text-[#36af7b]\']">\n' +
+            '        <h2 :class="[\'font-[600] transition-colors duration-200 text-[1.2rem]\', isAccordionOpen === index ? \'text-[#36af7b]\' : \'text-[#abc2d3]\']">\n' +
             '          {{ accordion.title }}\n' +
             '        </h2>\n' +
             '        <Icon\n' +
             '            icon="mdi:chevron-down"\n' +
-            '            class="text-[1.8rem] dark:text-slate-600 text-[#424242] transition-all duration-300"\n' +
+            '            class="text-[1.8rem] dark:text-[#abc2d3] text-[#424242] transition-all duration-300"\n' +
             '            :class="{\n' +
             '                  \'rotate-180 !text-[#36af7b]\': isAccordionOpen === index,\n' +
             '                }"\n' +
@@ -117,12 +117,12 @@ export const BorderAccordionCodes = [
             '          class="flex gap-2 cursor-pointer items-center justify-between w-full"\n' +
             '          @click="handleAccordionToggle(index)"\n' +
             '      >\n' +
-            '        <h2 :class="[\'font-[600] text-[1.2rem]\'], activeAccordionIndex === index && \'text-[#36af7b]\'">\n' +
+            '        <h2 :class="[\'font-[600] text-[1.2rem]\'], activeAccordionIndex === index ? \'text-[#36af7b]\' : \'dark:text-[#abc2d3]\'">\n' +
             '          {{ accordion.title }}\n' +
             '        </h2>\n' +
             '        <Icon\n' +
             '            icon="mdi:plus"\n' +
-            '            class="text-[1.6rem] dark:text-slate-600 text-[#424242] transition-all duration-300"\n' +
+            '            class="text-[1.6rem] dark:text-[#abc2d3] text-[#424242] transition-all duration-300"\n' +
             '            :class="{\n' +
             '                  \'rotate-45 !text-[#36af7b]\': activeAccordionIndex === index,\n' +
             '                }"\n' +

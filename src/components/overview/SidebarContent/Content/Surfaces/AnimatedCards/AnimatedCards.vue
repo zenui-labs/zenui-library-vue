@@ -385,8 +385,8 @@ const animatedCard11Code = ref(false);
       <OverviewFooter
           back-url="/components/drawer"
           back-name="drawer"
-          forward-name="image cropper"
-          forward-url="/components/image-cropper"
+          forward-name="accordion"
+          forward-url="/components/accordion"
       />
     </div>
 

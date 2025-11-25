@@ -272,13 +272,13 @@ const hover = ref(null);
                 class="flex 640px:flex-row flex-col items-center justify-between gap-[15px]"
             >
               <button
-                  class="py-2 hover:bg-gray-100 px-4 border border-gray-200 rounded-md w-full flex items-center justify-center gap-[10px]"
+                  class="py-2 hover:bg-gray-100 dark:border-darkBorderColor dark:text-darkSubTextColor dark:hover:bg-slate-900/50 px-4 border border-gray-200 rounded-md w-full flex items-center justify-center gap-[10px]"
               >
                 <Icon icon="fa:home" class="text-[1.3rem]"/>
                 Home
               </button>
               <button
-                  class="py-2 hover:bg-gray-100 px-4 border border-gray-200 rounded-md w-full flex items-center justify-center gap-[10px]"
+                  class="py-2 hover:bg-gray-100 dark:border-darkBorderColor dark:text-darkSubTextColor dark:hover:bg-slate-900/50 px-4 border border-gray-200 rounded-md w-full flex items-center justify-center gap-[10px]"
               >
                 <Icon icon="ph:share-fat-light" class="text-[1.3rem]"/>
                 Rejoin session

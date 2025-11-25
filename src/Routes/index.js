@@ -99,8 +99,8 @@ const componentsRoutes = [
         component: () => import("@/Pages/Components/Buttons/ButtonPage.vue"),
     },
     {
-        path: "/components/login-buttons",
-        name: "Login Button",
+        path: "/components/auth-buttons",
+        name: "Auth Button",
         component: () => import("@/Pages/Components/Buttons/AuthButtonPage.vue"),
     },
     {

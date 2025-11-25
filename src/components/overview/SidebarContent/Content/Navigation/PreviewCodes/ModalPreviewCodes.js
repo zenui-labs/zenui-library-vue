@@ -538,7 +538,7 @@ export const DeleteModalCodes = [
             '          <input\n' +
             '              @input="checkInputChange"\n' +
             '              type="text"\n' +
-            '              class="py-3 px-4 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] border border-gray-200 rounded-lg-md mt-1 w-full outline-none focus:border-[#36af7b]"\n' +
+            '              class="py-3 px-4 rounded-lg dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] border border-gray-200 rounded-lg-md mt-1 w-full outline-none focus:border-[#36af7b]"\n' +
             '          />\n' +
             '        </div>\n' +
             '\n' +

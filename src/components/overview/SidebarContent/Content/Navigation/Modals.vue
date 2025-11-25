@@ -549,7 +549,7 @@ const checkDeleteModalChange = (event) => {
                   <input
                       @input="checkDeleteModalChange"
                       type="text"
-                      class="py-3 px-4 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] border border-gray-200 rounded-lg-md mt-1 w-full outline-none focus:border-[#36af7b]"
+                      class="py-3 px-4 rounded-lg dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] border border-gray-200 rounded-lg-md mt-1 w-full outline-none focus:border-[#36af7b]"
                   />
                 </div>
 

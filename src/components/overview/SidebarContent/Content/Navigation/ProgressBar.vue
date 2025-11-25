@@ -188,7 +188,7 @@ const handleStartLoading = () => {
               ></div>
             </div>
 
-            <p>
+            <p class="dark:text-darkSubTextColor">
               Loading: <b>{{ progress }}%</b>
             </p>
           </div>
@@ -274,7 +274,7 @@ const handleStartLoading = () => {
               />
             </svg>
 
-            <p class="absolute top-[35%] left-[30%] translate-x-1/2 transform translate-y-1/2">
+            <p class="absolute top-[35%] dark:text-darkSubTextColor left-[30%] translate-x-1/2 transform translate-y-1/2">
               {{ progress }}%
             </p>
           </div>

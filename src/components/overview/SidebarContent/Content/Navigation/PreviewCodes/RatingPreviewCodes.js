@@ -166,13 +166,13 @@ export const RatingFeedbackModalCodes = '<script setup>\n' +
     '        class="flex md:flex-row flex-col items-center justify-between gap-[15px]"\n' +
     '    >\n' +
     '      <button\n' +
-    '          class="py-2 hover:bg-gray-100 px-4 border border-gray-200 rounded-md w-full flex items-center justify-center gap-[10px]"\n' +
+    '          class="py-2 hover:bg-gray-100 dark:border-[#334155] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 px-4 border border-gray-200 rounded-md w-full flex items-center justify-center gap-[10px]"\n' +
     '      >\n' +
     '        <Icon icon="fa:home" class="text-[1.3rem]"/>\n' +
     '        Home\n' +
     '      </button>\n' +
     '      <button\n' +
-    '          class="py-2 hover:bg-gray-100 px-4 border border-gray-200 rounded-md w-full flex items-center justify-center gap-[10px]"\n' +
+    '          class="py-2 hover:bg-gray-100 px-4 dark:border-[#334155] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 border border-gray-200 rounded-md w-full flex items-center justify-center gap-[10px]"\n' +
     '      >\n' +
     '        <Icon icon="ph:share-fat-light" class="text-[1.3rem]"/>\n' +
     '        Rejoin session\n' +
