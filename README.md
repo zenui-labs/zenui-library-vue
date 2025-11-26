@@ -17,7 +17,7 @@ ZenUI Library Vue
 Open-Source UI Component Library<br>
 Elevate your projects with ZenUI, a free, lightweight, customizable UI component library built with Vue3 and Tailwind CSS.
 
-![cover](https://i.ibb.co.com/CWtdR19/post.png)
+![cover](https://i.ibb.co.com/twFtvWnX/zenui-library-vue-og-image.png)
 
 ## Your Support = More UI Magic 😍
 
