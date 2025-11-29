@@ -11,11 +11,17 @@ import ContentNavbar from "@/Shared/Component/ContentNavbar.vue";
 import WarningMessageCard from "@/Shared/Component/WarningMessageCard.vue";
 import {tooltipContents} from "@/Utils/ContentsConfig/DataDisplayContents.js";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
+import {
+  ArrowTooltipPreviewCode,
+  ClickedTooltipPreviewCode,
+  ProfileTooltipPreviewCode,
+  RelativeTooltipPreviewCode,
+  RoundedTooltipPreviewCode
+} from "@/components/overview/SidebarContent/Content/Data Display/PreviewCodes/TooltipPrevieCodes.js";
 
 const sectionIds = tooltipContents.map((item) => item.href.slice(1));
 const activeSection = useScrollSpy(sectionIds);
 
-// actions
 const roundedTooltipPreview = ref(true);
 const roundedTooltipCode = ref(false);
 
@@ -84,7 +90,7 @@ onUnmounted(() => {
       <ComponentWrapper>
         <div
             v-if="roundedTooltipPreview"
-            class="p-8 pb-12 mb-4 flex items-center flex-col gap-5 justify-center"
+            class="p-8 pt-12 pb-10 mb-4 flex items-center flex-col gap-5 justify-center"
         >
           <div class="relative group">
             <button
@@ -105,7 +111,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="RoundedTooltipPreviewCode"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -126,7 +132,7 @@ onUnmounted(() => {
       <ComponentWrapper>
         <div
             v-if="arrowTooltipPreview"
-            class="p-8 pb-12 mb-4 flex items-center flex-col gap-5 justify-center"
+            class="p-8 pt-12 pb-10 mb-4 flex items-center flex-col gap-5 justify-center"
         >
           <div class="flex items-center gap-6">
             <div class="relative group">
@@ -185,7 +191,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="ArrowTooltipPreviewCode"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -283,7 +289,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="RelativeTooltipPreviewCode"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -390,7 +396,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="ProfileTooltipPreviewCode"/>
       </ComponentWrapper>
 
       <div class="mt-8">
@@ -520,7 +526,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <ShowCode v-else code=""/>
+        <ShowCode v-else :code="ClickedTooltipPreviewCode"/>
       </ComponentWrapper>
 
       <OverviewFooter

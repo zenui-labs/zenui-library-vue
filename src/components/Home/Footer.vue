@@ -244,31 +244,6 @@ const onSubmitSubscribe = async (event) => {
           </div>
         </a>
 
-        <!--        <a-->
-        <!--            v-if="theme === 'dark'"-->
-        <!--            href="https://www.producthunt.com/posts/zenui-library-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-zenui&#0045;library&#0045;2"-->
-        <!--            class="cursor-pointer w-full rounded-md flex items-center gap-[14px]"-->
-        <!--            target="_blank"-->
-        <!--            rel="noreferrer"-->
-        <!--        >-->
-        <!--          <img-->
-        <!--              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=490875&theme=dark&t=1746465887663"-->
-        <!--              alt="ZENUI&#0032;LIBRARY - Free&#0032;Templates&#0044;&#0032;Components&#0032;&#0038;&#0032;Icons&#0032;for&#0032;Developers | Product Hunt"-->
-        <!--          />-->
-        <!--        </a>-->
-        <!--        <a-->
-        <!--            v-else-->
-        <!--            href="https://www.producthunt.com/posts/zenui-library-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-zenui&#0045;library&#0045;2"-->
-        <!--            class="cursor-pointer w-full rounded-md flex items-center gap-[14px]"-->
-        <!--            target="_blank"-->
-        <!--            rel="noreferrer"-->
-        <!--        >-->
-        <!--          <img-->
-        <!--              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=490875&theme=light&t=1746458743385"-->
-        <!--              alt="ZENUI&#0032;LIBRARY - Free&#0032;Templates&#0044;&#0032;Components&#0032;&#0038;&#0032;Icons&#0032;for&#0032;Developers | Product Hunt"-->
-        <!--          />-->
-        <!--        </a>-->
-
         <a
             href="https://discord.gg/ysqmqNapZW"
             target="_blank"

@@ -1,162 +1,119 @@
 <template>
   <div
-      class="code-block-wrapper border border-[#ffffff15] rounded-normal overflow-hidden 1404px:max-w-[700px] 1605px:max-w-[800px] max-h-[400px] 400px:max-w-[380px] max-w-[325px] 640px:max-w-[980px]">
+      class="code-block-wrapper border border-[#ffffff15] rounded-normal overflow-hidden 1404px:max-w-[700px] 1605px:max-w-[800px] 400px:max-w-[380px] max-w-[325px] 640px:max-w-[700px]"
+  >
     <div
         v-if="isMultiTab"
+        class="flex overflow-x-auto bg-[#1a1a1a] px-2"
         style="scrollbar-width: none"
-        class="flex overflow-x-auto bg-[#282a36] border-b border-[#ffffff15] pl-2 pr-4 pt-1.5"
     >
       <button
-          v-for="tab in formattedCode"
+          v-for="tab in tabs"
           :key="tab.id"
-          @click="activeTab = tab.id"
+          @click="active = tab.id"
           :class="[
-          'px-3 py-2 flex items-center border-b border-transparent gap-[8px] text-sm transition-colors',
-          activeTab === tab.id
-            ? 'text-white border-white/80'
-            : 'text-gray-400 hover:bg-slate-700',
+          'px-3 py-3 flex items-center gap-2 text-sm border-b-[2px] transition-colors whitespace-nowrap',
+          active === tab.id
+            ? 'text-white border-brandColor'
+            : 'text-gray-400 hover:bg-[#2e2e2e] border-transparent',
         ]"
       >
-        <IconifyIcon
-            v-if="tab.language === 'vue'"
-            icon="logos:vue"
-            class="text-blue-400 text-[0.9rem]"
-        />
-        <IconifyIcon
-            v-else-if="tab.language === 'js'"
-            icon="logos:javascript"
-            class="text-yellow-400 text-[0.9rem]"
-        />
-        <IconifyIcon
-            v-else-if="tab.language === 'css'"
-            icon="devicon:css3"
-            class="text-blue-400 text-[1.1rem]"
-        />
+        <IconifyIcon v-if="tab.language === 'vue'" icon="logos:vue" class="text-green-400 text-sm"/>
+        <IconifyIcon v-else-if="tab.language === 'js'" icon="logos:javascript" class="text-yellow-400 text-sm"/>
+        <IconifyIcon v-else-if="tab.language === 'css'" icon="devicon:css3" class="text-blue-400 text-lg"/>
         {{ tab.displayText || tab.id.toUpperCase() }}
       </button>
     </div>
 
     <div class="relative">
       <button
-          @click="copyToClipboard"
-          class="absolute right-4 top-4 z-10 w-[40px] h-[40px] flex items-center justify-center bg-black rounded-md transition-all duration-300"
+          @click="copy"
+          class="absolute right-4 top-4 z-10 w-[40px] h-[40px] grid place-items-center bg-black/60 backdrop-blur rounded-md"
       >
         <IconifyIcon
-            v-if="isCopy"
+            v-if="copied"
             icon="lets-icons:done-all-round"
             class="text-[1.3rem] text-green-500"
         />
         <IconifyIcon
             v-else
             icon="mdi:content-copy"
-            class="text-[1.2rem] text-gray-400"
+            class="text-[1.2rem] text-gray-300"
         />
       </button>
 
       <div
-          class="text-[14px] max-h-[450px] overflow-auto font-mono bg-[#282a36] text-white flex"
-          :style="{ maxWidth: maxWidth }"
-          style="scrollbar-width: none"
+          class="zenui_code_snippet max-h-[450px] bg-[#212121] overflow-auto text-[14px]"
       >
-        <div
-            class="line-numbers text-right select-none pr-3 pl-3 pt-[1.4rem] bg-[#242631] text-gray-500 border-r border-[#ffffff15]"
-        >
-          <div
-              v-for="line in totalLines"
-              :key="line"
-              class="leading-[1.7] font-mono text-[13px]"
-          >
-            {{ line }}
-          </div>
-        </div>
-
         <pre
-            class="zenui_code_snippet overflow-x-auto pl-1 pb-3 pr-4 min-w-[94.2%] text-[14px]">
-          <code v-html="highlightedCode"></code>
-        </pre>
+            class="text-white py-4 px-6 text-sm font-mono leading-relaxed"
+            v-html="highlighted"
+        ></pre>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import {computed, ref} from "vue";
+import {computed, onMounted, ref} from "vue";
 import {Icon as IconifyIcon} from "@iconify/vue";
-import Prism from "prismjs";
-import "prismjs/components/prism-jsx.min.js";
-import "prismjs/components/prism-javascript.min.js";
-import "prismjs/components/prism-css.min.js";
-import "prismjs/themes/prism-tomorrow.css";
-import toggleThemeBaseClasses from "@/Utils/ToggleThemeBasedClasses.js";
-import {useZenuiStore} from "@/Store/Index.js";
+import {createHighlighter} from "shiki";
 
 const props = defineProps({
-  code: {
-    type: [Array, String],
-    required: true,
-  },
+  code: {type: [String, Array], required: true},
+  theme: {type: String, default: "material-theme-darker"},
 });
 
-const store = useZenuiStore();
-const isCopy = ref(false);
-const isMultiTab = Array.isArray(props.code);
-const activeTab = ref(isMultiTab ? props.code[0].id : "default");
+const copied = ref(false);
+const active = ref("default");
+const highlighter = ref(null);
 
-const formattedCode = computed(() => {
+const isMultiTab = Array.isArray(props.code);
+
+const tabs = computed(() => {
   if (isMultiTab) return props.code;
-  return [{id: "default", displayText: "", language: "html", code: props.code}];
+  return [
+    {
+      id: "default",
+      displayText: "",
+      language: "vue",
+      code: props.code,
+    },
+  ];
+});
+
+onMounted(async () => {
+  highlighter.value = await createHighlighter({
+    themes: [props.theme],
+    langs: [
+      "javascript",
+      "typescript",
+      "vue",
+      "html",
+      "css",
+      "json",
+    ],
+  });
+
+  if (isMultiTab) active.value = tabs.value[0].id;
 });
 
 const currentCode = computed(() => {
-  const item = formattedCode.value.find((item) => item.id === activeTab.value);
-  return item ? toggleThemeBaseClasses(item.code, store.withDarkClasses) : "";
+  return tabs.value.find((t) => t.id === active.value) || tabs.value[0];
 });
 
-const highlightedCode = computed(() => {
-  if (!currentCode.value) return "";
-  const lang =
-      formattedCode.value.find((item) => item.id === activeTab.value)?.language ||
-      "vue";
-  return Prism.highlight(
-      currentCode.value,
-      Prism.languages[lang] || Prism.languages.jsx,
-      lang
-  );
+const highlighted = computed(() => {
+  if (!highlighter.value) return "";
+  return highlighter.value.codeToHtml(currentCode.value.code, {
+    lang: currentCode.value.language,
+    theme: props.theme,
+  });
 });
 
-const totalLines = computed(() => {
-  return currentCode.value
-      ? currentCode.value.split("\n").length
-      : 1;
-});
-
-const maxWidth = computed(() => "800px");
-
-function copyToClipboard() {
-  navigator.clipboard.writeText(currentCode.value).then(() => {
-    isCopy.value = true;
-    setTimeout(() => {
-      isCopy.value = false;
-    }, 1000);
+function copy() {
+  navigator.clipboard.writeText(currentCode.value.code).then(() => {
+    copied.value = true;
+    setTimeout(() => (copied.value = false), 800);
   });
 }
 </script>
-
-<style scoped>
-.line-numbers {
-  user-select: none;
-  flex-shrink: 0;
-}
-
-pre {
-  margin: 0;
-  background: transparent;
-}
-
-.zenui_code_snippet code {
-  display: block;
-  margin: 0;
-}
-
-
-</style>
