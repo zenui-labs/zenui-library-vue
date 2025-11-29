@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Asfak00/zenui-library-vue">
-    <img src="https://i.ibb.co.com/ycZFk66Q/logo.png" alt="ZenUI Library" width="150" />
+    <img src="https://i.ibb.co.com/YTbt17Fy/logo.png" alt="ZenUI Library" width="150" />
   </a>
 
 <h1 align="center">
