@@ -77,7 +77,7 @@ const handleDragLeave = () => {
 </script>
 
 <template>
-  <div class="grid grid-cols-1 640px:grid-cols-2 1024px:grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 425px:grid-cols-2 1024px:grid-cols-3 gap-4">
     <div
         v-for="item in gridItems"
         :key="item.id"

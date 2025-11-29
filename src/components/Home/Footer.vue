@@ -125,9 +125,9 @@ const onSubmitSubscribe = async (event) => {
           <h3 class="font-[600] dark:text-darkTextColor text-[20px] capitalize">Products</h3>
           <ul class="footer font-[400] text-black/70 dark:text-darkSubTextColor mt-2 text-[1rem] flex flex-col gap-2">
             <li>
-              <p><a href='https://react-ui.zenui.net/' target='_blank' rel='noreferrer'>ZenUI Library
+              <p><a href='https://reactui.zenui.net/' target='_blank' rel='noreferrer'>ZenUI Library
                 React</a></p>
-              <span><a href='https://react-ui.zenui.net/' target='_blank'
+              <span><a href='https://reactui.zenui.net/' target='_blank'
                        rel='noreferrer'>ZenUI Library React</a></span>
             </li>
             <li>
@@ -171,7 +171,7 @@ const onSubmitSubscribe = async (event) => {
                     rel="noreferrer"
                 >
                   Changelog
-                  <GoArrowUpRight class="text-[1.1rem] mt-0.5"/>
+                  <Icon icon="iconamoon:arrow-up-1" class="text-[1.3rem] rotate-[45deg] inline"/>
                 </a>
               </p>
               <span>
@@ -182,7 +182,7 @@ const onSubmitSubscribe = async (event) => {
                     rel="noreferrer"
                 >
                   Changelog
-                  <GoArrowUpRight class="text-[1.1rem] mt-0.5"/>
+      <Icon icon="iconamoon:arrow-up-1" class="text-[1.3rem] rotate-[45deg] text-brandColor inline"/>
                 </a>
               </span>
             </li>

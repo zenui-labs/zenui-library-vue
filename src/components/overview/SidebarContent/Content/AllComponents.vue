@@ -66,9 +66,8 @@ useHead({
       confidence.
     </p>
 
-    <!-- Input -->
     <h2 class="mt-12 font-[600] text-[1.5rem] text-brandColor">Input</h2>
-    <div class="grid grid-cols-2 425px:grid-cols-3 mt-4 gap-8">
+    <div class="grid grid-cols-2 640px:grid-cols-3 mt-4 gap-8">
       <a
           v-for="(button, index) in inputsData"
           :key="index"
@@ -88,9 +87,8 @@ useHead({
       </a>
     </div>
 
-    <!-- Navigation -->
     <h2 class="mt-12 font-[600] text-[1.5rem] text-brandColor">Navigation</h2>
-    <div class="grid grid-cols-2 425px:grid-cols-3 mt-4 gap-8">
+    <div class="grid grid-cols-2 640px:grid-cols-3 mt-4 gap-8">
       <a
           v-for="(button, index) in navigationsData"
           :key="index"
@@ -110,9 +108,8 @@ useHead({
       </a>
     </div>
 
-    <!-- Buttons -->
     <h2 class="mt-12 font-[600] text-[1.5rem] mb-3 text-brandColor">Buttons</h2>
-    <div class="grid grid-cols-2 425px:grid-cols-3 gap-8">
+    <div class="grid grid-cols-2 640px:grid-cols-3 gap-8">
       <a
           v-for="(button, index) in buttonsData"
           :key="index"
@@ -132,9 +129,8 @@ useHead({
       </a>
     </div>
 
-    <!-- Feedback -->
     <h2 class="mt-12 font-[600] text-[1.5rem] text-brandColor">Feedback</h2>
-    <div class="grid grid-cols-2 425px:grid-cols-3 mt-4 gap-8">
+    <div class="grid grid-cols-2 640px:grid-cols-3 mt-4 gap-8">
       <a
           v-for="(button, index) in feedbackData"
           :key="index"
@@ -154,9 +150,8 @@ useHead({
       </a>
     </div>
 
-    <!-- Surface -->
     <h2 class="mt-12 font-[600] text-[1.5rem] mb-3 text-brandColor">Surface</h2>
-    <div class="grid grid-cols-2 425px:grid-cols-3 gap-8">
+    <div class="grid grid-cols-2 640px:grid-cols-3 gap-8">
       <a
           v-for="(button, index) in surfaceData"
           :key="index"
@@ -176,9 +171,8 @@ useHead({
       </a>
     </div>
 
-    <!-- DataDisplay -->
     <h2 class="mt-12 font-[600] text-[1.5rem] mb-3 text-brandColor">Data Display</h2>
-    <div class="grid grid-cols-2 425px:grid-cols-3 gap-8">
+    <div class="grid grid-cols-2 640px:grid-cols-3 gap-8">
       <a
           v-for="(button, index) in displayData"
           :key="index"

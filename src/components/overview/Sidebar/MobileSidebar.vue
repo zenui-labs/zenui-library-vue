@@ -42,7 +42,7 @@ watch(sidebarOpen, (newVal) => {
 
 <template>
   <div
-      class="w-full 1024px:hidden bg-border mt-[4.9rem] 425px:mt-[4.3rem] pb-2 pt-2.5 fixed 425px:top-0 top-[-10px] px-6 640px:px-10 transition-colors duration-500 dark:bg-slate-800 640px:pr-7 z-30"
+      class="w-full 1024px:hidden bg-border py-3 sticky top-0 px-6 640px:px-10 transition-colors duration-500 dark:bg-slate-800 640px:pr-7 z-30"
   >
     <Icon icon="heroicons-outline:menu-alt-1"
           class="text-[1.8rem] dark:text-darkTextColor text-text mobilesidebarIcon cursor-pointer"
@@ -53,9 +53,9 @@ watch(sidebarOpen, (newVal) => {
   <aside
       :class="[
       sidebarOpen
-        ? 'translate-x-0 opacity-100 z-40'
+        ? 'translate-x-0 opacity-100 z-50'
         : 'translate-x-[-200px] opacity-0 z-[-1]',
-      'py-6 pt-[6rem] px-6 640px:px-10 dark:bg-slate-900 border-r h-[100vh] border-border flex-col gap-4 overflow-y-scroll fixed top-0 left-0 w-[80%] 640px:w-[340px] bg-secondary z-20 flex mobileSidebar transition-all duration-500'
+      'py-6 px-6 640px:px-10 dark:bg-slate-900 border-r h-[100vh] border-border flex-col gap-4 overflow-y-scroll fixed top-0 left-0 w-[80%] 640px:w-[340px] bg-secondary z-20 flex mobileSidebar transition-all duration-500'
     ]"
   >
     <Content/>

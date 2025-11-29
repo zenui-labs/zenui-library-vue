@@ -78,7 +78,7 @@ const animatedCard11Code = ref(false);
   <aside
       class="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10"
   >
-    <div class="w-full 425px:w-[80%]">
+    <div class="w-full 1024px:w-[80%]">
       <ContentHeader id="hover-animated-card-1" text="hover animated card 1"/>
       <ComponentDescription
           text="This is a hover-animated card. Hover to reveal dynamic effects and animations."

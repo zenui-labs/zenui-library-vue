@@ -15,7 +15,7 @@ const store = useZenuiStore()
   <NewsBoard/>
   <Navbar/>
   <MobileNavbar/>
-
+  <MobileSidebar/>
   <div class="flex w-full mx-auto max-w-[1700px]">
     <div class="1024px:w-[32%] 1260px:w-[28%] relative 1404px:w-[19%] 2000px:w-[18%] 1024px:mr-[3rem] 1605px:mr-[0rem]">
       <div
@@ -26,10 +26,9 @@ const store = useZenuiStore()
     </div>
 
     <div
-        class="w-full h-[calc(100vh-76px)] overflow-y-auto pt-[5rem] 640px:pt-[5rem] 1024px:pt-[2rem] 1024px:px-[0.5rem] relative"
+        class="w-full h-[calc(100vh-76px)] overflow-y-auto pt-[2rem] 1024px:px-[0.5rem] relative"
         style="scrollbar-width: none"
     >
-      <MobileSidebar/>
       <slot/>
     </div>
   </div>

@@ -46,7 +46,7 @@ const shineSkeletonCode = ref(false);
 
 <template>
   <aside class="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
-    <div class="w-full 425px:w-[80%]">
+    <div class="w-full 1024px:w-[80%]">
       <ContentHeader text="Card Skeleton" id="card_skeleton"/>
 
       <ComponentDescription
