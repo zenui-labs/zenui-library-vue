@@ -1,11 +1,12 @@
 <script setup>
-import {ref} from "vue";
+import { ref } from "vue";
 import ContentHeader from "@/Shared/ContentHeader.vue";
 import ComponentDescription from "@/Shared/Component/ComponentDescription.vue";
 import ToggleTab from "@/Shared/Component/ToggleTab.vue";
 import ComponentWrapper from "@/Shared/Component/ComponentWrapper.vue";
 import ShowCode from "@/Shared/Component/ShowCode.vue";
-import {Icon} from "@iconify/vue";
+import { Icon } from "@iconify/vue";
+import { TreeTimelinePreviewCode } from "../PreviewCodes/TimeLinePreviewCodes";
 
 // tree timeline
 const treeTimelinePreview = ref(true);
@@ -47,23 +48,23 @@ const milestones = [
 
 <template>
   <div>
-    <ContentHeader className="mt-8" text="tree timeline" id="tree_timeline"/>
+    <ContentHeader className="mt-8" text="tree timeline" id="tree_timeline" />
 
     <ComponentDescription
-        text="A milestone timeline highlights key events or achievements in a project, visually tracking important deadlines and accomplishments along a chronological path."
+      text="A milestone timeline highlights key events or achievements in a project, visually tracking important deadlines and accomplishments along a chronological path."
     />
 
     <ToggleTab
-        :code="treeTimelineCode"
-        @update:code="(val) => (treeTimelineCode = val)"
-        @update:preview="(val) => (treeTimelinePreview = val)"
-        :preview="treeTimelinePreview"
+      :code="treeTimelineCode"
+      @update:code="(val) => (treeTimelineCode = val)"
+      @update:preview="(val) => (treeTimelinePreview = val)"
+      :preview="treeTimelinePreview"
     />
 
     <ComponentWrapper>
       <div
-          v-if="treeTimelinePreview"
-          class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
+        v-if="treeTimelinePreview"
+        class="p-8 mb-4 flex items-center flex-col gap-5 justify-center"
       >
         <div class="w-full mx-auto p-6">
           <h1 class="text-3xl font-bold mb-16 dark:text-[#abc2d3] text-center">
@@ -72,19 +73,19 @@ const milestones = [
 
           <div>
             <ul
-                class="relative h-fit before:content-[''] before:absolute before:w-1 before:h-full before:bg-gray-200 dark:before:bg-slate-800 before:left-1/2 before:transform before:-translate-x-1/2 before:rounded-md before:z-10"
+              class="relative h-fit before:content-[''] before:absolute before:w-1 before:h-full before:bg-gray-200 dark:before:bg-slate-800 before:left-1/2 before:transform before:-translate-x-1/2 before:rounded-md before:z-10"
             >
               <li
-                  v-for="(milestone, index) in milestones"
-                  :key="index"
-                  :class="[
+                v-for="(milestone, index) in milestones"
+                :key="index"
+                :class="[
                   'relative w-1/2 mb-4',
                   index % 2 === 0 ? 'text-right' : 'left-1/2 text-left',
                 ]"
               >
                 <div
-                    id="icon"
-                    :class="[
+                  id="icon"
+                  :class="[
                     'absolute top-1/2 -translate-y-1/2 bg-gray-200 dark:bg-slate-800 rounded-full p-2 z-10',
                     index % 2 === 0
                       ? 'translate-x-1/2 right-0'
@@ -92,13 +93,13 @@ const milestones = [
                   ]"
                 >
                   <Icon
-                      :icon="milestone.icon"
-                      class="text-gray-500 dark:text-[#abc2d3] w-5 h-5"
+                    :icon="milestone.icon"
+                    class="text-gray-500 dark:text-[#abc2d3] w-5 h-5"
                   />
                 </div>
 
                 <div
-                    :class="[
+                  :class="[
                     'relative border rounded-md dark:bg-slate-900 dark:border-slate-700 dark:shadow-slate-900 shadow-gray-50 border-gray-200/60 shadow-md',
                     index % 2 === 0 ? '-left-8' : '-right-8',
                   ]"
@@ -106,7 +107,7 @@ const milestones = [
                   <div class="py-3 px-4">
                     <div>
                       <div
-                          class="text-text dark:text-[#abc2d3] text-lg font-semibold"
+                        class="text-text dark:text-[#abc2d3] text-lg font-semibold"
                       >
                         {{ milestone.title }}
                       </div>
@@ -125,7 +126,7 @@ const milestones = [
         </div>
       </div>
 
-      <ShowCode v-else code=""/>
+      <ShowCode v-else :code="TreeTimelinePreviewCode" />
     </ComponentWrapper>
   </div>
 </template>
