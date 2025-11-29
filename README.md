@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <a href="https://github.com/Asfak00/zenui-library-vue">
+  <a href="https://github.com/zenui-labs/zenui-library-vue">
     <img src="https://i.ibb.co.com/YTbt17Fy/logo.png" alt="ZenUI Library" width="150" />
   </a>
 
@@ -8,10 +8,10 @@
 ZenUI Library Vue
 </h1>
 <p align="center">
-<a href="https://github.com/Asfak00/zenui-library-vue" target="__blank"><img alt="release date" src="https://img.shields.io/github/release-date/asfak00/zenui-library-vue"></a>
-<a href="https://github.com/Asfak00/zenui-library-vue" target="__blank"><img alt="commits" src="https://img.shields.io/github/commit-activity/w/asfak00/zenui-library-vue"></a>
-<a href="https://github.com/Asfak00/zenui-library-vue" target="__blank"><img alt="Contributors" src="https://img.shields.io/github/contributors/asfak00/zenui-library-vue"></a>
-  <a href="https://github.com/Asfak00/zenui-library-vue" target="__blank"><img alt="stars" src="https://img.shields.io/github/stars/asfak00/zenui-library-vue"></a>
+<a href="https://github.com/zenui-labs/zenui-library-vue" target="__blank"><img alt="release date" src="https://img.shields.io/github/release-date/asfak00/zenui-library-vue"></a>
+<a href="https://github.com/zenui-labs/zenui-library-vue" target="__blank"><img alt="commits" src="https://img.shields.io/github/commit-activity/w/asfak00/zenui-library-vue"></a>
+<a href="https://github.com/zenui-labs/zenui-library-vue" target="__blank"><img alt="Contributors" src="https://img.shields.io/github/contributors/asfak00/zenui-library-vue"></a>
+  <a href="https://github.com/zenui-labs/zenui-library-vue" target="__blank"><img alt="stars" src="https://img.shields.io/github/stars/asfak00/zenui-library-vue"></a>
 </p>
 <p align="center">
 Open-Source UI Component Library<br>
@@ -137,14 +137,14 @@ Feel free to add any Tailwind CSS class to further style components, for example
 ## Contribution
 
 We welcome contributions from the community! Please refer to
-the [CONTRIBUTING.md](https://github.com/Asfak00/zenui-library-vue/blob/production/CONTRIBUTING.md) file for more
+the [CONTRIBUTING.md](https://github.com/zenui-labs/zenui-library-vue/blob/production/CONTRIBUTING.md) file for more
 details on
 how to contribute.
 
 ## License
 
 This project is licensed under the MIT License - see
-the [LICENSE](https://github.com/Asfak00/zenui-library-vue/blob/production/LICENSE.md) file for details.
+the [LICENSE](https://github.com/zenui-labs/zenui-library-vue/blob/production/LICENSE.md) file for details.
 
 ## Connect With ZenUI
 
